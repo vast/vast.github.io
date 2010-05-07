@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{{ page.title }} @ vast.github.com</title>
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <link rel="stylesheet" type="text/css" href="/css/base.css" media="screen, projection" />
+</head>
+<body class="post">
+<div id="wrap">
+  <div id="page">
+    <div class="meta">
+      <h1 class="title">{{ page.title }}</h1>
+      <p class="meta">
+        <a href="/">Vasily Polovnyov</a>
+        <span class="date">{{ post.date | date_to_string }}</span>
+      </p>
+    </div>
+    <div class="contents">
+    {{ content }}
+    </div>
+  </div>
+  <div id="aside">
+    <p>
+      Since I'm not a native speaker I'm bound to make grammatical and spelling errors.
+      I want this to be an opportunity to improve my English, so please do correct me if you
+      know where I'm wrong. Just <a href="mailto:vasily@polovnyov.ru">email me</a> about it and I'll fix the error.
+    </p>
+
+    <p>Thank you very much in advance.</p>
+  </div>
+</div>
+</body>
+</html>
