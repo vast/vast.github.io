@@ -1,0 +1,53 @@
+html {font: 100.1%/1.5 Georgia, Times New Roman, Times, serif}
+html, body, h1, h2, h3, ul, li, ol, dl, dt, dd, p, img {
+    padding: 0; margin: 0; font-size: 100%; font-weight: normal; border: 0
+}
+
+body {
+    color: #333;
+    background: #fff;
+    text-align: left
+}
+
+a {color: #0e5ea6; text-decoration: none}
+a:hover {background: #0085fe; color: #eee; text-decoration: none}
+
+p {margin: 12px 0}
+
+h1, h2, h3 {margin: 1em 0 0; color: #202020; font-family: Helvetica, Arial, sans-serif}
+h1 {font-size: 200%}
+h2 {font-size: 150%}
+h3 {font-size: 125%}
+
+ul, ol {padding-left: 2em}
+ul {list-style: square inside; margin: 12px 0}
+li {margin: 0 0 .2em}
+ol {list-style-position: inside}
+
+tt, pre, code, samp, kbd {
+  font-family: consolas, lucida console, bitstream vera sans mono, courier new, monospace;
+  font-size: 14px;
+  color: #333
+}
+code {color: #007A00}
+
+#wrap {width: 45em; margin: 0 auto}
+
+#page {padding: 1px 25px 10px}
+
+#aside {
+  margin: 16px 25px;
+  padding: 10px 0;
+  border-top: 1px solid #bbb;
+  color: #777;
+  font-size: 87.5%;
+}
+
+.title, .post .header {
+  margin: 0 0 16px;
+  color: #333;
+  border-bottom: 1px solid #bbb
+}
+
+.contacts {list-style: none outside; padding-left: 0; margin: 0}
+.contacts li {margin: 0}

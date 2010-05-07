@@ -1,6 +1,14 @@
 ---
    layout: default
-   title: It works!
+   title: Vasily Polovnyov
 ---
 
-Hello, `everyone` ;)
+Hello. My name is Vasily Polovnyov. I'm a web developer working mainly in Ruby. Currently I'm working
+at [whiteants.net](http://whiteants.net).
+
+###Open Source Projects
+
+* [ciridiri](http://github.com/vast/ciridiri) &mdash; a dead simple wiki-engine on [circumflex](http://github.com/inca/circumflex);
+* [sinatra-redirect-with-flash](http://vast.github.com/sinatra-redirect-with-flash/) &mdash; a sinatra extension which provides
+  nice `redirect` helper than can set proper flash (rack-flash) before the redirection;
+* [sinatra-xsendfile](http://vast.github.com/sinatra-xsendfile/) &mdash; a sinatra extension for sending files faster.
