@@ -15,9 +15,9 @@ a:hover {background: #0085fe; color: #eee; text-decoration: none}
 p {margin: 12px 0}
 
 h1, h2, h3 {margin: 1em 0 0; color: #202020; font-family: Helvetica, Arial, sans-serif}
-h1 {font-size: 200%}
-h2 {font-size: 150%}
-h3 {font-size: 125%}
+h1 {font-size: 150%}
+h2 {font-size: 125%}
+h3 {font-size: 100%}
 
 ul, ol {padding-left: 2em}
 ul {list-style: square inside; margin: 12px 0}
@@ -31,13 +31,16 @@ tt, pre, code, samp, kbd {
 }
 code {color: #007A00}
 
-#wrap {width: 45em; margin: 0 auto}
+#wrap {
+  width: 45em;
+  margin: 32px auto 0
+}
 
 #page {padding: 1px 25px 10px}
 
 #aside {
   margin: 16px 25px;
-  padding: 10px 0;
+  padding: 1px 0;
   border-top: 1px solid #bbb;
   color: #777;
   font-size: 87.5%;
@@ -49,5 +52,17 @@ code {color: #007A00}
   border-bottom: 1px solid #bbb
 }
 
-.contacts {list-style: none outside; padding-left: 0; margin: 0}
+.contacts {list-style: none outside; padding-left: 0}
 .contacts li {margin: 0}
+
+/* posts */
+.post .meta {font-size: 87.5%}
+.post .title {line-height: 1}
+.post .header {padding: 0 0 16px}
+
+.post .date, .posts .date {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 87.5%
+}
+
+.post .title, .post .header p {margin: 0; border: 0}

@@ -5,7 +5,7 @@ title: Interactive console for your Sinatra app
 
 Just a simple Rails `script/console` analogue implemented as a rake task:
 
-    require 'myapp' #yours sinatra app
+    require 'myapp' #your sinatra app
 
     desc "run irb console"
     task :console, :environment do |t, args|
