@@ -10,7 +10,7 @@ body {
 }
 
 a {color: #0e5ea6; text-decoration: none}
-a:hover {background: #0085fe; color: #eee; text-decoration: none}
+a:hover {text-decoration: underline}
 
 p {margin: 12px 0}
 
@@ -46,10 +46,11 @@ code {color: #007A00}
   font-size: 87.5%;
 }
 
-.title, .post .header {
-  margin: 0 0 16px;
-  color: #333;
-  border-bottom: 1px solid #bbb
+#aside a, #aside a:visited, .post .meta a, .post .meta a:visited {color: #8085c1}
+
+.post .header {
+  padding: 0 0 16px;
+  color: #777
 }
 
 .about p:first-child {font-size: 125%; color: #202020; margin-bottom: 2em}
@@ -60,7 +61,6 @@ code {color: #007A00}
 /* posts */
 .post .meta {font-size: 87.5%}
 .post .title {line-height: 1}
-.post .header {padding: 0 0 16px}
 
 .post .date, .posts .date {
   font-family: Helvetica, Arial, sans-serif;
