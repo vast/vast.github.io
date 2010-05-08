@@ -52,6 +52,8 @@ code {color: #007A00}
   border-bottom: 1px solid #bbb
 }
 
+.about p:first-child {font-size: 125%; color: #202020; margin-bottom: 2em}
+
 .contacts {list-style: none outside; padding-left: 0}
 .contacts li {margin: 0}
 
