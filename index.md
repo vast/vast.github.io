@@ -3,7 +3,7 @@
    title: Vasily Polovnyov
 ---
 
-Hello. My name is Vasily Polovnyov. I'm a web developer working mainly in Ruby. Currently I'm working
+Hello. My name is Vasily Polovnyov. I'm a web developer working mainly in Ruby. I work
 at [whiteants.net](http://whiteants.net).
 
 ###Open Source Projects
