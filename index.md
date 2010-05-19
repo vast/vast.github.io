@@ -9,6 +9,7 @@ at [whiteants.net](http://whiteants.net).
 ###Open Source Projects
 
 * [ciridiri](http://vast.github.com/ciridiri) &mdash; a dead simple wiki engine on [circumflex](http://github.com/inca/circumflex);
+* [ciridiri.rb](http://vast.github.com/ciridiri.rb) &mdash; a Ruby+Sinatra port of ciridiri;
 * [sinatra-redirect-with-flash](http://vast.github.com/sinatra-redirect-with-flash/) &mdash; a sinatra extension which provides
   nice `redirect` helper than can set proper flash (rack-flash) before the redirection;
 * [sinatra-xsendfile](http://vast.github.com/sinatra-xsendfile/) &mdash; a sinatra extension for sending files faster.
