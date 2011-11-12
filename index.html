@@ -18,20 +18,20 @@ body {
 a, a:visited {color: #0064AE; text-decoration: none}
 a:hover {text-decoration: underline}
 p {margin: 0 0 1.5em}
-h1, h2, h3 {margin: 1.5em 0 0; color: #212121; font-family: 'PT Sans Narrow', sans-serif}
+h1, h2, h3 {margin: 1.5em 0 0; color: #212121; font-family: 'PT Sans Narrow', Helvetica, Arial, sans-serif}
 h1 {font-size: 200%}
 h2 {font-size: 150%}
 h3 {font-size: 125%}
 /* здесь был веб2.0 детка, здесь был веб2.0 */
 #wrap {
-  width: 640px;
+  width: 680px;
   margin: 120px auto 0;
   overflow: hidden
 }
 
 #aside {
   float: left;
-  width: 230px;
+  width: 270px;
   text-align: right;
   font-size: 150%;
 }
@@ -41,6 +41,8 @@ h3 {font-size: 125%}
   margin-top: 8px;
   color: #000;
 }
+
+#aside h1 span {display: block}
 
 #contents {
   width: 380px;
@@ -57,7 +59,7 @@ h3 {font-size: 125%}
 <body>
   <div id="wrap">
     <div id="aside">
-      <h1>Vasily Polovnyov</h1>
+      <h1>Vasily <span>Polovnyov</span></h1>
     </div>
     <div id="contents">
       <p>Привет. Мне 25 лет и я работаю <nobr>веб-разработчиком</nobr> в <a href="http://whiteants.net">whiteants.net</a>.</p>
