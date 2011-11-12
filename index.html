@@ -3,6 +3,7 @@
 <head>
 <title>Vasily Polovnyov // Ни за что не догадаетесь, как меня зовут</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=700" />
 <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
 <!-- Понравился сайт пацана? Цэ-Эс-Эс Н-на! -->
 <style type="text/css">
@@ -25,7 +26,7 @@ h3 {font-size: 125%}
 /* здесь был веб2.0 детка, здесь был веб2.0 */
 #wrap {
   width: 680px;
-  margin: 120px auto 0;
+  margin: 120px auto 20px;
   overflow: hidden
 }
 
@@ -50,7 +51,13 @@ h3 {font-size: 125%}
   text-align: left;
 }
 
-#contents .footer {font-size: 16px; color: #000}
+#contents .footer {font-size: 16px}
+
+@media screen and (max-device-width: 480px){
+  #aside, #contents {float: none; width: auto; text-align: left}
+  #aside h1 {text-align: center; line-height: 1.5}
+  #aside h1 span {display: inline}
+}
 
 </style>
 <link rel="openid.server" href="http://www.myopenid.com/server" />
