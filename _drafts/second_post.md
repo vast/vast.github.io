@@ -14,4 +14,4 @@
 
 Есть еще 〈угловые скобки〉. Но таких символов не бывает на обычных клавиатурах, вместо них используют \<знаки сравнения\>. В своей повседневной жизни смело и непринужденно называйте их \<angle brackets\>.
 
-И еще один познавательный факт из мира английского языка. Самое длинное слово в английском языке — _[pneumonoultramicroscopicsilicovolcanoconiosis](https://www.youtube.com/watch?v=li7HFKEkVOw)_.
+И еще один познавательный факт из мира английского языка. Самое длинное слово в английском языке — _[pneumonoultramicroscopicsilicovolcanoconiosis](http://en.wikipedia.org/wiki/Pneumonoultramicroscopicsilicovolcanoconiosis)_. Попробуйте [выучить его произношение](https://www.youtube.com/watch?v=li7HFKEkVOw).
