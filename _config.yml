@@ -1,0 +1,7 @@
+markdown: redcarpet
+permalink: pretty
+
+redcarpet:
+  extensions: [strikethrough]
+
+title: 'Приключения успешного программиста'
