@@ -10,6 +10,7 @@
     {% endif %}
   </title>
   <link rel="stylesheet" href="/css/base.css" media="screen, projection" />
+  <link rel="profile" href="http://microformats.org/profile/hcard" />
 </head>
 <body>
   <article class="post">
@@ -20,5 +21,13 @@
       {{ content }}
     </div>
   </article>
+
+  <footer id="footer">
+    <address class="vcard">
+      <h5><a href="http://vasily.polovnyov.ru/" class="fn url">Василий Половнев</a></h5>
+      <span>фронтенд-шмонтенд разработчик, успешный брограммист</span>
+      <a href="http://twitter.com/vazilla" class="url twitter">@vazilla</a>
+    </address>
+  </footer>
 </body>
 </html>
