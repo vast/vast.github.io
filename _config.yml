@@ -1,5 +1,5 @@
 markdown: redcarpet
-permalink: none
+permalink: /posts/:title.html
 
 redcarpet:
   extensions: [strikethrough]
