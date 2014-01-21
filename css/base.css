@@ -19,6 +19,7 @@ body {
   background: #fff;
   font: normal normal 18px/1.45 Gregor, Georgia, serif;
   padding: 1em 2em .5em;
+  -webkit-text-size-adjust: none;
 }
 
 a {
@@ -88,7 +89,7 @@ ol {
 .outstanding {
   text-align: center;
   margin: .5em 0 2em;
-  font: 24px/1.5 Georgia, serif;
+  font: 1.125em/1.5 Georgia, serif;
 }
 
 #footer {
@@ -112,7 +113,7 @@ ol {
 }
 
 #footer address {
-  font-size: 16px;
+  font-size: 88%;
 }
 
 #footer .title {
