@@ -85,6 +85,12 @@ ol {
   margin: 0 auto;
 }
 
+.outstanding {
+  text-align: center;
+  margin: .5em 0 2em;
+  font: 24px/1.5 Georgia, serif;
+}
+
 #footer {
   position: relative;
   max-width: 36em;
