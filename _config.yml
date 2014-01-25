@@ -4,4 +4,4 @@ permalink: /posts/:title.html
 redcarpet:
   extensions: [strikethrough]
 
-title: 'Приключения успешного программиста'
+title: 'Записки успешного брограммиста'
