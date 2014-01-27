@@ -5,3 +5,5 @@ redcarpet:
   extensions: [strikethrough]
 
 title: 'Записки успешного брограммиста'
+description: 'О программировании, технологиях и жизни'
+url: 'http://vasily.polovnyov.ru'
