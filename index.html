@@ -1,3 +1,6 @@
+---
+---
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -12,9 +15,10 @@ html, body, h1, h2, h3, ul, li, ol, dl, dt, dd, p, img {
     padding: 0; margin: 0; font-size: 100%; font-weight: normal; border: 0
 }
 body {
-    color: #222;
-    font-size: 20px;
-    background: #fff
+  color: #222;
+  font-size: 20px;
+  padding: 0 .5em;
+  background: #fff
 }
 a, a:visited {color: #0064AE; text-decoration: none}
 a:hover {text-decoration: underline}
@@ -25,7 +29,7 @@ h2 {font-size: 150%}
 h3 {font-size: 125%}
 /* здесь был веб2.0 детка, здесь был веб2.0 */
 #wrap {
-  width: 680px;
+  max-width: 680px;
   margin: 120px auto 20px;
   overflow: hidden
 }
@@ -51,9 +55,19 @@ h3 {font-size: 125%}
   text-align: left;
 }
 
-#contents .footer {font-size: 16px}
+#contents .footer, .blog {
+  font-size: 16px
+}
 
-@media screen and (max-device-width: 480px){
+.blog ul {
+  list-style: none outside;
+}
+
+.blog li {
+  margin: .25em 0;
+}
+
+@media screen and (max-width: 480px) {
   #aside, #contents {float: none; width: auto; text-align: left}
   #aside h1 {text-align: center; line-height: 1.5}
   #aside h1 span {display: inline}
@@ -70,13 +84,39 @@ h3 {font-size: 125%}
       <h1 class="fn">Vasily <span>Polovnyov</span></h1>
     </div>
     <div id="contents">
-      <p>Привет. Мне 27 лет <del datetime="2012-04-17">и я работаю <nobr>веб-разработчиком</nobr> в <a href="http://whiteants.net">whiteants.net</a></del>.</p>
+      <p>
+        Привет. Мне 27 лет <del datetime="2012-04-17">и я работаю <nobr>веб-разработчиком</nobr>
+        в <a href="http://whiteants.net">whiteants.net</a></del>.
+      </p>
+
       <div class="footer">
-      <p>Помимо работы интересуюсь веб-технологиями, языками программирования, минимализмом <del datetime="2012-01-01">и вторым Старкрафтом</del>.</p>
-      <p>Лучший способ связаться со мной — <a href="mailto:vasily.polovnyov@me.com" class="email">электронная почта</a>. Кроме того, меня можно найти в <a href="http://twitter.com/vazilla" class="url">Твиттере</a> и <a href="http://github.com/vast" class="url">Гитхабе</a>.</p>
+        <p>
+          Помимо работы интересуюсь веб-технологиями, языками программирования,
+          минимализмом <del datetime="2012-01-01">и вторым Старкрафтом</del>.
+        </p>
+        <p>
+          Лучший способ связаться со мной —
+          <a href="mailto:vasily.polovnyov@me.com" class="email">электронная почта</a>.
+          Кроме того, меня можно найти в <a href="http://twitter.com/vazilla" class="url">Твиттере</a>
+          и <a href="http://github.com/vast" class="url">Гитхабе</a>.
+        </p>
+      </div>
+
+      <div class="blog">
+        <h3>{{ site.title }}</h3>
+        <ul class="posts">
+          {% for post in site.posts %}
+          <li>
+            <a href="{{ post.url }}">
+              {{ post.title }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
       </div>
     </div>
   </div>
+
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));

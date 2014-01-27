@@ -30,7 +30,7 @@ a {
 }
 
 a:hover {
-  color: #03709a;
+  color: #0064AE;
   border-color: #111;
 }
 
@@ -132,7 +132,7 @@ img {
 }
 
 #footer a {
-  color: #03709a;
+  color: #0064AE;
   text-decoration: none;
   border: none;
 }
