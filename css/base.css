@@ -69,10 +69,12 @@ ul {
 }
 
 ul li:before {
-  content: '— ';
+  content: '—';
+  position: absolute;
+  display: inline-block;
   width: 1.5em;
   margin-left: -1.5em;
-  text-align: right;
+  text-align: left;
 }
 
 li > ul, li > ol {
@@ -86,6 +88,10 @@ li > ul li, li > ol li {
 ol {
   margin-bottom: 1.8em;
   list-style: decimal inside
+}
+
+dd {
+  margin-left: 1.5em;
 }
 
 img {
@@ -106,7 +112,7 @@ img {
 #footer {
   position: relative;
   max-width: 36em;
-  margin: 4em auto 0;
+  margin: 9em auto 0;
   padding: 3em 0;
   color: #777;
 }
