@@ -34,12 +34,14 @@ var typographer = (function() {
 
   return {
     kickit: function(selector) {
-      var matches = document.querySelectorAll(selector);
       tiny = tiny.concat(_capitalizedTiny());
 
-      for (var i = 0; i < matches.length; i++) {
-        _walkThroughTheNode(matches[i]);
-      }
+      document.addEventListener('DOMContentLoaded', function() {
+        var matches = document.querySelectorAll(selector);
+        for (var i = 0; i < matches.length; i++) {
+          _walkThroughTheNode(matches[i]);
+        }
+      }, false)
     }
   }
 })();
