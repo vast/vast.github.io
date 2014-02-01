@@ -111,6 +111,28 @@ img {
   font: 1.125em/1.5 Georgia, serif;
 }
 
+.post-nav {
+  display: table;
+  padding: 2em 0 0;
+  font-size: 75%;
+}
+
+.previous-post, .next-post, .post-nav-arrows {
+  display: table-cell;
+}
+
+.post-nav-arrows .is-disabled {
+  color: #777;
+}
+
+.previous-post {
+  padding-right: 5px;
+}
+
+.next-post {
+  padding-left: 5px;
+}
+
 #footer {
   position: relative;
   max-width: 36em;

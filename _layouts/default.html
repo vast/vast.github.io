@@ -24,6 +24,35 @@
     <div class="post-contents">
       {{ content }}
     </div>
+
+    <footer class="post-nav">
+      {% if page.previous.url %}
+        <div class="previous-post">
+          <a class="prev" href="{{page.previous.url}}">{{page.previous.title}}</a>
+        </div>
+      {% endif %}
+
+      <div class="post-nav-arrows">
+        {% if page.previous.url %}
+          <span class="previous-post-arrow">&larr;</span>
+        {% else %}
+          <span class="previous-post-arrow is-disabled">&larr;</span>
+        {% endif %}
+
+        {% if page.next.url %}
+          <span class="next-post-arrow">&rarr;</span>
+        {% else %}
+          <span class="next-post-arrow is-disabled">&rarr;</span>
+        {% endif %}
+        </div>
+      </div>
+
+      {% if page.next.url %}
+        <div class="next-post">
+          <a class="next" href="{{page.next.url}}">{{page.next.title}}</a>
+        </div>
+      {% endif %}
+    </footer>
   </article>
 
   <footer id="footer">
