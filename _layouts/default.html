@@ -58,11 +58,29 @@
   <footer id="footer">
     <address class="vcard">
       <h5><a href="/" class="fn url">Василий Половнёв</a></h5>
-      <span class="title">фронтенд-шмонтенд разработчик, успешный брограммист</span>
+      <span id="funny-title" class="title">фронтенд-шмонтенд разработчик, успешный брограммист</span>
       <a href="http://twitter.com/vazilla" class="url twitter">@vazilla</a>
     </address>
   </footer>
   <script src="/js/typography.js"></script>
   <script>typographer.kickit('.post-contents, .post-title')</script>
+  <script>
+    var funnyTitles = [
+      'капитан-командор, непризнанный филантроп',
+      'автор бестселлера &laquo;HTML ненавидит нас всех&raquo;',
+      'веб-евангелист в ООО &laquo;Печанька&raquo;',
+      'давно мечтает о двойной фамилии Круг-Циркуль',
+      'мать, жена, саентолог',
+      'мастер спорта по тяжелым омлетикам',
+      'фронтенд-шмонтенд разработчик, успешный брограммист',
+      'самый счастливый обладатель маски Оптимуса Прайма в Курской области'
+    ];
+
+    var trulyRandom = function() {
+      document.getElementById('funny-title').innerHTML = funnyTitles[Math.floor(Math.random()*funnyTitles.length)];
+    }
+
+    setInterval(trulyRandom, 10000);
+  </script>
 </body>
 </html>
