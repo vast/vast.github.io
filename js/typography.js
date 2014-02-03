@@ -3,15 +3,6 @@ var typographer = (function() {
               'на', 'до', 'при', 'меж', 'о', 'у', 'в', 'во', 'с', 'со', 'от', 'ото', 'из', 'без',
               'безо', 'к', 'ко', 'об', 'обо', 'под', 'подо', 'над', 'перед', 'передо'];
 
-  _capitalize = function(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-  },
-
-  _capitalizedTiny = function() {
-    var _this = this;
-    return tiny.map(function(e) { return _this._capitalize(e); });
-  },
-
   _typoNode = function(node) {
     tiny.forEach(function(word) {
       if (node.innerHTML) {
@@ -34,8 +25,6 @@ var typographer = (function() {
 
   return {
     kickit: function(selector) {
-      tiny = tiny.concat(_capitalizedTiny());
-
       document.addEventListener('DOMContentLoaded', function() {
         var matches = document.querySelectorAll(selector);
         for (var i = 0; i < matches.length; i++) {
