@@ -4,127 +4,67 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<title>Vasily Polovnyov // Ни за что не догадаетесь, как меня зовут</title>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<meta name="viewport" content="width=700" />
-<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
-<!-- Понравился сайт пацана? Цэ-Эс-Эс Н-на! -->
-<style type="text/css">
-html {font: 100.1%/1.4 Georgia, Times New Roman, Times, serif}
-html, body, h1, h2, h3, ul, li, ol, dl, dt, dd, p, img {
-    padding: 0; margin: 0; font-size: 100%; font-weight: normal; border: 0
-}
-body {
-  color: #222;
-  font-size: 20px;
-  padding: 0 .5em;
-  background: #fff
-}
-a, a:visited {color: #0064AE; text-decoration: none}
-a:hover {text-decoration: underline}
-p {margin: 0 0 1.5em}
-h1, h2, h3 {margin: 1.5em 0 0; color: #212121; font-family: 'PT Sans Narrow', Helvetica, Arial, sans-serif}
-h1 {font-size: 200%}
-h2 {font-size: 150%}
-h3 {font-size: 125%}
-/* здесь был веб2.0 детка, здесь был веб2.0 */
-#wrap {
-  max-width: 680px;
-  margin: 120px auto 20px;
-  overflow: hidden
-}
-
-#aside {
-  float: left;
-  width: 270px;
-  text-align: right;
-  font-size: 150%;
-}
-
-#aside h1 {
-  line-height: .75;
-  margin-top: 8px;
-  color: #000;
-}
-
-#aside h1 span {display: block}
-
-#contents {
-  width: 380px;
-  float: right;
-  text-align: left;
-}
-
-#contents .footer, .blog {
-  font-size: 16px
-}
-
-.blog ul {
-  list-style: none outside;
-}
-
-.blog li {
-  margin: .25em 0;
-}
-
-@media screen and (max-width: 480px) {
-  #aside, #contents {float: none; width: auto; text-align: left}
-  #aside h1 {text-align: center; line-height: 1.5}
-  #aside h1 span {display: inline}
-}
-
-</style>
-<link rel="openid.server" href="http://www.myopenid.com/server" />
-<link rel="openid.delegate" href="http://vast.myopenid.com" />
-<link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+  <title>Vasily Polovnyov // Ни за что не догадаетесь, как меня зовут</title>
+  <meta charset="utf-8" />
+  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="openid.server" href="http://www.myopenid.com/server" />
+  <link rel="openid.delegate" href="http://vast.myopenid.com" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+  <link rel="stylesheet" href="/css/base.css" media="screen, projection" />
+  <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 980px)" />
 </head>
 <body>
-  <div id="wrap" class="vcard">
-    <div id="aside">
-      <h1 class="fn">Vasily <span>Polovnyov</span></h1>
-    </div>
-    <div id="contents">
+  <article class="post">
+    <header class="post-header">
+      <h2 class="post-title">Привет</h2>
+    </header>
+    <div class="post-contents">
       <p>
-        Привет. Мне 27 лет <del datetime="2012-04-17">и я работаю <nobr>веб-разработчиком</nobr>
-        в <a href="http://whiteants.net">whiteants.net</a></del>.
+        Меня зовут Василий Половнёв. Мне 27 лет.
+        Я обычный белый парень, который мечтает стать <del>черным</del> писателем,
+        а работает программистом.
       </p>
 
-      <div class="footer">
-        <p>
-          Помимо работы интересуюсь веб-технологиями, языками программирования,
-          минимализмом <del datetime="2012-01-01">и вторым Старкрафтом</del>.
-        </p>
-        <p>
-          Лучший способ связаться со мной —
-          <a href="mailto:vasily.polovnyov@me.com" class="email">электронная почта</a>.
-          Кроме того, меня можно найти в <a href="http://twitter.com/vazilla" class="url">Твиттере</a>
-          и <a href="http://github.com/vast" class="url">Гитхабе</a>.
-        </p>
-      </div>
+      <p>
+        По сути это одна и та же работа: подумать, написать, отжать, повторить.
+        Но среди моих читателей одни интерпретаторы, компиляторы и препроцессоры.
+      </p>
 
-      <div class="blog">
-        <h3>{{ site.title }}</h3>
-        <ul class="posts">
-          {% for post in site.posts %}
-          <li>
-            <a href="{{ post.url }}">
-              {{ post.title }}
-            </a>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
+      <p>
+        В этом году одна из моих целей — 12 заметок в блоге,
+        которые смогут прочитать мои друзья и поклонники.
+        Писать я буду на темы близкие к веб-разработке, изредка прибегая к бранной лексике.
+        Надеюсь, будет не скучно.
+      </p>
+
+      <p>
+        А пока убирайте несовершеннолетних детей от экрана и читайте мою заметку,
+        в которой я веду <a href="/posts/brackets.html">невероятное расследование о скобках</a>.
+      </p>
     </div>
-  </div>
+    <footer class="blog">
+      <h3>Другие заметки</h3>
+      <ul class="posts">
+        {% for post in site.posts %}
+        <li>
+          <a href="{{ post.url }}">
+            {{ post.title }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+    </footer>
+  </article>
 
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-1522660-11");
-pageTracker._trackPageview();
-} catch(err) {}</script>
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-1522660-11', 'polovnyov.ru');
+    ga('send', 'pageview');
+  </script>
 </body>
 </html>

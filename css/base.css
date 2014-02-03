@@ -166,3 +166,7 @@ img {
   text-decoration: none;
   border: none;
 }
+
+.blog h3 {
+  padding-bottom: 0.125em;
+}
