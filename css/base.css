@@ -100,6 +100,14 @@ img {
   margin: 0 auto;
 }
 
+hr {
+  position: relative;
+  margin: 2em 0;
+  border: 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #fff;
+}
+
 .post {
   max-width: 38em;
   margin: 0 auto;
@@ -112,7 +120,8 @@ img {
 }
 
 .post-nav {
-  display: table;
+  /*display: table;*/
+  display: none;
   padding: 2em 0 0;
   font-size: 75%;
 }
