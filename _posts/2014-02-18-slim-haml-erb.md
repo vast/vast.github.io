@@ -8,7 +8,7 @@ layout: default
     Ну, что ты братишка притих…<br />
     Обида залита в груди.<br />
     Не можешь ни хавать, ни пить.<br />
-    Сука, не хочется Slim.
+    Сука не хочется Slim.
   </p>
   <small>
     Макс Корж, «<a href="https://www.youtube.com/watch?v=sdnbZkKvVDY">Мотылек</a>»
