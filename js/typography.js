@@ -6,7 +6,7 @@ var typographer = (function() {
   _typoNode = function(node) {
     tiny.forEach(function(word) {
       if (node.innerHTML) {
-        node.innerHTML = node.innerHTML.replace(new RegExp(' ' + word + ' ', 'g'), ' ' + word + ' ');  // contains &nbsp;
+        node.innerHTML = node.innerHTML.replace(new RegExp(' ' + word + ' ', 'g'), ' ' + word + ' ');  // contains &nbsp;
       }
     });
   },
