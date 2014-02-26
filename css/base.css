@@ -137,6 +137,18 @@ blockquote.pull-right small:before {
   display: none;
 }
 
+pre, code {
+  color: #cf1332;
+  font-family: Monaco, Menlo, Consolas, Lucida Console, Bitstream Vera Sans Mono, Courier New, monospace;
+  font-size: 88.8%
+}
+
+pre code {
+  color: #0086b3;
+  font-size: 1em;
+  white-space: pre-wrap;
+}
+
 .post {
   max-width: 38em;
   margin: 0 auto;
