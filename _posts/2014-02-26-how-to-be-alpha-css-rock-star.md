@@ -48,5 +48,5 @@ CSS — не только средство визуального дизайна
 
 Домашнее чтение:
 
-* «[Code smells in CSS](http://csswizardry.com/2012/11/code-smells-in-css/)», чего стоит избегать при написании CSS.
-* «[Архитектура CSS](http://web-standards.ru/articles/css-architecture/)», после этой статьи ваш мир уже не будет прежним;
+* «[Code smells in CSS](http://csswizardry.com/2012/11/code-smells-in-css/)», чего стоит избегать при написании CSS;
+* «[Архитектура CSS](http://web-standards.ru/articles/css-architecture/)», после этой статьи ваш мир уже не будет прежним.
