@@ -45,7 +45,7 @@ $ gst                # 0.5 секунды, git status -s
 
 Обязательно посмотрите:
 
-* «[Unsucking Your Team’s Development Environment](http://zachholman.com/talk/unsucking-your-teams-development-environment/)», как Github борется с рутиной;
-* «[Фронтенд без рутины или npm install -g grunt-cli](http://sho.io/grunt)», что и как можно автоматизировать фронтенд-таски с помощью Grunt;
-* «[Automating with convention: Introducing sub](http://signalvnoise.com/posts/3264-automating-with-convention-introducing-sub)», как Basecamp (37 signals) борется с рутиной;
+* «[Unsucking Your Team’s Development Environment](http://zachholman.com/talk/unsucking-your-teams-development-environment/)», как Github борется со скукой и отстоем;
+* «[Фронтенд без рутины или npm install -g grunt-cli](http://sho.io/grunt)», что и как можно автоматизировать с помощью Grunt;
+* «[Automating with convention: Introducing sub](http://signalvnoise.com/posts/3264-automating-with-convention-introducing-sub)», как Basecamp (37 signals) справляется с рутиной;
 * «[Шаблонизируй это](https://www.youtube.com/watch?v=ynr51b3_PFE)», Илья Бирман о шаблонах в работе дизайнера.
