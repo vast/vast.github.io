@@ -25,7 +25,7 @@ layout: default
   font: normal normal 16px/1 sans-serif;
   position: relative;
   display: inline-block;
-  padding: 10px 12px 11px;
+  padding: 11px 12px 10px;
   background: #212121;
   color: #fff;
 }
@@ -121,7 +121,7 @@ layout: default
     left: -4px;
     margin-top: -4px;
     border-style: solid;
-    border-width: 4px 4px 4px 0;
+    border-width: 6px 6px 6px 0;
     border-color: transparent #212121 transparent transparent;
   }
 }
