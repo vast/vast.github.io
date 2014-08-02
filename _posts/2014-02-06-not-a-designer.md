@@ -1,6 +1,7 @@
 ---
 title: 'Нет, это дизайнерский таск'
 layout: default
+classes: favorite
 ---
 
 

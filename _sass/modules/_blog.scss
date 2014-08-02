@@ -1,0 +1,18 @@
+.blog {
+  h3 {
+    padding-bottom: .125em;
+  }
+}
+
+.blog-posts {
+  li {
+    margin: 0 0 .25em;
+  }
+
+  .favorite:after {
+    content: '★';
+    color: #414141;
+    font-size: .7em;
+    vertical-align: middle;
+  }
+}
