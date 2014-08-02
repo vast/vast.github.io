@@ -1,28 +1,28 @@
 body {
-  color: #414141;
-  color: rgba(0, 0, 0, .8);
+  color: $text-color-fallback;
+  color: $text-color;
   background: #fff;
-  font: normal normal 20px/1.5 Gregor, Georgia, serif;
+  font: normal normal 20px/1.5 $gregor-font;
   padding: 1em 2em .5em;
   -webkit-text-size-adjust: none;
 }
 
 a {
-  color: #111;
-  color: rgba(0, 0, 0, .9);
+  color: $link-color-fallback;
+  color: $link-color;
   text-decoration: none;
   border-bottom: 1px solid #999;
   border-bottom: 1px solid rgba(0, 0, 0, .4);
   transition: color 0.4s, border-color 0.4s;
 
   &:hover {
-    color: #0064AE;
-    border-color: #111;
-    border-color: rgba(0, 0, 0, .9);
+    color: $link-hover-color;
+    border-color: $link-color-fallback;
+    border-color: $link-color;
   }
 
   &:active {
-    color: #c33012;
+    color: $link-active-color;
     border-bottom-color: transparent;
   }
 }
@@ -118,13 +118,13 @@ blockquote {
 }
 
 pre, code {
-  color: #cf1332;
-  font-family: Monaco, Menlo, Consolas, Lucida Console, Bitstream Vera Sans Mono, Courier New, monospace;
+  color: $code-color;
+  font-family: $monospace-font;
   font-size: 88.8%
 }
 
 pre code {
-  color: #0086b3;
+  color: $pre-code-color;
   font-size: 1em;
   white-space: pre-wrap;
 }
