@@ -1,0 +1,126 @@
+body {
+  color: #212121;
+  background: #fff;
+  font: normal normal 20px/1.5 Gregor, Georgia, serif;
+  padding: 1em 2em .5em;
+  -webkit-text-size-adjust: none;
+}
+
+a {
+  color: #111;
+  text-decoration: none;
+  border-bottom: 1px solid #999;
+  transition: color 0.4s, border-color 0.4s;
+
+  &:hover {
+    color: #0064AE;
+    border-color: #111;
+  }
+
+  &:active {
+    color: #c33012;
+    border-bottom-color: transparent;
+  }
+}
+
+p {
+  margin: 0 0 1.5em;
+}
+
+h1 {
+  padding: 1.5em 0;
+  font-size: 2em;
+}
+
+h2 {
+  padding: 1.75em 0;
+  font-size: 1.5em;
+}
+
+h3 {
+  padding: 1.82em 0;
+  font-size: 1.16em;
+}
+
+h4 {
+  font-weight: bold
+}
+
+ul {
+  margin-bottom: 1.8em;
+  list-style: none outside;
+
+  li:before {
+    content: '—';
+    position: absolute;
+    display: inline-block;
+    width: 1.5em;
+    margin-left: -1.5em;
+    text-align: left;
+  }
+}
+
+li > ul, li > ol {
+  margin: .45em 0 0 2.5em
+}
+
+li > ul li, li > ol li {
+  font-size: 1em
+}
+
+ol {
+  margin-bottom: 1.8em;
+  list-style: decimal inside
+}
+
+dd {
+  margin-left: 1.5em;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+hr {
+  position: relative;
+  margin: 2em 0;
+  border: 0;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #fff;
+}
+
+blockquote {
+  padding: 0 0 0 1em;
+  margin: 0 0 1.5em;
+  border-left: 5px solid #eee;
+
+  &.pull-right {
+    padding: 0 1em 0 0;
+    border-left: none;
+    border-right: 5px solid #eee;
+    text-align: right;
+  }
+
+  p { margin: 0 }
+  small { color: #515151 }
+
+  small:before, &.pull-right small:after {
+    content: '— ';
+  }
+
+  &.pull-right small:before { display: none}
+}
+
+pre, code {
+  color: #cf1332;
+  font-family: Monaco, Menlo, Consolas, Lucida Console, Bitstream Vera Sans Mono, Courier New, monospace;
+  font-size: 88.8%
+}
+
+pre code {
+  color: #0086b3;
+  font-size: 1em;
+  white-space: pre-wrap;
+}
