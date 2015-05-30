@@ -3,6 +3,16 @@
   margin: 0 auto;
 }
 
+
+.post-date + .post-title {
+  padding-top: 0;
+}
+
+.post-date {
+  font-style: italic;
+  color: lighten($text-color, 50%);
+}
+
 .outstanding {
   text-align: center;
   margin: .5em 0 2em;

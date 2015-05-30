@@ -19,6 +19,9 @@
 <body>
   <article class="post">
     <header class="post-header">
+      <small class="post-date">
+        {{ page.date | date: "%-d.%m.%Y" }}
+      </small>
       <h2 class="post-title">{{ page.title }} </h2>
     </header>
     <div class="post-contents">
