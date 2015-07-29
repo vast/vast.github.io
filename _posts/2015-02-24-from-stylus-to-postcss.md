@@ -34,13 +34,13 @@ postcssVars = require("postcss-simple-vars")
 postcssNested = require("postcss-nested")
 
 preprocessors = [
-  postcssImport(from: app_config.paths.main_stylesheet),
+  postcssImport(from: AppConfig.paths.mainStylesheet),
   postcssNested,
   postcssVars
 ]
 
 gulp.task "stylesheets", ["clean:stylesheets"], ->
-  gulp.src(app_config.paths.main_stylesheet)
+  gulp.src(AppConfig.paths.mainStylesheet)
     .pipe(postcss(preprocessors))
 ```
 
@@ -118,6 +118,6 @@ $submit-shadow-color: color($(link-color) blackness(+20%));
 
 Дополнительное чтение:
 
+* [Пример использования](https://github.com/fatezh/fatezh) PostCSS с Gulp из [Верстающего Фатежа](https://fatezh.github.io);
 * [PostCSS на Гитхабе](https://github.com/postcss/postcss);
-* [Андрей Ситник о PostCSS](http://codehipsters.com/2014/11/27/sitnik-interview.html);
-* [Пример использования PostCSS с gulp](https://gist.github.com/vast/a5df37ff2667dd1dc783).
+* [Андрей Ситник о PostCSS](http://codehipsters.com/2014/11/27/sitnik-interview.html).
