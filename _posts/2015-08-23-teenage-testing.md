@@ -50,3 +50,4 @@ layout: default
 
 * [Testing like the TSA](https://signalvnoise.com/posts/3159-testing-like-the-tsa). 7 правил тестирования.
 * [50 оттенков красного](http://www.youtube.com/watch?v=ismsJYFKuGQ), [слайды](http://www.slideshare.net/ssuserfc4417/50-45546464). О тестировании без боли.
+* [How Much Testing Is Too Much?](http://www.justinweiss.com/blog/2015/05/04/how-much-testing-is-too-much/). Об эффективности тестов.
