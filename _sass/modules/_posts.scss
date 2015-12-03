@@ -1,14 +1,14 @@
 .post {
   max-width: 38em;
-  margin: 0 auto;
+  padding: 4em 4em 6em 2em;
 }
-
 
 .post-date + .post-title {
   padding-top: 0;
 }
 
 .post-date {
+  display: none;
   color: lighten($text-color, 50%);
 }
 
