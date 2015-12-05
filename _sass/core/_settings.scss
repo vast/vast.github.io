@@ -1,14 +1,14 @@
 $monospace-font: Monaco, Menlo, Consolas, Lucida Console, Bitstream Vera Sans Mono, Courier New, monospace;
-$gregor-font: Gregor, Georgia, serif;
+$base-font: Georgia, serif;
 
 $text-color: rgba(0, 0, 0, .8);
 $text-color-fallback: #414141;
 
-$link-color: rgba(0, 0, 0, .9);
-$link-color-fallback: #111;
+$link-color: rgba(0, 0, 0, .8);
+$link-color-fallback: #414141;
 
-$link-hover-color: #0064ae;
+$link-hover-color: #0086b3;
 $link-active-color: #c33012;
 
-$code-color: #cf1332;
+$code-color: $text-color;
 $pre-code-color: #0086b3;

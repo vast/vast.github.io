@@ -1,20 +1,16 @@
 .post {
-  max-width: 38em;
-  margin: 0 auto;
-}
-
-
-.post-date + .post-title {
-  padding-top: 0;
+  max-width: 34em;
+  padding: 4em 4em 6em 2em;
 }
 
 .post-date {
+  display: block;
   color: lighten($text-color, 50%);
 }
 
 .outstanding {
   text-align: center;
-  margin: .5em 0 2em;
+  margin: .5em 0 1.25em;
   font: 1.125em/1.5 Georgia, serif;
 }
 

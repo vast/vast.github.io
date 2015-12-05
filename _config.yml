@@ -4,6 +4,6 @@ permalink: /posts/:title.html
 redcarpet:
   extensions: [strikethrough]
 
-title: 'Записки успешного брограммиста'
+title: 'Ушпешный блог'
 description: 'О программировании, технологиях и жизни'
 url: 'http://vasily.polovnyov.ru'
