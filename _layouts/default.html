@@ -31,8 +31,11 @@
 
   <footer id="footer">
     <address class="vcard">
-      <h5><a href="/" class="fn url">Василий Половнёв</a></h5>
-      <span id="funny-title" class="title">фронтенд-шмонтенд разработчик, успешный брограммист</span>
+      <h5>
+        <a href="/" class="fn url">Василий Половнёв</a>,
+        <span id="funny-title" class="title" onmouseenter="javascript:trulyRandom();">фронтенд-шмонтенд разработчик, успешный брограммист</span>
+      </h5>
+
       <a href="http://twitter.com/vazilla" class="url twitter">@vazilla</a>
     </address>
   </footer>
@@ -57,7 +60,7 @@
       document.getElementById('funny-title').innerHTML = funnyTitles[Math.floor(Math.random()*funnyTitles.length)];
     }
 
-    setInterval(trulyRandom, 10000);
+    setInterval(trulyRandom, 5000);
   </script>
   <script>
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

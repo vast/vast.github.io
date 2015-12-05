@@ -1,29 +1,8 @@
 #footer {
   position: relative;
-  max-width: 38em;
-  margin: 9em auto 0;
-  padding: 3em 0;
-  color: #777;
-  display: none;
-
-  &:before {
-    content: '/*...*/';
-    display: block;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: -20px;
-    text-align: center;
-    font-family: Monaco, monospace;
-    color: #999;
-  }
+  max-width: 34em;
+  padding: 3em 4em 6em 2em;
+  border-top: 1px dotted #777;
 
   address { font-size: 88% }
-  .title { display: block }
-
-  a {
-    color: #0064AE;
-    text-decoration: none;
-    border: none;
-  }
 }
