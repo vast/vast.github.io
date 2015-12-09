@@ -1,6 +1,7 @@
 ---
 title: Stylus → PostCSS
 layout: default
+classes: favorite
 ---
 
 Пока [серьезные ребята](http://benfrain.com/breaking-up-with-sass-postcss/) [только подумывают](http://davidtheclark.com/excited-about-postcss/) о переезде на PostCSS, я взял и перевел сайт (не этот, а другой) со Stylus на PostCSS.
