@@ -17,34 +17,25 @@
 <body>
   <article class="post">
     <header class="post-header">
-      <h2 class="post-title">Ушпешный блог</h2>
+      <h2 class="post-title post-title--main">
+        Василий Половнёв
+      </h2>
     </header>
     <div class="post-contents">
       <p>
-        Меня зовут Василий Половнёв. Мне 29 лет.
-        Я обычный белый парень, который мечтает стать <del>черным</del> писателем,
-        а работает программистом.
+        Разработчик, зануда, сооснователь <a href="https://github.com/kurskmeetup/meetups">Kursk Meetup</a>.
       </p>
-
       <p>
-        По сути это одна и та же работа: подумать, написать, отжать, повторить.
-        Но среди моих читателей одни интерпретаторы, компиляторы и препроцессоры.
+      Специализируюсь на Рельсах, фронтенде, автоматизации тестирования и разработки.
       </p>
-
-      <p>
-        В этом году одна из моих целей — 12 заметок в блоге,
-        которые смогут прочитать мои друзья и поклонники.
-        Писать я буду на темы близкие к <nobr>веб-разработке</nobr>, изредка прибегая к бранной лексике.
-        Надеюсь, будет не скучно.
-      </p>
-
-      <p>
-        А пока убирайте несовершеннолетних детей от экрана и читайте мою заметку,
-        в которой я веду <a href="/posts/brackets.html">невероятное расследование о скобках</a>.
+      <p class="my_presence">
+        <a href="https://github.com/vast" class="my_presence-link">Гитхаб</a>
+        <a href="https://twitter.com/vazilla" class="my_presence-link">Твиттер</a>
+        <a href="mailto:vasily@polovnyov.ru" class="my_presence-link">Почта</a>
       </p>
     </div>
     <footer class="blog">
-      <h3>Другие заметки</h3>
+      <h3>Ушпешный блог</h3>
       <ul class="blog-posts">
         {% for post in site.posts %}
         <li class="{{ post.classes }}">
