@@ -9,6 +9,10 @@
     margin: 0 0 .25em;
   }
 
+  li:before {
+    display: none;
+  }
+
   .favorite:after {
     content: '★';
     color: #414141;
