@@ -1,6 +1,5 @@
 .post {
-  max-width: 36rem;
-  padding: 4rem 4rem 6rem 2rem;
+  @include container;
 }
 
 .post-date {
@@ -16,6 +15,12 @@
     width: 1em;
     left: -1em;
     position: absolute;
+  }
+
+  @media (max-width: 480px) {
+    &::before {
+      display: none;
+    }
   }
 }
 
