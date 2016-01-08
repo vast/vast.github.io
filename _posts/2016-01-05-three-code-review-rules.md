@@ -71,6 +71,10 @@ layout: default
 
   .my_checklist li:before {
     content: '☐';
+    display: inline-block;
+    width: 1.5em;
+    margin-left: -1.5em;
+    text-align: center;
   }
 
   .my_checklist .is-done {
