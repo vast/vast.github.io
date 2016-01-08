@@ -1,6 +1,5 @@
 .post {
-  max-width: 34em;
-  padding: 4em 4em 6em 2em;
+  @include container;
 }
 
 .post-date {
@@ -9,7 +8,6 @@
 }
 
 .post-title--main {
-  padding-bottom: 1em;
   position: relative;
 
   &::before {
@@ -18,19 +16,25 @@
     left: -1em;
     position: absolute;
   }
+
+  @media (max-width: 480px) {
+    &::before {
+      display: none;
+    }
+  }
 }
 
 .outstanding {
   text-align: center;
-  margin: .5em 0 1.25em;
-  font: 1.125em/1.5 Georgia, serif;
+  margin: 1.1rem 0 1.05rem;
+  font: 1.125rem/1.5 Georgia, serif;
 }
 
 .outstanding--therule {
   border: 2px solid;
   border-radius: 2px;
   padding: .5em 0 .6em;
-  margin: 0 0 2.4em;
+  margin: 1.25rem 0 2.25rem;
 }
 
 .img--break {

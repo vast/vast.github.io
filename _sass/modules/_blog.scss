@@ -1,16 +1,14 @@
 .blog {
-  h3 {
-    padding-bottom: .125em;
+  h2 {
+    padding-top: 1.15em;
   }
 }
 
 .blog-posts {
-  li {
-    margin: 0 0 .25em;
-  }
+  margin-top: 0;
 
-  li:before {
-    display: none;
+  li {
+    padding-left: 0;
   }
 
   .favorite:after {
