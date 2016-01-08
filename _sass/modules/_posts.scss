@@ -1,6 +1,6 @@
 .post {
-  max-width: 34em;
-  padding: 4em 4em 6em 2em;
+  max-width: 36rem;
+  padding: 4rem 4rem 6rem 2rem;
 }
 
 .post-date {
@@ -9,7 +9,6 @@
 }
 
 .post-title--main {
-  padding-bottom: 1em;
   position: relative;
 
   &::before {
@@ -22,8 +21,8 @@
 
 .outstanding {
   text-align: center;
-  margin: .5em 0 1.25em;
-  font: 1.125em/1.5 Georgia, serif;
+  margin: 1.1rem 0 1.05rem;
+  font: 1.125rem/1.5 Georgia, serif;
 }
 
 .outstanding--therule {
