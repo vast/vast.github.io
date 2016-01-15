@@ -29,6 +29,7 @@ layout: default
 
 <ul id="my_checklist" class="my_checklist">
   <li class="my_checklist-item">понятно как и какую проблему решает пуллреквест?</li>
+  <li class="my_checklist-item is-done">гифка в пуллреквесте смешная?</li>
   <li class="my_checklist-item">в коде нет потенциальных багов?</li>
   <li class="my_checklist-item">от кода не пахнет (DRY, SRP, комментарии)?</li>
   <li class="my_checklist-item">имена и названия понятны?</li>
@@ -44,7 +45,6 @@ layout: default
   <li class="my_checklist-item">нет жирных моделей, контроллеров и вьюх?</li>
   <li class="my_checklist-item">колбэки меняют только собственное состояние?</li>
   <li class="my_checklist-item">нет медленных участков (N+1 запросов, O(n^2) алгоритмов)?</li>
-  <li class="my_checklist-item is-done">гифка в пуллреквесте смешная?</li>
 </ul>
 
 <div class="outstanding outstanding--therule">
