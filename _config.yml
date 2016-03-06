@@ -1,8 +1,5 @@
-markdown: redcarpet
+markdown: kramdown
 permalink: /posts/:title.html
-
-redcarpet:
-  extensions: [strikethrough]
 
 title: 'Ушпешный блог'
 description: 'О программировании, технологиях и жизни'
