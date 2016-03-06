@@ -1,6 +1,9 @@
 markdown: kramdown
 permalink: /posts/:title.html
 
+kramdown:
+  input: GFM
+
 title: 'Ушпешный блог'
 description: 'О программировании, технологиях и жизни'
 url: 'http://vasily.polovnyov.ru'
