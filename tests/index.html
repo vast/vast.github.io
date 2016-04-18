@@ -26,6 +26,12 @@
         <h2>Что внутри</h2>
         <p>Вот уроки, которые мы&nbsp;отправляем:</p>
 
+        <p>
+          <label for="mn-figure-1" class="margin-toggle">⊕</label>
+          <input type="checkbox" id="mn-figure-1" class="margin-toggle">
+          <span class="marginnote"><img src="examples/1.png" alt=""></span>
+        </p>
+
         <h3>Модульные тесты</h3>
         <ol>
           <li>Знакомство с&nbsp;пирамидой Тестоу</li>
@@ -64,8 +70,105 @@
 
         <p>Количество мест ограничено. Стоимость&nbsp;&mdash; 3000&nbsp;рублей. Набор&nbsp;&mdash; скоро.</p>
 
-        <p>Напишем, когда будет открыт набор. Без спама.</p>
+        <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+        <style type="text/css">
+          #mc_embed_signup {
+            clear: left;
+          }
+
+          #mc_embed_signup form {
+            text-align: left;
+            border-top: dashed 2px #999;
+            padding: 1em 2em 1em 1em;
+            margin-left: -1em;
+          }
+
+          #mc_embed_signup input {
+            font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+            letter-spacing: .03em;
+            font-size: 1em!important;
+          }
+
+          .signup-form__subscription-notice {
+            display: none;
+          }
+
+          .signup-form__subscription-notice,
+          .signup-form__subscription-notice p,
+          .signup-form__email-hint {
+            font-size: 1em;
+            margin-top: 0
+          }
+
+          .has-already-subscribed .signup-form__subscription-notice {
+            display: block;
+          }
+
+          .has-already-subscribed .signup-form__contents {
+            display: none;
+          }
+        </style>
+
+
+        <div id="mc_embed_signup" class="sans">
+          <form action="https://vpr-tests.herokuapp.com/" method="post" class="signup-form">
+            <div class="signup-form__contents">
+              <input type="email" name="email" id="f-email" placeholder="Электронная почта" class="email" />
+              <input type="submit" value="Оставить" class="button">
+              <p class="sans signup-form__email-hint">Напишем, когда будет открыт набор. Без спама.</p>
+            </div>
+
+            <div class="signup-form__subscription-notice">
+              <p>
+                Напишем по&nbsp;адресу <strong class="signup-form__subscribed-email"></strong>,
+                когда будет открыт набор на&nbsp;курс.
+              </p>
+            </div>
+          </form>
+        </div>
       </section>
+
+      <footer style="padding-top: 6rem">
+        Есть вопросы? — <a href="mailto:vasily@polovnyov.ru">vasily@polovnyov.ru</a>
+      </footer>
     </article>
+
+    <script src="https://yastatic.net/jquery/2.2.3/jquery.min.js"></script>
+    <script src="cookies.js"></script>
+    <script>
+      window.app = {};
+      window.app.$form = $(".signup-form");
+      window.app.$subscribedEmail = $(".signup-form__subscribed-email");
+
+      (function() {
+        var email = Cookies.get("subscribed-email");
+        if (email) {
+          window.app.$form.addClass("has-already-subscribed");
+          window.app.$subscribedEmail.text(email);
+        }
+      })();
+
+      window.app.$form.on("submit", function() {
+        var $form = $(this);
+        var $input = $form.find(".email");
+
+        var email = $.trim($input.val());
+        var url = $form.attr("action");
+
+        if (!email) return;
+
+        $.ajax({
+          url: url,
+          data: { email: email }
+        }).then(function() {
+          Cookies.set("subscribed-email", email);
+
+          window.app.$form.addClass("has-already-subscribed");
+          window.app.$subscribedEmail.text(email);
+        });
+
+        return false;
+      });
+    </script>
   </body>
 </html>
