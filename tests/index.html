@@ -187,7 +187,7 @@
         var email = $.trim($input.val());
         var url = $form.attr("action");
 
-        if (!email) return;
+        if (!email) return false;
 
         $.ajax({ method: 'POST', url: url, data: { email: email }}).done(function() {
           Cookies.set("subscribed-email", email);
