@@ -26,6 +26,17 @@
     </header>
     <div class="post-contents">
       {{ content }}
+
+      <p>
+        {% if page.has_ps %}
+          P. P. S.
+        {% else %}
+          P. S.
+        {% endif %}
+
+        Открываю <a href="/tests/">дистанционный курс об&nbsp;основах тестирования и&nbsp;тестах в&nbsp;Ruby/Rails</a>.
+        С&nbsp;теорией, примерами и домашкой.
+      </p>
     </div>
     <footer class="post-meta">
       <small class="post-date">
