@@ -4,12 +4,90 @@
     <meta charset="UTF-8" />
     <title>Тестовая рассылка — дистанционный курс об основах тестирования и тестах в Ruby/Rails</title>
     <link rel="stylesheet" href="tufte.css" />
+    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+    #mc_embed_signup {
+      clear: left;
+    }
+
+    #mc_embed_signup form {
+      text-align: left;
+      border-top: dashed 2px #999;
+      padding: 1em 2em 1em 1em;
+      margin-left: -1em;
+      max-width: 90%;
+      box-sizing: border-box;
+    }
+
+    #mc_embed_signup input {
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+      letter-spacing: .03em;
+      font-size: 1em!important;
+    }
+
+    .signup-form__subscription-notice {
+      display: none;
+    }
+
+    .signup-form__subscription-notice,
+    .signup-form__subscription-notice p,
+    .signup-form__email-hint {
+      font-size: 1em;
+      margin-top: .25em;
+      line-height: 1.3;
+      width: auto;
+    }
+
+    .has-already-subscribed .signup-form__subscription-notice {
+      display: block;
+    }
+
+    .has-already-subscribed .signup-form__contents {
+      display: none;
+    }
+
+    .margin-toggle {
+      border-bottom: .5px dashed;
+    }
+
+    .curriculum {
+      display: inline-block;
+      width: 30%;
+      vertical-align: top;
+      padding: 0 1.4rem 0 0;
+      margin: 0;
+      min-width: 15em;
+      list-style: none outside;
+      font-size: 1.1rem;
+      line-height: 1.3;
+      box-sizing: border-box;
+    }
+
+    .curriculum li {
+      padding: .4rem 0;
+    }
+
+    .curriculum__title {
+      border-bottom: .5px solid;
+      padding-top: 1rem!important;
+    }
+    </style>
   </head>
   <body>
     <article>
       <section>
-        <h1>Тестовая рассылка</h1>
+        <h1>
+          Тестовая рассылка
+        </h1>
+        <p>
+        <label for="mn-figure-1" class="margin-toggle">⊕ Пример письма</label>
+        <input type="checkbox" id="mn-figure-1" class="margin-toggle">
+          <span class="marginnote">
+            <img src="examples/1.png" alt="" style="margin-top: 4px">
+          </span>
+        </p>
+
         <p>Дистанционный курс об&nbsp;основах тестирования и&nbsp;тестах в&nbsp;Ruby/Rails. С&nbsp;теорией, примерами, домашкой и&nbsp;дополнительными материалами: статьями, советами, видео.</p>
 
         <p>Цель курса&nbsp;&mdash; помочь научиться безболезненно проверять собственную работу автоматическими тестами. Слушатели курса пишут ясные и&nbsp;лаконичные тесты быстрее чем код.</p>
@@ -24,42 +102,36 @@
 
       <section>
         <h2>Что внутри</h2>
-        <p>Вот уроки, которые мы&nbsp;отправляем:</p>
+        <p style="margin-bottom: 0">Вот уроки, которые мы&nbsp;отправляем:</p>
 
-        <p>
-          <label for="mn-figure-1" class="margin-toggle">⊕</label>
-          <input type="checkbox" id="mn-figure-1" class="margin-toggle">
-          <span class="marginnote"><img src="examples/1.png" alt=""></span>
-        </p>
+        <ul class="curriculum">
+          <li class="curriculum__title">Модульные тесты</li>
+          <li>1. Знакомство с&nbsp;пирамидой Тестоу</li>
+          <li>2. Что и&nbsp;как тестировать у&nbsp;модуля</li>
+          <li>3. Если модуль использует другой модуль</li>
+          <li>4. 5&nbsp;правил модульных тестов</li>
+        </ul>
 
-        <h3>Модульные тесты</h3>
-        <ol>
-          <li>Знакомство с&nbsp;пирамидой Тестоу</li>
-          <li>Что и&nbsp;как тестировать у&nbsp;модуля</li>
-          <li>А&nbsp;если модуль использует другой модуль</li>
-          <li>5&nbsp;правил тестирования модулей</li>
-        </ol>
+        <ul class="curriculum" start="5">
+          <li class="curriculum__title">Ясные и&nbsp;лаконичные тесты</li>
+          <li>5. Пишем для людей</li>
+          <li>6. describe и&nbsp;context</li>
+          <li>7. let и&nbsp;before</li>
+          <li>8. Одна проверка на&nbsp;тест</li>
+          <li>9. Корректные, неправильные и&nbsp;пограничные ситуации</li>
+          <li>10. Ничего лишнего</li>
+          <li>11. Тесты&nbsp;&mdash; тоже код</li>
+          <li>12. Тесты шаблонов</li>
+          <li>13. Модульные тесты с&nbsp;Jasmine</li>
+        </ul>
 
-        <h3>Ясные и лаконичные тесты</h3>
-        <ol start="5">
-          <li>Пишем для людей</li>
-          <li>describe, context и&nbsp;все-все-все</li>
-          <li>let и&nbsp;before</li>
-          <li>Одна проверка на&nbsp;тест</li>
-          <li>Корректные, неправильные и&nbsp;пограничные ситуации</li>
-          <li>Ничего лишнего</li>
-          <li>Тесты&nbsp;&mdash; тоже код</li>
-          <li>Тестируем шаблоны</li>
-          <li>Модульные тесты с&nbsp;Jasmine</li>
-        </ol>
-
-        <h3>Тесты в браузере</h3>
-        <ol start="14">
-          <li>UI&nbsp;тесты</li>
-          <li>Один сценарий на&nbsp;тест</li>
-          <li>Делимся миром</li>
-          <li>Тестируем интерфейс, а&nbsp;не&nbsp;реализацию</li>
-        </ol>
+        <ul class="curriculum" start="14">
+          <li class="curriculum__title">Тесты в&nbsp;браузере</li>
+          <li>14. UI&nbsp;тесты</li>
+          <li>15. Один сценарий на&nbsp;тест</li>
+          <li>16. shared_context</li>
+          <li>17. Тестируем интерфейс, а&nbsp;не&nbsp;реализацию</li>
+        </ul>
       </section>
 
       <section>
@@ -68,67 +140,27 @@
 
         <p>К&nbsp;урокам прилагаются практические домашние задания. Выполняете задание, открываете пуллреквест на&nbsp;Гитхабе, проверка&nbsp;&mdash; кодревью в&nbsp;тот&nbsp;же день.</p>
 
-        <p>Количество мест ограничено. Стоимость&nbsp;&mdash; 3000&nbsp;рублей. Набор&nbsp;&mdash; скоро.</p>
-
-        <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
-        <style type="text/css">
-          #mc_embed_signup {
-            clear: left;
-          }
-
-          #mc_embed_signup form {
-            text-align: left;
-            border-top: dashed 2px #999;
-            padding: 1em 2em 1em 1em;
-            margin-left: -1em;
-          }
-
-          #mc_embed_signup input {
-            font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-            letter-spacing: .03em;
-            font-size: 1em!important;
-          }
-
-          .signup-form__subscription-notice {
-            display: none;
-          }
-
-          .signup-form__subscription-notice,
-          .signup-form__subscription-notice p,
-          .signup-form__email-hint {
-            font-size: 1em;
-            margin-top: 0
-          }
-
-          .has-already-subscribed .signup-form__subscription-notice {
-            display: block;
-          }
-
-          .has-already-subscribed .signup-form__contents {
-            display: none;
-          }
-        </style>
-
+        <p>Стоимость&nbsp;&mdash; 3000&nbsp;рублей. Количество мест ограничено. Набор&nbsp;&mdash; скоро.</p>
 
         <div id="mc_embed_signup" class="sans">
           <form action="https://vpr-tests.herokuapp.com/" method="post" class="signup-form">
             <div class="signup-form__contents">
               <input type="email" name="email" id="f-email" placeholder="Электронная почта" class="email" />
               <input type="submit" value="Оставить" class="button">
-              <p class="sans signup-form__email-hint">Напишем, когда будет открыт набор. Без спама.</p>
+              <p class="sans signup-form__email-hint">Напишем, когда будет открыта подписка на курс. Без спама.</p>
             </div>
 
             <div class="signup-form__subscription-notice">
               <p>
                 Напишем по&nbsp;адресу <strong class="signup-form__subscribed-email"></strong>,
-                когда будет открыт набор на&nbsp;курс.
+                когда будет открыта подписка на&nbsp;курс.
               </p>
             </div>
           </form>
         </div>
       </section>
 
-      <footer style="padding-top: 6rem">
+      <footer style="padding-top: 6rem;">
         Есть вопросы? — <a href="mailto:vasily@polovnyov.ru">vasily@polovnyov.ru</a>
       </footer>
     </article>
@@ -157,10 +189,7 @@
 
         if (!email) return;
 
-        $.ajax({
-          url: url,
-          data: { email: email }
-        }).then(function() {
+        $.ajax({ method: 'POST', url: url, data: { email: email }}).done(function() {
           Cookies.set("subscribed-email", email);
 
           window.app.$form.addClass("has-already-subscribed");
