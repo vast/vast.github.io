@@ -8,6 +8,11 @@ body {
   background: #fff;
   font: normal normal 1rem/1.45 $base-font;
   -webkit-text-size-adjust: none;
+  visibility: hidden;
+
+  &.is__ready {
+    visibility: visible;
+  }
 }
 
 .global-container {

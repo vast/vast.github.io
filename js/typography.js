@@ -30,6 +30,8 @@ var typographer = (function() {
         for (var i = 0; i < matches.length; i++) {
           _walkThroughTheNode(matches[i]);
         }
+
+        document.body.classList.add('is__ready');
       }, false)
     }
   }
