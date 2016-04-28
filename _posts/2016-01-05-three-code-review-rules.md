@@ -1,6 +1,7 @@
 ---
 title: Три правила ревью
 layout: default
+classes: favorite
 ---
 
 Я люблю ревью кода и тупые правила, вроде «переходя дорогу, смотри в обе стороны». В тупых правилах нет исключений и мудреных условий, поэтому работают они безотказно.
@@ -58,8 +59,7 @@ layout: default
 
 Еще по теме:
 
-* [The Code Review Mindset
-](https://medium.com/medium-eng/the-code-review-mindset-3280a4af0a89#.16v4n6pbs);
+* [The Code Review Mindset](https://medium.com/medium-eng/the-code-review-mindset-3280a4af0a89#.16v4n6pbs);
 * [Code Review Best Practices](http://kevinlondon.com/2015/05/05/code-review-best-practices.html);
 * [Thoughtbot Code Review Guide](https://github.com/thoughtbot/guides/tree/master/code-review);
 * [What a CSS Code Review Might Look Like](https://css-tricks.com/what-a-css-code-review-might-look-like/).
