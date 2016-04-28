@@ -12,6 +12,7 @@
     {% endif %}
   </title>
   <link rel="stylesheet" href="/css/application.css" media="screen, projection" />
+  <link rel="stylesheet" href="https://npmcdn.com/social-likes-next/dist/social-likes_birman.css">
   <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 980px)" />
   <link rel="profile" href="http://microformats.org/profile/hcard" />
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
@@ -60,6 +61,12 @@
           {% endcase %}
           {{ page.date | date: "%Y" }}
         </small>
+
+        <div class="social-likes">
+          <div data-service="twitter" data-via="vazilla" title="Поделиться ссылкой в Твитере">Твитнуть</div>
+          <div data-service="facebook" title="Поделиться ссылкой на Фейсбуке">Поделиться</div>
+          <div class="vkontakte" title="Поделиться ссылкой во Вконтакте">Поделиться</div>
+        </div>
       </footer>
     </article>
   </div>
@@ -78,13 +85,14 @@
       </aside>
 
       <footer id="footer">
-        <span style="margin-left: -1.22em">&copy; Василий Половнёв, 2014—{{ site.time | date: '%Y' }}</span><br />
+        <span style="margin-left: -1.22em">&copy; Василий Половнёв, 2014—{{ site.time | date: '%Y' }}</span>,<br />
         <span id="funny-title" class="title" onmouseenter="javascript:trulyRandom();">фронтенд-шмонтенд разработчик, успешный брограммист</span>
       </footer>
     </div>
   </div>
 
   <script src="/js/typography.js"></script>
+  <script src="https://npmcdn.com/social-likes-next/dist/social-likes.min.js"></script>
   <script>typographer.kickit('.post-contents, .post-title')</script>
   <script>
     var funnyTitles = [
