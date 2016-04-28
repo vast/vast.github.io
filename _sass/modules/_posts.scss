@@ -4,6 +4,7 @@
 
 .post-date {
   display: block;
+  font-family: Helvetica Neue, Arial, sans-serif;
   color: lighten($text-color, 50%);
 }
 
@@ -50,9 +51,29 @@
 // INBOX
 //
 
+.social-likes {
+  margin: .75rem -.3em 0!important;
+}
+
+.related-posts {
+  -webkit-columns: 3;
+  columns: 3;
+
+  li {
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 0;
+    width: 100%;
+  }
+
+  li:nth-child(n+9) {
+    display: none;
+  }
+}
+
 .my_presence {
   display: inline-block;
-  background: rgba(0, 0, 0, .03);
+  background: $minor-color;
   padding: 1em 0 1.1em 1.5em;
   border-radius: 4px;
   margin: 0 -1.5em;

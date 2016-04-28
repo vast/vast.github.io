@@ -1,5 +1,5 @@
 @media (max-width: 768px) {
-  body {
+  .global-container {
     padding: 1em;
   }
 }
@@ -15,7 +15,7 @@
     font-size: 14px;
   }
 
-  body {
+  .global-container {
     padding: 1em 0;
   }
 }
