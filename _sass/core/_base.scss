@@ -7,8 +7,11 @@ body {
   color: $text-color;
   background: #fff;
   font: normal normal 1rem/1.45 $base-font;
-  padding: 1em 2em;
   -webkit-text-size-adjust: none;
+}
+
+.global-container {
+  padding: 1em 2em;
 }
 
 a {

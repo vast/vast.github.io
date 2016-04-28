@@ -50,6 +50,22 @@
 // INBOX
 //
 
+.related-posts {
+  -webkit-columns: 3;
+  columns: 3;
+
+  li {
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 0;
+    width: 100%;
+  }
+
+  li:nth-child(n+9) {
+    display: none;
+  }
+}
+
 .my_presence {
   display: inline-block;
   background: rgba(0, 0, 0, .03);

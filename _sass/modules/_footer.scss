@@ -1,8 +1,12 @@
+.bottom-contents {
+  font-size: 88%;
+  background: #f5f5f5;
+}
+
+.related {
+  @include container;
+}
+
 #footer {
   @include container;
-
-  position: relative;
-  border-top: 1px dotted #777;
-
-  address { font-size: 88% }
 }
