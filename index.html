@@ -15,39 +15,41 @@
   <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 980px)" />
 </head>
 <body>
-  <article class="post">
-    <header class="post-header">
-      <h2 class="post-title post-title--main">
-        Василий Половнёв
-      </h2>
-    </header>
-    <div class="post-contents">
-      <p>
-        Разработчик, зануда, сооснователь <a href="https://github.com/kurskmeetup/meetups">Kursk Meetup</a>.
-      </p>
-      <p>
-      Специализация — Рельсы, фронтенд, автоматизация тестирования и разработки.
-      </p>
-      <p class="my_presence">
-        <a href="https://github.com/vast" class="my_presence-link">Гитхаб</a>
-        <a href="https://twitter.com/vazilla" class="my_presence-link">Твиттер</a>
-        <a href="https://github.com/vast/til" class="my_presence-link">СЯУшки</a>
-        <a href="mailto:vasily@polovnyov.ru" class="my_presence-link">Почта</a>
-      </p>
-    </div>
-    <footer class="blog">
-      <h2>Ушпешный блог</h2>
-      <ul class="blog-posts">
-        {% for post in site.posts %}
-        <li class="{{ post.classes }}">
-          <a href="{{ post.url }}">
-            {{ post.title }}
-          </a>
-        </li>
-        {% endfor %}
-      </ul>
-    </footer>
-  </article>
+  <div class="global-container">
+    <article class="post">
+      <header class="post-header">
+        <h2 class="post-title post-title--main">
+          Василий Половнёв
+        </h2>
+      </header>
+      <div class="post-contents">
+        <p>
+          Разработчик, зануда, сооснователь <a href="https://github.com/kurskmeetup/meetups">Kursk Meetup</a>.
+        </p>
+        <p>
+        Специализация — Рельсы, фронтенд, автоматизация тестирования и разработки.
+        </p>
+        <p class="my_presence">
+          <a href="https://github.com/vast" class="my_presence-link">Гитхаб</a>
+          <a href="https://twitter.com/vazilla" class="my_presence-link">Твиттер</a>
+          <a href="https://github.com/vast/til" class="my_presence-link">СЯУшки</a>
+          <a href="mailto:vasily@polovnyov.ru" class="my_presence-link">Почта</a>
+        </p>
+      </div>
+      <footer class="blog">
+        <h2>Ушпешный блог</h2>
+        <ul class="blog-posts">
+          {% for post in site.posts %}
+          <li class="{{ post.classes }}">
+            <a href="{{ post.url }}">
+              {{ post.title }}
+            </a>
+          </li>
+          {% endfor %}
+        </ul>
+      </footer>
+    </article>
+  </div>
 
   <script src="/js/typography.js"></script>
   <script>typographer.kickit('.post-contents, .post-title')</script>
