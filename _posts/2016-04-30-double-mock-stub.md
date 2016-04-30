@@ -30,7 +30,8 @@ describe NotificationsController do
     it "wraps notifications in 'data' key" do
       get :index, format: :json
 
-      expect(json_response["data"].keys).to have_key "notifications"
+      expect(json_response["data"].keys)
+        .to have_key "notifications"
     end
   end
 end

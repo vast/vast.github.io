@@ -2,11 +2,14 @@ var typographer = (function() {
   var tiny = ['ни', 'не', 'и', 'но', 'а', 'или', 'да', 'как', 'из-за', 'про', 'по', 'за', 'для',
               'на', 'до', 'при', 'меж', 'о', 'у', 'в', 'во', 'с', 'со', 'от', 'ото', 'из', 'без',
               'безо', 'к', 'ко', 'об', 'обо', 'под', 'подо', 'над', 'перед', 'передо'];
+  var tinyRegexps = tiny.map(function(word) { return new RegExp('([ «])(' + word + ') ', 'gi'); });
 
   _typoNode = function(node) {
-    tiny.forEach(function(word) {
+    tinyRegexps.forEach(function(regexp) {
       if (node.innerHTML) {
-        node.innerHTML = node.innerHTML.replace(new RegExp('([ «])(' + word + ') ', 'gi'), '$1$2 ');  // contains &nbsp;
+        node.innerHTML = node.innerHTML.replace(regexp, '$1$2 ');  // contains &nbsp;
+      } else if (node.nodeType === 3) {
+        node.nodeValue = node.nodeValue.replace(regexp, '$1$2 ');
       }
     });
   },
