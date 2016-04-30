@@ -47,10 +47,10 @@ context "when attachment file is too large to email" do
   before do
     allow(attachment)
       .to receive(:file_size)
-      .and_return(large_file_warning_size + 1)
+      .and_return(max_file_size + 1)
   end
 
-  it "raises large file size error" do
+  it "raises 'file is too large' error" do
     # ...
   end
 end
@@ -75,7 +75,7 @@ context "when cloning process cannot be performed" do
     # проверит, был ли он вызван.
     # Если вызова не было — ошибка и красный тест.
 
-    clone_this_poor_dolly
+    clone_poor_dolly
   end
 end
 ```
@@ -87,20 +87,22 @@ end
 it "notifies airbrake" do
   expect(Airbrake).to receive(:notify) # проверка + настройка
 
-  do_clone # испытание
+  clone_poor_dolly # испытание
 end
 
 # стаб + проверка
 it "notifies airbrake" do
   allow(Airbrake).to receive(:notify) # настройка
 
-  do_clone # испытание
+  clone_poor_dolly # испытание
 
   expect(Airbrake).to have_received(:notify) # проверка
 end
 ```
 
-Дублеры, моки и стабы привязывают наши тесты к интерфейсу используемого объекта, а реальные объекты — к их реализации. Чтобы узнать об этой дилемме больше и понять, стоит ли вам мокать-стабить все подряд, почитайте:
+-----------------------
+
+Дублеры, моки и стабы привязывают тесты к интерфейсу используемого объекта, а реальные объекты — к их реализации. Чтобы узнать об этой дилемме больше и понять, стоит ли вам мокать-стабить все подряд, почитайте:
 
 * [Mocks Aren't Stubs](http://martinfowler.com/articles/mocksArentStubs.html);
 * [Thoughts on Mocking, Part 2](https://www.practicingruby.com/articles/thoughts-on-mocking-2);
