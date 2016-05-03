@@ -52,9 +52,9 @@ describe "NotificationsController#index" do
 end
 ```
 
-Что произойдет, если мы переименуем `Notifications#as_json` в `Notifications#to_json`? Ничего. Мы останемся на едине с зеленым тестом, проверяющим бесполезного дублера.
+Что произойдет, если мы переименуем `Notifications#as_json` в `Notifications#to_json`? Ничего. Мы останемся наедине с зеленым тестом, проверяющим бесполезного дублера.
 
-<img class="img--break" src="/assets/cantbelieve.jpg" alt="" width="471" height="480" />
+<img class="img--break" src="/assets/cantbelieve-double.jpg" alt="" width="620" height="471" />
 
 ## `instance_double`
 Чтобы не попадать в такую дебильную ситуацию, используйте `instance_double`:
