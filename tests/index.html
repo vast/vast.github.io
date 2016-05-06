@@ -226,10 +226,10 @@
         <p>Стоимость&nbsp;&mdash; 1500&nbsp;рублей. Количество мест ограничено. <nobr>Набор&nbsp;&mdash; скоро</nobr>.</p>
 
         <div id="mc_embed_signup" class="sans">
-          <form action="https://vpr-tests.herokuapp.com/" method="post" class="signup-form">
+          <form action="https://vpr-tests.herokuapp.com/" method="post" class="signup-form" data-reach-goal="tests-newsletter-signup">
             <div class="signup-form__contents">
               <input type="email" name="email" id="f-email" placeholder="Электронная почта" class="email" required/>
-              <input type="submit" value="Оставить" class="button">
+              <input type="submit" value="Оставить" class="button" data-reach-goal="tests-newsletter-signup-click">
               <p class="sans signup-form__email-hint">Напишем, когда будет открыта подписка на курс. Без спама.</p>
             </div>
 
@@ -254,6 +254,11 @@
       window.app = {};
       window.app.$form = $(".signup-form");
       window.app.$subscribedEmail = $(".signup-form__subscribed-email");
+
+      $('[data-reach-goal]').on('click submit', function() {
+        var goal = $(this).attr('data-reach-goal');
+        yaCounter37100705.reachGoal(goal);
+      });
 
       (function() {
         var email = Cookies.get("subscribed-email");
