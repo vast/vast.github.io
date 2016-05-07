@@ -77,13 +77,16 @@
 }
 
 .my_presence {
-  display: inline-block;
   background: $minor-color;
   padding: 1em 0 1.1em 1.5em;
   border-radius: 4px;
-  margin: 0 -1.5em;
+  margin: 0 0 0 -1.5em;
 }
 
 .my_presence-link {
   margin-right: 1.5em;
+
+  &.is__active {
+    color: $link-active-color;
+  }
 }

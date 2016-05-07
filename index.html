@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <title>Сайт Василия Половнёва</title>
+  <title>Сайт и ушпешный блог Василия Половнёва</title>
   <meta charset="utf-8" />
   <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -48,9 +48,9 @@
   <div class="global-container">
     <article class="post">
       <header class="post-header">
-        <h2 class="post-title post-title--main">
+        <h1 class="post-title post-title--main">
           Василий Половнёв
-        </h2>
+        </h1>
       </header>
       <div class="post-contents">
         <p>
@@ -60,25 +60,66 @@
         Специализация — Рельсы, фронтенд, автоматизация тестирования и разработки.
         </p>
         <p class="my_presence">
-          <a href="https://github.com/vast" class="my_presence-link">Гитхаб</a>
-          <a href="https://twitter.com/vazilla" class="my_presence-link">Твиттер</a>
-          <a href="https://github.com/vast/til" class="my_presence-link">СЯУшки</a>
+          <span class="my_presence-link is__active">Ушпешный блог</span>
           <a href="mailto:vasily@polovnyov.ru" class="my_presence-link">Почта</a>
+          <a href="https://twitter.com/vazilla" class="my_presence-link">Твиттер</a>
+          <a href="https://github.com/vast" class="my_presence-link">Гитхаб</a>
+          <a href="https://github.com/vast/til" class="my_presence-link">СЯУшки</a>
         </p>
       </div>
-      <footer class="blog">
-        <h2>Ушпешный блог</h2>
-        <ul class="blog-posts">
-          {% for post in site.posts %}
+    </article>
+
+    <div class="recent_posts">
+      {% for post in site.posts limit:10 %}
+        <article class="post">
+          <header>
+            <h2 class="post-title">
+              <a href="{{post.url}}">{{ post.title }}</a>
+            </h2>
+          </header>
+
+          <div class="post-contents">
+            {{ post.content }}
+          </div>
+
+          <footer class="post-meta">
+            <small class="post-date">
+              ⊙
+              {% assign m = post.date | date: "%-m" %}
+              {{ post.date | date: "%-d" }}
+              {% case m %}
+                {% when '1' %}января
+                {% when '2' %}февраля
+                {% when '3' %}марта
+                {% when '4' %}апреля
+                {% when '5' %}мая
+                {% when '6' %}июня
+                {% when '7' %}июля
+                {% when '8' %}августа
+                {% when '9' %}сентября
+                {% when '10' %}октября
+                {% when '11' %}ноября
+                {% when '12' %}декабря
+              {% endcase %}
+              {{ post.date | date: "%Y" }}
+            </small>
+          </footer>
+        </article>
+      {% endfor %}
+    </div>
+
+    <footer class="old_posts">
+      <h1 class="old_posts-title">Ушпешный архив</h1>
+      <ul class="old_posts-list">
+        {% for post in site.posts offset:10 %}
           <li class="{{ post.classes }}">
             <a href="{{ post.url }}">
               {{ post.title }}
             </a>
           </li>
-          {% endfor %}
-        </ul>
-      </footer>
-    </article>
+        {% endfor %}
+      </ul>
+    </footer>
   </div>
 
   <script src="/js/typography.js"></script>
