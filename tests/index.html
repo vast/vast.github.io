@@ -7,74 +7,65 @@
     <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
-    img {
-      height: auto;
-    }
-    #mc_embed_signup {
-      clear: left;
-    }
+      img {
+        height: auto;
+      }
 
-    #mc_embed_signup form {
-      text-align: left;
-      border-top: dashed 2px #999;
-      padding: 1em 2em 1em 1em;
-      margin-left: -1em;
-      max-width: 90%;
-      box-sizing: border-box;
-    }
+      .margin-toggle {
+        border-bottom: .5px dashed;
+      }
 
-    #mc_embed_signup input {
-      font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
-      letter-spacing: .03em;
-      font-size: 1em!important;
-    }
+      .curriculum {
+        display: inline-block;
+        width: 30%;
+        vertical-align: top;
+        padding: 0 1.4rem 0 0;
+        margin: 0;
+        min-width: 15em;
+        list-style: none outside;
+        font-size: 1.1rem;
+        line-height: 1.3;
+        box-sizing: border-box;
+      }
 
-    .signup-form__subscription-notice {
-      display: none;
-    }
+      .curriculum li {
+        padding: .4rem 0;
+      }
 
-    .signup-form__subscription-notice,
-    .signup-form__subscription-notice p,
-    .signup-form__email-hint {
-      font-size: 1em;
-      margin-top: .25em;
-      line-height: 1.3;
-      width: auto;
-    }
+      .curriculum__title {
+        border-bottom: .5px solid;
+        padding-top: 1rem!important;
+      }
 
-    .has-already-subscribed .signup-form__subscription-notice {
-      display: block;
-    }
+      .buy-btn {
+        display: inline-block;
+        padding: .75rem 1.25rem;
+        margin: 0;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 1.333333;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border: 1px solid transparent;
+        border-radius: .3rem;
+        touch-action: manipulation;
 
-    .has-already-subscribed .signup-form__contents {
-      display: none;
-    }
+        color: #fff;
+        background-color: #414141;
+        border-color: #414141;
+      }
 
-    .margin-toggle {
-      border-bottom: .5px dashed;
-    }
-
-    .curriculum {
-      display: inline-block;
-      width: 30%;
-      vertical-align: top;
-      padding: 0 1.4rem 0 0;
-      margin: 0;
-      min-width: 15em;
-      list-style: none outside;
-      font-size: 1.1rem;
-      line-height: 1.3;
-      box-sizing: border-box;
-    }
-
-    .curriculum li {
-      padding: .4rem 0;
-    }
-
-    .curriculum__title {
-      border-bottom: .5px solid;
-      padding-top: 1rem!important;
-    }
+      .buy-btn:hover {
+        background-color: #212121;
+        border-color: #212121;
+      }
     </style>
   </head>
   <body>
@@ -219,28 +210,32 @@
         <h2>Подписка на&nbsp;курс</h2>
         <p>
           17&nbsp;уроков по&nbsp;электронной почте, по&nbsp;2&nbsp;урока в&nbsp;неделю,
-          плюс консультации: мы&nbsp;стараемся отвечать на&nbsp;все вопросы.</p>
+          плюс консультации: мы&nbsp;стараемся отвечать на&nbsp;все вопросы.
+        </p>
 
-        <p>К&nbsp;урокам прилагаются практические домашние задания. Выполняете задание, открываете пулреквест на&nbsp;Гитхабе, проверка&nbsp;&mdash; кодревью в&nbsp;тот&nbsp;же день.</p>
+        <p>
+          К&nbsp;урокам прилагаются практические домашние задания. Выполняете задание, открываете пулреквест на&nbsp;Гитхабе, проверка&nbsp;&mdash; кодревью в&nbsp;тот&nbsp;же день.
+        </p>
 
-        <p>Стоимость&nbsp;&mdash; 1500&nbsp;рублей. Количество мест ограничено. <nobr>Набор&nbsp;&mdash; скоро</nobr>.</p>
+        <p>
+          Осталось 8&nbsp;мест.
+        </p>
 
-        <div id="mc_embed_signup" class="sans">
-          <form action="https://vpr-tests.herokuapp.com/" method="post" class="signup-form" data-reach-goal="tests-newsletter-signup">
-            <div class="signup-form__contents">
-              <input type="email" name="email" id="f-email" placeholder="Электронная почта" class="email" required/>
-              <input type="submit" value="Оставить" class="button" data-reach-goal="tests-newsletter-signup-click">
-              <p class="sans signup-form__email-hint">Напишем, когда будет открыта подписка на курс. Без спама.</p>
-            </div>
-
-            <div class="signup-form__subscription-notice">
-              <p>
-                Напишем по&nbsp;адресу <strong class="signup-form__subscribed-email"></strong>,
-                когда будет открыта подписка на&nbsp;курс.
-              </p>
-            </div>
-          </form>
-        </div>
+        <form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
+          <input type="hidden" name="receiver" value="41001497426879">
+          <input type="hidden" name="formcomment" value="Тестовая рассылка">
+          <input type="hidden" name="short-dest" value="Тестовая рассылка">
+          <input type="hidden" name="label" value="$order_id">
+          <input type="hidden" name="quickpay-form" value="small">
+          <input type="hidden" name="paymentType" value="AC">
+          <input type="hidden" name="sum" value="1500">
+          <input type="hidden" name="targets" value="Подписка на «Тестовую рассылку»">
+          <input type="hidden" name="need-email" value="true">
+          <input type="hidden" name="successURL" value="http://vasily.polovnyov.ru/tests/?bought=yep">
+          <p style="text-align: right">
+            <input type="submit" value="Подписаться за 1500 ₽" class="buy-btn">
+          </p>
+        </form>
       </section>
 
       <footer style="padding-top: 6rem;">
@@ -252,39 +247,10 @@
     <script src="cookies.js"></script>
     <script>
       window.app = {};
-      window.app.$form = $(".signup-form");
-      window.app.$subscribedEmail = $(".signup-form__subscribed-email");
 
       $('[data-reach-goal]').on('click submit', function() {
         var goal = $(this).attr('data-reach-goal');
         yaCounter37100705.reachGoal(goal);
-      });
-
-      (function() {
-        var email = Cookies.get("subscribed-email");
-        if (email) {
-          window.app.$form.addClass("has-already-subscribed");
-          window.app.$subscribedEmail.text(email);
-        }
-      })();
-
-      window.app.$form.on("submit", function() {
-        var $form = $(this);
-        var $input = $form.find(".email");
-
-        var email = $.trim($input.val());
-        var url = $form.attr("action");
-
-        if (!email) return false;
-
-        $.ajax({ method: 'POST', url: url, data: { email: email }}).done(function() {
-          Cookies.set("subscribed-email", email);
-
-          window.app.$form.addClass("has-already-subscribed");
-          window.app.$subscribedEmail.text(email);
-        });
-
-        return false;
       });
     </script>
   </body>
