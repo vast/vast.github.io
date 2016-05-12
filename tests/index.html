@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <title>Тестовая рассылка — дистанционный курс об основах тестирования и тестах в Ruby/Rails</title>
     <link rel="stylesheet" href="tufte.css" />
-    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
+      body {
+        margin: 0;
+      }
+
       img {
         height: auto;
       }
@@ -66,10 +69,34 @@
         background-color: #212121;
         border-color: #212121;
       }
+
+      .alert {
+        background-color: #fcf8e3;
+        padding: 15px 12.5%;
+        margin-bottom: 1rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: none;
+      }
+
+      .has-bought-subscription .alert--bought {
+        display: block;
+      }
     </style>
   </head>
   <body>
-  <!-- Yandex.Metrika counter -->
+  <script>
+    if (window.location.search.indexOf('bought') !== -1 ) {
+      document.body.className += 'has-bought-subscription';
+    }
+  </script>
+
+  <div class="alert alert--bought">
+    Спасибо! Вы&nbsp;подписались на&nbsp;«Тестовую рассылку». Письмо с&nbsp;инструкциями придет сегодня.
+  </div>
+
   <script type="text/javascript">
       (function (d, w, c) {
           (w[c] = w[c] || []).push(function() {
