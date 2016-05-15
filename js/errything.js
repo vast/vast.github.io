@@ -39,3 +39,49 @@ var typographer = (function() {
     }
   }
 })();
+
+var smartTitles = (function() {
+  var titles = [];
+  var triggers = [];
+
+  function collectTitlesAndTriggers() {
+    var nodes = document.querySelectorAll('.post:not(.post--ignored)');
+    var scrollTop = window.pageYOffset;
+
+    for (var i = 0; i < nodes.length; i++) {
+      var rect = nodes[i].getBoundingClientRect();
+
+      triggers.push({ top: scrollTop + rect.top, bottom: scrollTop + rect.bottom });
+      titles.push(nodes[i].querySelector('.post-title').textContent);
+    }
+  };
+
+  function updateWindowTitle() {
+    var scrollTop = window.pageYOffset;
+    var windowHeight = window.innerHeight;
+
+    var newTitle;
+    var currentDistance;
+    var minDistance = 99999;
+
+    titles.forEach(function(title, index) {
+      var fromTop = Math.abs(triggers[index].top - scrollTop);
+      var fromBottom = Math.abs(triggers[index].bottom - scrollTop - windowHeight);
+      var currentDistance = Math.min(fromTop, fromBottom);
+
+      if (currentDistance < minDistance) {
+        minDistance = currentDistance;
+        newTitle = title;
+      }
+    });
+
+    if (newTitle) document.title = newTitle;
+  }
+
+  function bindEvents() {
+    document.addEventListener('scroll', updateWindowTitle);
+  }
+
+  collectTitlesAndTriggers();
+  bindEvents();
+})();
