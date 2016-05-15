@@ -14,15 +14,20 @@
 }
 
 .post-nav {
-  margin-top: 2.64rem;
+  display: flex;
+  margin: 2.64rem 0 0;
+  padding: 0;
+  list-style: none outside;
+
+  li {
+    margin: 0;
+    padding: 0;
+  }
 }
 
-.prev_post_link {
-  margin-right: 1em;
-}
-
-.next_post_link {
-  margin-left: 1em;
+.post-nav-spacer {
+  margin: 0 1em!important;
+  white-space: nowrap;
 }
 
 .post-title--main {
