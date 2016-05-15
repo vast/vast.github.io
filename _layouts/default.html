@@ -100,6 +100,16 @@
           <div data-service="facebook" title="Поделиться ссылкой на Фейсбуке">Поделиться</div>
           <div class="vkontakte" title="Поделиться ссылкой во Вконтакте">Поделиться</div>
         </div>
+
+        <div class="post-nav">
+          {% if page.previous.url %}
+            <a class="prev_post_link" href="{{page.previous.url}}">{{page.previous.title}}</a>
+          {% endif %}
+          ← →
+          {% if page.next.url %}
+            <a class="next_post_link" href="{{page.next.url}}">{{page.next.title}}</a>
+          {% endif %}
+        </div>
       </footer>
     </article>
   </div>

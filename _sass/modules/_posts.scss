@@ -6,11 +6,23 @@
   font-size: 16px;
 }
 
-.post-date {
+.post-date, .post-nav {
   font-size: .875em;
   display: block;
   font-family: Helvetica Neue, Arial, sans-serif;
   color: lighten($text-color, 50%);
+}
+
+.post-nav {
+  margin-top: 2.64rem;
+}
+
+.prev_post_link {
+  margin-right: 1em;
+}
+
+.next_post_link {
+  margin-left: 1em;
 }
 
 .post-title--main {
