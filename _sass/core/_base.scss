@@ -20,7 +20,6 @@ body {
 }
 
 a {
-  color: $link-color-fallback;
   color: $link-color;
   text-decoration: none;
   box-shadow: inset 0 -2px 0 -1px rgba(0, 0, 0, .15);
@@ -28,13 +27,12 @@ a {
 
   &:hover {
     color: $link-hover-color;
-    border-color: $link-color-fallback;
-    border-color: $link-color;
+    box-shadow: inset 0 -2px 0 -1px $link-hover-color;
   }
 
   &:active {
     color: $link-active-color;
-    border-bottom-color: transparent;
+    box-shadow: inset 0 -2px 0 -1px $link-active-color;
   }
 }
 
