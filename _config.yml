@@ -7,3 +7,15 @@ kramdown:
 title: 'Ушпешный блог'
 description: 'О программировании, технологиях и жизни'
 url: 'http://vasily.polovnyov.ru'
+popular_posts: []
+popular_post_urls:
+  - "/posts/from-stylus-to-postcss.html"
+  - "/posts/double-mock-stub.html"
+  - "/posts/foundation-5-and-ie8.html"
+  - "/posts/stop-comments-deodorants.html"
+  - "/posts/how-to-be-alpha-css-rock-star.html"
+  - "/posts/teenage-testing.html"
+  - "/posts/three-code-review-rules.html"
+  - "/posts/css-inbox.html"
+  - "/posts/optimus-prime-css-part-1.html"
+  - "/posts/stop-comments.html"

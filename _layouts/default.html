@@ -123,9 +123,17 @@
   <div class="bottom-contents">
     <div class="global-container">
       <aside class="related">
-        <h2>Из последнего</h2>
-        <ul class="related-posts">
-          {% for post in site.posts limit:10 %}
+        <h2>Популярное</h2>
+        {% assign popular_posts = site.popular_posts %}
+        {% for post_url in site.popular_post_urls %}
+          {% for post in site.posts %}
+            {% if post_url == post.url %}
+              {% assign popular_posts = popular_posts | push: post %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+        <ul class="related-posts related-posts--popular">
+          {% for post in popular_posts %}
             {% if post.url != page.url %}
               <li><a href="{{ post.url }}">{{ post.title }}</a></li>
             {% endif %}
