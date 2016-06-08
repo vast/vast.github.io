@@ -19,6 +19,20 @@ body {
   padding: 1em 2em;
 }
 
+.narrow-container {
+  @include container;
+}
+
+.full-width-container {
+  @include container;
+  max-width: none;
+}
+
+.nudge-top-container {
+  padding-top: 0;
+  margin-top: -3rem;
+}
+
 a {
   color: $link-color;
   text-decoration: none;

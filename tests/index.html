@@ -3,19 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <title>Тестовая рассылка — дистанционный курс об основах тестирования и тестах в Ruby/Rails</title>
-    <link rel="stylesheet" href="tufte.css" />
+    <link rel="stylesheet" href="/css/application.css" media="screen, projection" />
+    <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 980px)" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
-      body {
+      figure {
+        display: flex;
         margin: 0;
+        padding: 0;
       }
 
-      img {
-        height: auto;
+      figure .marginnote {
+        flex: 1;
+        margin: .85em 0 0;
       }
 
-      .margin-toggle {
-        border-bottom: .5px dashed;
+      figure div {
+        flex: 11;
+      }
+
+      .before-after {
+        display: flex;
+      }
+
+      .before-after h3 {
+        text-align: center;
+      }
+
+      .before-after__before,
+      .before-after__after {
+        position: relative;
+        flex: 1;
+        padding: 0 1em;
+        border-bottom: .5px solid #ccc;
+      }
+
+      .before-after__before-travolta,
+      .before-after__after-neo {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 250px;
+        margin-left: -125px;
+      }
+
+      .before-after__before-bg {
+        -webkit-filter: blur(2px);
+        filter: blur(2px);
+      }
+
+      .before-after__after-neo {
+        width: 375px;
+        margin-left: -188px;
       }
 
       .curriculum {
@@ -26,8 +65,6 @@
         margin: 0;
         min-width: 15em;
         list-style: none outside;
-        font-size: 1.1rem;
-        line-height: 1.3;
         box-sizing: border-box;
       }
 
@@ -86,10 +123,10 @@
       }
     </style>
   </head>
-  <body>
+  <body class="is__ready">
   <script>
     if (window.location.search.indexOf('bought') !== -1 ) {
-      document.body.className += 'has-bought-subscription';
+      document.body.className += ' has-bought-subscription';
     }
   </script>
 
@@ -97,7 +134,7 @@
     Спасибо! Вы&nbsp;подписались на&nbsp;«Тестовую рассылку». Письмо с&nbsp;инструкциями придет сегодня.
   </div>
 
-  <script type="text/javascript">
+  <!-- script type="text/javascript">
       (function (d, w, c) {
           (w[c] = w[c] || []).push(function() {
               try {
@@ -123,30 +160,71 @@
           } else { f(); }
       })(document, window, "yandex_metrika_callbacks");
   </script>
-  <noscript><div><img src="https://mc.yandex.ru/watch/37100705" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <noscript><div><img src="https://mc.yandex.ru/watch/37100705" style="position:absolute; left:-9999px;" alt="" /></div></noscript -->
   <!-- /Yandex.Metrika counter -->
 
-    <article>
-      <section>
-        <h1>
-          Тестовая рассылка
-        </h1>
-
+    <article class="global-container">
+      <section class="narrow-container">
+        <h1>Тестовая рассылка</h1>
         <p>Дистанционный курс об&nbsp;основах тестирования и&nbsp;тестах в&nbsp;Ruby/Rails. С&nbsp;теорией, примерами, домашкой и&nbsp;дополнительными материалами: статьями, советами, видео.</p>
 
-        <p>Цель курса&nbsp;&mdash; помочь научиться безболезненно и&nbsp;быстро проверять собственную работу автоматическими тестами.</p>
-      </section>
+        <!-- p>Цель курса&nbsp;&mdash; помочь научиться безболезненно и&nbsp;быстро проверять собственную работу автоматическими тестами.</p -->
 
-      <section>
         <h2>Для кого</h2>
-        <p>Рассылка предназначена для разработчиков знакомых с&nbsp;Ruby и&nbsp;Rspec, но&nbsp;не&nbsp;до&nbsp;конца понимающих что и&nbsp;как тестировать. Для тех, кто прочитал Rspec Book, но&nbsp;не&nbsp;может написать тест с&nbsp;нуля. Для тех, кто исправляет баг за&nbsp;5&nbsp;минут, а&nbsp;потом 2&nbsp;часа пишет для него тест.</p>
+        <p>Курс предназначен для разработчиков знакомых с&nbsp;Ruby и&nbsp;Rspec, но&nbsp;не&nbsp;до&nbsp;конца понимающих что и&nbsp;как тестировать. Для тех, кто прочитал Rspec Book, но&nbsp;не&nbsp;может написать тест с&nbsp;нуля. Для тех, кто исправляет баг за&nbsp;5&nbsp;минут, а&nbsp;потом 2&nbsp;часа пишет для него тест.</p>
 
         <p>Если вы&nbsp;в&nbsp;совершенстве владеете TDD/BDD и&nbsp;отличаете мок от&nbsp;стаба, то&nbsp;уроки не&nbsp;принесут вам ощутимой пользы.</p>
+
+        <h2>Чем полезен</h2>
+        <p>
+          Курс поможет научиться проверять собственную работу автоматическими тестами. Объясним,
+          как проверять приложение модульными и&nbsp;интеграционными тестами, как имитировать
+          действия пользователя.
+        </p>
+
+        <p>
+          Отдельный раздел курса посвящен правилам, с&nbsp;помощью которых вы&nbsp;научитесь писать тесты так,
+          чтобы их&nbsp;было легко читать и&nbsp;поддерживать.
+        </p>
+
+        <p>
+          В&nbsp;курсе предусмотрена практика.
+          Набьёте на&nbsp;ней руку и&nbsp;станете писать тесты быстрее чем код.
+        </p>
       </section>
 
-      <section style="clear: right">
+      <section class="full-width-container nudge-top-container">
+        <div class="before-after">
+          <div class="before-after__before">
+            <h3>До&nbsp;курса</h3>
+            <img src="/tests/examples/rspec-example.png"
+              class="before-after__before-bg"
+              width="1040"
+              height="664" />
+            <img src="/tests/examples/travolta.gif"
+              class="before-after__before-travolta"
+              width="500"
+              height="482" />
+          </div>
+
+          <div class="before-after__after">
+            <h3>После курса</h3>
+            <img src="/tests/examples/rspec-example.png"
+              class="before-after__after-bg"
+              width="1040"
+              height="664" />
+            <img src="/tests/examples/neo.png"
+              class="before-after__after-neo"
+              width="400"
+              height="300" />
+          </div>
+        </div>
+      </section>
+
+      <section class="full-width-container">
         <h2>Что внутри</h2>
-        <p style="margin-bottom: 0">Вот уроки, которые я&nbsp;отправляю:</p>
+
+        <p>Вот уроки, которые я&nbsp;отправляю:</p>
 
         <ul class="curriculum">
           <li class="curriculum__title">Модульные тесты</li>
@@ -178,39 +256,39 @@
         </ul>
       </section>
 
-      <section class="samples">
+      <section class="narrow-container">
         <h2>Как выглядят уроки</h2>
         <figure>
-          <label for="real-examples" class="margin-toggle">⊕</label>
-          <input type="checkbox" id="real-examples" class="margin-toggle">
+          <div>
+            <img src="examples/3-top.png" alt="" width="1720" height="1654" />
+          </div>
 
-          <span class="marginnote" style="margin-top: 1em;">
+          <small class="marginnote">
             Объясняю теорию на&nbsp;пальцах и&nbsp;примерах
-          </span>
-
-          <img src="examples/3-top.png" alt="" width="1720" height="1654" />
-        </figure>
-
-        <figure class="fullwidth">
-          <img src="examples/2-queries.png" alt="" width="1720" height="1654" />
+          </small>
         </figure>
 
         <figure>
-          <label for="more-homework" class="margin-toggle">⊕</label>
-          <input type="checkbox" id="more-homework" class="margin-toggle">
+          <div>
+            <img src="examples/2-queries.png" alt="" width="1720" height="1654" />
+          </div>
+        </figure>
 
-          <span class="marginnote" style="margin-top: 1em;">
+        <figure>
+          <small class="marginnote">
             Домашка и&nbsp;странные подписи в&nbsp;подвале
-          </span>
-          <img src="examples/2-homework.png" alt="" width="1720" height="1654"  />
+          </small>
+          <div>
+            <img src="examples/2-homework.png" alt="" width="1720" height="1654"  />
+          </div>
         </figure>
       </section>
 
-      <section>
+      <section class="narrow-container">
         <h2>Ответы на&nbsp;вопросы</h2>
 
         <p><em>Что будем использовать?</em><br />
-        RSpec. Тесты на&nbsp;нем выразительные, и&nbsp;их&nbsp;проще читать, потому что они ближе к&nbsp;человеческому языку.</p>
+        RSpec, Jasmine и&nbsp;Capybara. Тесты на&nbsp;них выразительные: их&nbsp;проще читать и&nbsp;понимать.</p>
 
         <p><em>Какие системные требования?</em><br />
           Акаунт на&nbsp;<a href="https://github.com/">Гитхабе</a> и&nbsp;базовые знания Ruby, Rails и&nbsp;RSpec: отличать класс от&nbsp;модуля, <code>attr_reader</code> от&nbsp;<code>attr_accesor</code>, контролер от&nbsp;модели, <code>describe</code> от&nbsp;<code>expect</code>. Если сомневаетесь, пройдите базовые курсы по&nbsp;Ruby и RSpec:</p>
@@ -233,7 +311,7 @@
           Если курс вам не&nbsp;понравится, верну деньги пропорционально неотправленным урокам.</p>
       </section>
 
-      <section>
+      <section class="narrow-container" style="border: 4px solid #414141">
         <h2>Подписка на&nbsp;курс</h2>
         <p>
           13&nbsp;уроков по&nbsp;электронной почте, по&nbsp;2&nbsp;урока в&nbsp;неделю,
@@ -265,7 +343,7 @@
         </form>
       </section>
 
-      <footer style="padding-top: 6rem;">
+      <footer id="footer">
         Есть вопросы? — <a href="mailto:vasily@polovnyov.ru">vasily@polovnyov.ru</a>
       </footer>
     </article>
