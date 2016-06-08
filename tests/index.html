@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <title>Тестовая рассылка — дистанционный курс об основах тестирования и тестах в Ruby/Rails</title>
+    <title>Тестовый курс — дистанционный курс об основах тестирования и тестах в Ruby/Rails</title>
     <link rel="stylesheet" href="/css/application.css" media="screen, projection" />
     <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 980px)" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,7 +27,7 @@
         display: flex;
       }
 
-      .before-after h3 {
+      .before-after h2 {
         text-align: center;
       }
 
@@ -44,18 +44,45 @@
         position: absolute;
         bottom: 0;
         left: 50%;
-        width: 250px;
-        margin-left: -125px;
+        width: 280px;
+        margin-left: -140px;
+      }
+
+      @media (max-width: 1100px) {
+        .before-after__before-travolta,
+        .before-after__after-neo {
+          width: 180px;
+          margin-left: -90px;
+        }
+      }
+
+      @media (max-width: 786px) {
+        .before-after__before-travolta,
+        .before-after__after-neo {
+          width: 280px;
+          margin-left: -140px;
+        }
+
+        .before-after {
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .before-after__before-travolta,
+        .before-after__after-neo {
+          width: 200px;
+          margin-left: -100px;
+        }
+
+        .before-after {
+          flex-direction: column;
+        }
       }
 
       .before-after__before-bg {
-        -webkit-filter: blur(2px);
-        filter: blur(2px);
-      }
-
-      .before-after__after-neo {
-        width: 375px;
-        margin-left: -188px;
+        -webkit-filter: blur(1px);
+        filter: blur(1px);
       }
 
       .curriculum {
@@ -144,10 +171,10 @@
   </script>
 
   <div class="alert alert--bought">
-    Спасибо! Вы&nbsp;подписались на&nbsp;«Тестовую рассылку». Письмо с&nbsp;инструкциями придет сегодня.
+    Спасибо! Вы&nbsp;подписались на&nbsp;«Тестовый курс». Письмо с&nbsp;инструкциями придет сегодня.
   </div>
 
-  <!-- script type="text/javascript">
+  <script type="text/javascript">
       (function (d, w, c) {
           (w[c] = w[c] || []).push(function() {
               try {
@@ -173,12 +200,12 @@
           } else { f(); }
       })(document, window, "yandex_metrika_callbacks");
   </script>
-  <noscript><div><img src="https://mc.yandex.ru/watch/37100705" style="position:absolute; left:-9999px;" alt="" /></div></noscript -->
+  <noscript><div><img src="https://mc.yandex.ru/watch/37100705" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
   <!-- /Yandex.Metrika counter -->
 
     <article class="global-container">
       <section class="narrow-container">
-        <h1>Тестовая рассылка</h1>
+        <h1>Тестовый курс</h1>
         <p>Дистанционный курс об&nbsp;основах тестирования и&nbsp;тестах в&nbsp;Ruby/Rails. С&nbsp;теорией, примерами, домашкой и&nbsp;дополнительными материалами: статьями, советами, видео.</p>
 
         <!-- p>Цель курса&nbsp;&mdash; помочь научиться безболезненно и&nbsp;быстро проверять собственную работу автоматическими тестами.</p -->
@@ -209,27 +236,27 @@
       <section class="full-width-container nudge-top-container">
         <div class="before-after">
           <div class="before-after__before">
-            <h3>До&nbsp;курса</h3>
+            <h2>До&nbsp;курса</h2>
             <img src="/tests/examples/rspec-example.png"
               class="before-after__before-bg"
               width="1040"
               height="664" />
-            <img src="/tests/examples/travolta.gif"
+            <img src="/tests/examples/travolta-small.gif"
               class="before-after__before-travolta"
-              width="500"
-              height="482" />
+              width="281"
+              height="271" />
           </div>
 
           <div class="before-after__after">
-            <h3>После курса</h3>
+            <h2>После курса</h2>
             <img src="/tests/examples/rspec-example.png"
               class="before-after__after-bg"
               width="1040"
               height="664" />
-            <img src="/tests/examples/neo.png"
+            <img src="/tests/examples/neo-small.png"
               class="before-after__after-neo"
-              width="400"
-              height="300" />
+              width="281"
+              height="271" />
           </div>
         </div>
       </section>
@@ -237,7 +264,7 @@
       <section class="full-width-container">
         <h2>Что внутри</h2>
 
-        <p>Вот уроки, которые я&nbsp;отправляю:</p>
+        <p>Вот уроки, которые мы&nbsp;отправляем:</p>
 
         <ul class="curriculum">
           <li class="curriculum__title">Модульные тесты</li>
@@ -277,7 +304,7 @@
           </div>
 
           <small class="marginnote">
-            Объясняю теорию на&nbsp;пальцах и&nbsp;примерах
+            Объясняем теорию на&nbsp;пальцах и&nbsp;примерах
           </small>
         </figure>
 
@@ -318,13 +345,13 @@
           Нет. Курс рассчитан на&nbsp;поэтапное освоение с&nbsp;выполнением домашнего задания.</p>
 
         <p><em>Как и&nbsp;когда проверят мою домашнюю работу?</em><br />
-          Я&nbsp;проверяю домашнюю работу в&nbsp;тот&nbsp;же день. Проверка&nbsp;&mdash; самое настоящее кодревью пулреквеста в&nbsp;Гитхабе. Если проверка задержится, я&nbsp;вас предупрежу.</p>
+          Мы&nbsp;проверяем домашнюю работу в&nbsp;тот&nbsp;же день. Проверка&nbsp;&mdash; самое настоящее кодревью пулреквеста в&nbsp;Гитхабе. Если проверка задержится, мы&nbsp;вас предупредим.</p>
 
         <p><em>Что если уроки не&nbsp;приходят?</em><br />
-          Напишите мне на&nbsp;<a href="mailto:vasily@polovnyov.ru">vasily@polovnyov.ru</a>. Если проблему с&nbsp;доставкой писем не&nbsp;сможем исправить, верну деньги.</p>
+          Напишите мне на&nbsp;<a href="mailto:vasily@polovnyov.ru">vasily@polovnyov.ru</a>. Если проблему с&nbsp;доставкой писем не&nbsp;сможем исправить, вернём деньги.</p>
 
         <p><em>Можно&nbsp;ли отказаться от&nbsp;рассылки?</em><br />
-          Если курс вам не&nbsp;понравится, верну деньги пропорционально неотправленным урокам.</p>
+          Если курс вам не&nbsp;понравится, вернём деньги пропорционально неотправленным урокам.</p>
       </section>
 
       <section class="narrow-container" style="border: 4px solid #414141">
@@ -350,12 +377,12 @@
           data-reach-goal="tests-newsletter-signup-click">
 
           <input type="hidden" name="receiver" value="41001497426879">
-          <input type="hidden" name="formcomment" value="Тестовая рассылка">
-          <input type="hidden" name="short-dest" value="Тестовая рассылка">
+          <input type="hidden" name="formcomment" value="Тестовый курс">
+          <input type="hidden" name="short-dest" value="Тестовый курс">
           <input type="hidden" name="label" value="$order_id">
           <input type="hidden" name="quickpay-form" value="small">
           <input type="hidden" name="paymentType" value="AC">
-          <input type="hidden" name="targets" value="Подписка на «Тестовую рассылку»">
+          <input type="hidden" name="targets" value="Подписка на «Тестовый курс»">
           <input type="hidden" name="need-email" value="true">
           <input type="hidden" name="successURL" value="http://vasily.polovnyov.ru/tests/?bought=yep">
 
