@@ -126,6 +126,14 @@
       .has-bought-subscription .alert--bought {
         display: block;
       }
+
+      .buy-it {
+        padding: 2.75rem 0 0;
+      }
+
+      .buy-it fieldset {
+        margin-bottom: 1.5rem;
+      }
     </style>
   </head>
   <body class="is__ready">
@@ -322,32 +330,53 @@
       <section class="narrow-container" style="border: 4px solid #414141">
         <h2>Подписка на&nbsp;курс</h2>
         <p>
-          13&nbsp;уроков по&nbsp;электронной почте, по&nbsp;2&nbsp;урока в&nbsp;неделю,
-          плюс консультации: я&nbsp;стараюсь отвечать на&nbsp;все вопросы.
+          Два варианта подписки: с&nbsp;домашними заданиями и&nbsp;без.
+        </p>
+        <p>
+          В&nbsp;обоих вариантах вы получаете 13&nbsp;уроков по&nbsp;электронной почте, по&nbsp;2&nbsp;урока в&nbsp;неделю.
+        </p>
+        <p>
+          При подписке с&nbsp;домашними заданиями дополнительно получаете практические домашние задания в&nbsp;Гитхабе.
+          Выполняете задание, открываете пулреквест, проверка&nbsp;&mdash; кодревью в&nbsp;тот&nbsp;же день.
         </p>
 
         <p>
-          К&nbsp;урокам прилагаются практические домашние задания. Выполняете задание, открываете пулреквест на&nbsp;Гитхабе, проверка&nbsp;&mdash; кодревью в&nbsp;тот&nbsp;же день.
+          Оплата банковской картой. При оплате укажите адрес, на&nbsp;который отправлять уроки.
         </p>
 
-        <p>
-          Осталось 7&nbsp;мест.
-        </p>
+        <form method="POST"
+          action="https://money.yandex.ru/quickpay/confirm.xml"
+          class="buy-it"
+          data-reach-goal="tests-newsletter-signup-click">
 
-        <form method="POST" action="https://money.yandex.ru/quickpay/confirm.xml">
           <input type="hidden" name="receiver" value="41001497426879">
           <input type="hidden" name="formcomment" value="Тестовая рассылка">
           <input type="hidden" name="short-dest" value="Тестовая рассылка">
           <input type="hidden" name="label" value="$order_id">
           <input type="hidden" name="quickpay-form" value="small">
           <input type="hidden" name="paymentType" value="AC">
-          <input type="hidden" name="sum" value="1300">
           <input type="hidden" name="targets" value="Подписка на «Тестовую рассылку»">
           <input type="hidden" name="need-email" value="true">
           <input type="hidden" name="successURL" value="http://vasily.polovnyov.ru/tests/?bought=yep">
-          <p style="text-align: right">
-            <input type="submit" value="Подписаться за 1300 ₽" class="buy-btn">
-          </p>
+
+          <fieldset>
+            <div>
+              <label>
+                <input type="radio" name="sum" value="400" checked>
+                13&nbsp;уроков без&nbsp;домашних заданий за&nbsp;400&nbsp;рублей
+              </label>
+            </div>
+            <div>
+              <label>
+                <input type="radio" name="sum" value="1300">
+                13&nbsp;уроков с&nbsp;домашними заданиями за&nbsp;1300&nbsp;рублей
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="buy-it__submits">
+            <input type="submit" value="Подписаться за 400 ₽" class="buy-btn">
+          </fieldset>
         </form>
       </section>
 
@@ -364,6 +393,12 @@
       $('[data-reach-goal]').on('click submit', function() {
         var goal = $(this).attr('data-reach-goal');
         yaCounter37100705.reachGoal(goal);
+      });
+
+
+      $('.buy-it').on('change', 'input:radio', function() {
+        var text = 'Подписаться за ' + this.value + ' ₽';
+        $('.buy-btn').val(text);
       });
     </script>
   </body>
