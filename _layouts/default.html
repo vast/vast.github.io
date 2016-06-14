@@ -62,16 +62,18 @@
       <div class="post-contents">
         {{ content }}
 
-        <p>
-          {% if page.has_ps %}
-            P. P. S.
-          {% else %}
-            P. S.
-          {% endif %}
+        {% if page.skip_tests_announce == nil or (page.skip_tests_announce == false) %}
+          <p>
+            {% if page.has_ps %}
+              P. P. S.
+            {% else %}
+              P. S.
+            {% endif %}
 
-          Я веду <a href="/tests/">дистанционный курс о&nbsp;тестах в&nbsp;Ruby/Rails</a>.
-          С&nbsp;теорией, примерами и домашкой.
-        </p>
+            Я веду <a href="/tests/">дистанционный курс о&nbsp;тестах в&nbsp;Ruby/Rails</a>.
+            С&nbsp;теорией, примерами и домашкой.
+          </p>
+        {% endif %}
       </div>
       <footer class="post-meta">
         <small class="post-date">
