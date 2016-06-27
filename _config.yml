@@ -9,7 +9,9 @@ description: 'О программировании, технологиях и ж�
 url: 'http://vasily.polovnyov.ru'
 popular_posts: []
 popular_post_urls:
+  - "/posts/tests-junior.html"
   - "/posts/from-stylus-to-postcss.html"
+  - "/posts/git-commit-messages.html"
   - "/posts/double-mock-stub.html"
   - "/posts/foundation-5-and-ie8.html"
   - "/posts/stop-comments-deodorants.html"
@@ -17,5 +19,3 @@ popular_post_urls:
   - "/posts/teenage-testing.html"
   - "/posts/three-code-review-rules.html"
   - "/posts/css-inbox.html"
-  - "/posts/optimus-prime-css-part-1.html"
-  - "/posts/stop-comments.html"
