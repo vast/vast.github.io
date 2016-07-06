@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Firepad</title>
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDla6Br2PobRw8CHOxSmVAvC66ZB7HBC-c",
+      authDomain: "typography-2451d.firebaseapp.com",
+      databaseURL: "https://typography-2451d.firebaseio.com",
+      storageBucket: "",
+    };
+    firebase.initializeApp(config);
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.16.0/codemirror.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.16.0/mode/jade/jade.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.16.0/mode/javascript/javascript.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.16.0/codemirror.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.16.0/theme/solarized.css">
+
+  <!-- Firepad -->
+  <link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.css" />
+  <script src="https://cdn.firebase.com/libs/firepad/1.4.0/firepad.min.js"></script>
+
+  <style>
+    html { height: 100%; }
+    body { margin: 0; height: 100%; position: relative; }
+    /* Height / width / positioning can be customized for your use case.
+       For demo purposes, we make firepad fill the entire browser. */
+    #firepad-container {
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+<body>
+<div id="firepad-container"></div>
+<script>
+  var codeMirror = CodeMirror(document.getElementById('firepad-container'), {
+    lineNumbers: true,
+    mode: 'jade',
+    theme: 'solarized',
+    tabSize: 2,
+    autofocus: true,
+  });
+
+  var firepadRef = firebase.database().ref('typography-test');
+
+  var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror, {
+    defaultText: '+spread\n',
+  });
+
+  firepad.on('synced', function(isSynced) {
+    if (isSynced) {
+      console.log('synced: ' + firepad.getText());
+    } else {
+      console.log('just kidding');
+    }
+  });
+</script>
+</body>
+</html>
