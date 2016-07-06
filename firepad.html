@@ -40,13 +40,21 @@
       font-size: 13px;
       line-height: 18px;
     }
+
+    .powered-by-firepad {
+      display: none!important;
+    }
+
+    .CodeMirror {
+      box-shadow: none!important;
+    }
   </style>
 </head>
 <body>
 <div id="firepad-container"></div>
 <script>
   var codeMirror = CodeMirror(document.getElementById('firepad-container'), {
-    lineNumbers: true,
+    lineNumbers: false,
     mode: 'jade',
     theme: 'solarized',
     tabSize: 2,
