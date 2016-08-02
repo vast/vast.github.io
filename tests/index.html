@@ -153,6 +153,38 @@
         border-color: #212121;
       }
 
+      .quick-buy-btn {
+        display: inline-block;
+        padding: .75rem 1.25rem;
+        margin: 0;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 1.333333;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border: 2px solid #414141;
+        border-radius: .3rem;
+        touch-action: manipulation;
+        color: #414141!important;
+        text-decoration: none;
+        box-shadow: none;
+        transition: background .3s, color .3s;
+      }
+
+      .quick-buy-btn:hover {
+        box-shadow: none;
+        color: #fff!important;
+        background: #414141;
+      }
+
       .alert {
         background-color: #fcf8e3;
         padding: 15px 12.5%;
@@ -226,8 +258,15 @@
     <article class="global-container">
       <section class="narrow-container">
         <h1>Тестовый курс</h1>
-        <p>Дистанционный курс об&nbsp;основах тестирования и&nbsp;тестах в&nbsp;Ruby/Rails. С&nbsp;теорией, примерами, домашкой и&nbsp;дополнительными материалами: статьями, советами, видео.</p>
+        <p>
+        Дистанционный курс об&nbsp;основах тестирования и&nbsp;тестах в&nbsp;Ruby/Rails. С&nbsp;теорией, примерами, домашкой и&nbsp;дополнительными материалами: статьями, советами, видео.
+        </p>
+        <p>
+          <a href="#signup" class="quick-buy-btn">Подписаться за 200 ₽</a>
+        </p>
+      </section>
 
+      <section class="narrow-container nudge-top-container">
         <h2>Для кого</h2>
         <p>Курс предназначен для разработчиков знакомых с&nbsp;Ruby и&nbsp;Rspec, но&nbsp;не&nbsp;до&nbsp;конца понимающих что и&nbsp;как тестировать. Для тех, кто прочитал Rspec Book, но&nbsp;не&nbsp;может написать тест с&nbsp;нуля. Для тех, кто исправляет баг за&nbsp;5&nbsp;минут, а&nbsp;потом 2&nbsp;часа пишет тест.</p>
 
@@ -371,7 +410,7 @@
           Если курс вам не&nbsp;понравится, вернём деньги пропорционально неотправленным урокам.</p>
       </section>
 
-      <section class="narrow-container" style="border: 4px solid #414141;">
+      <section id="signup" class="narrow-container" style="border: 4px solid #414141;">
         <h2>Подписка на&nbsp;курс</h2>
         <p>
           Два варианта подписки: с&nbsp;домашними заданиями и&nbsp;без.
@@ -406,8 +445,8 @@
           <fieldset>
             <div>
               <label>
-                <input type="radio" name="sum" value="400" checked>
-                12&nbsp;уроков без&nbsp;домашних заданий за&nbsp;400&nbsp;рублей
+                <input type="radio" name="sum" value="200" checked>
+                12&nbsp;уроков без&nbsp;домашних заданий за&nbsp;200&nbsp;рублей
               </label>
             </div>
             <div>
@@ -419,7 +458,7 @@
           </fieldset>
 
           <fieldset class="buy-it__submits">
-            <input type="submit" value="Подписаться за 400 ₽" class="buy-btn">
+            <input type="submit" value="Подписаться за 200 ₽" class="buy-btn">
           </fieldset>
         </form>
       </section>
@@ -430,7 +469,7 @@
     <script>
       window.app = {};
 
-      $('[data-reach-goal]').on('click submit', function() {
+      $('[data-reach-goal]').on('submit', function() {
         var goal = $(this).attr('data-reach-goal');
         yaCounter37100705.reachGoal(goal);
       });
