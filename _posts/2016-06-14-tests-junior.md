@@ -1,5 +1,5 @@
 ---
-title: Ищу стажеров
+title: Ищу стажеров (Уже нашел)
 layout: default
 skip_tests_announce: true
 ---
