@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <title>Тестовый курс — дистанционный курс об основах тестирования и тестах в Ruby/Rails</title>
+    <title>Тестовый курс — дистанционный курс о тестировании в Ruby/Rails</title>
     <link rel="stylesheet" href="/css/application.css" media="screen, projection" />
     <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 980px)" />
     <link rel="stylesheet" href="https://npmcdn.com/ilyabirman-likely@2.1.0/release/likely.css" />
@@ -22,6 +22,14 @@
 
       figure div {
         flex: 10;
+      }
+
+      figure.opposite div {
+        order: 2;
+      }
+
+      figure.opposite .marginnote {
+        order: 1;
       }
 
       .before-after {
@@ -348,7 +356,7 @@
       </section>
 
       <section class="full-width-container">
-        <h2>Как выглядят уроки</h2>
+        <h2>Как выглядит курс</h2>
         <figure>
           <div>
             <img src="examples/3-top.png" alt="" width="1720" height="1654" />
@@ -359,7 +367,7 @@
           </small>
         </figure>
 
-        <figure>
+        <figure class="opposite">
           <div>
             <img src="examples/4-read-more.png" alt="" width="1720" height="1654" />
           </div>
@@ -374,6 +382,24 @@
           </div>
           <small class="marginnote">
             Домашка и&nbsp;странные подписи в&nbsp;подвале
+          </small>
+        </figure>
+
+        <figure class="opposite">
+          <div>
+            <img src="examples/github-1.png" alt="" width="2332" height="1770" />
+          </div>
+          <small class="marginnote">
+            Проверка домашней работы в&nbsp;Гитхабе
+          </small>
+        </figure>
+
+        <figure>
+          <div>
+            <img src="examples/github-2.png" alt="" width="2332" height="1770" />
+          </div>
+          <small class="marginnote">
+             
           </small>
         </figure>
       </section>
