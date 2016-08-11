@@ -1,9 +1,12 @@
 .header {
   position: absolute;
-  padding-left: 2rem;
+  left: 0;
+  right: 0;
   font-style: italic;
+}
 
-  @media (max-width: 480px) {
-    padding-left: 1.5rem;
-  }
+.header-contents {
+  @include container;
+  padding-top: 0;
+  padding-bottom: 0;
 }
