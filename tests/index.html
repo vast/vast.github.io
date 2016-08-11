@@ -2,7 +2,7 @@
 <html lang="ru">
   <head>
     <meta charset="UTF-8" />
-    <title>Тестовый курс — дистанционный курс об основах тестирования и тестах в Ruby/Rails</title>
+    <title>Тестовый курс — дистанционный курс о тестировании в Ruby/Rails</title>
     <link rel="stylesheet" href="/css/application.css" media="screen, projection" />
     <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 980px)" />
     <link rel="stylesheet" href="https://npmcdn.com/ilyabirman-likely@2.1.0/release/likely.css" />
@@ -22,6 +22,14 @@
 
       figure div {
         flex: 10;
+      }
+
+      figure.opposite div {
+        order: 2;
+      }
+
+      figure.opposite .marginnote {
+        order: 1;
       }
 
       .before-after {
@@ -254,7 +262,7 @@
       <section class="narrow-container">
         <h1>Тестовый курс</h1>
         <p>
-        Дистанционный курс об&nbsp;основах тестирования и&nbsp;тестах в&nbsp;Ruby/Rails. С&nbsp;теорией, примерами, домашкой и&nbsp;дополнительными материалами: статьями, советами, видео.
+        Дистанционный курс о&nbsp;тестировании и&nbsp;тестах в&nbsp;Ruby/Rails. С&nbsp;теорией, примерами, домашкой и&nbsp;дополнительными материалами: статьями, советами, видео.
         </p>
         <p>
           <a href="#signup" class="quick-buy-btn">Подписаться за 200 ₽</a>
@@ -263,7 +271,7 @@
 
       <section class="narrow-container nudge-top-container">
         <h2>Для кого</h2>
-        <p>Курс предназначен для разработчиков знакомых с&nbsp;Ruby и&nbsp;Rspec, но&nbsp;не&nbsp;до&nbsp;конца понимающих что и&nbsp;как тестировать. Для тех, кто прочитал Rspec Book, но&nbsp;не&nbsp;может написать тест с&nbsp;нуля. Для тех, кто исправляет баг за&nbsp;5&nbsp;минут, а&nbsp;потом 2&nbsp;часа пишет тест.</p>
+        <p>Для разработчиков знакомых с&nbsp;Ruby и&nbsp;Rspec, но&nbsp;не&nbsp;до&nbsp;конца понимающих что и&nbsp;как тестировать. Для тех, кто прочитал Rspec Book, но&nbsp;не&nbsp;может написать тест с&nbsp;нуля. Для тех, кто исправляет баг за&nbsp;5&nbsp;минут, а&nbsp;потом 2&nbsp;часа пишет тест.</p>
 
         <p>Если вы&nbsp;в&nbsp;совершенстве владеете TDD/BDD и&nbsp;отличаете мок от&nbsp;стаба, то&nbsp;уроки не&nbsp;принесут вам ощутимой пользы.</p>
 
@@ -348,7 +356,7 @@
       </section>
 
       <section class="full-width-container">
-        <h2>Как выглядят уроки</h2>
+        <h2>Как выглядит курс</h2>
         <figure>
           <div>
             <img src="examples/3-top.png" alt="" width="1720" height="1654" />
@@ -359,7 +367,7 @@
           </small>
         </figure>
 
-        <figure>
+        <figure class="opposite">
           <div>
             <img src="examples/4-read-more.png" alt="" width="1720" height="1654" />
           </div>
@@ -374,6 +382,24 @@
           </div>
           <small class="marginnote">
             Домашка и&nbsp;странные подписи в&nbsp;подвале
+          </small>
+        </figure>
+
+        <figure class="opposite">
+          <div>
+            <img src="examples/github-1.png" alt="" width="2332" height="1770" />
+          </div>
+          <small class="marginnote">
+            Проверка домашней работы в&nbsp;Гитхабе
+          </small>
+        </figure>
+
+        <figure>
+          <div>
+            <img src="examples/github-2.png" alt="" width="2332" height="1770" />
+          </div>
+          <small class="marginnote">
+             
           </small>
         </figure>
       </section>
