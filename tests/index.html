@@ -14,22 +14,65 @@
         padding: 0;
       }
 
-      figure .marginnote {
+      figure aside {
         flex: 2;
-        margin: 2.6% 3rem 0 0;
+      }
+
+      figure .marginnote {
+        margin: 3.6% 3rem 0 0;
+        display: inline-block;
         max-width: 100px;
       }
 
       figure div {
-        flex: 10;
+        flex: 3;
       }
 
       figure.opposite div {
         order: 2;
       }
 
-      figure.opposite .marginnote {
+      figure.opposite aside {
         order: 1;
+        text-align: right;
+      }
+
+      figure.opposite .marginnote {
+        margin: 3.6% 0 0 3rem;
+        text-align: right;
+        max-width: 150px;
+      }
+
+      .row {
+        display: flex;
+      }
+
+      .row-main {
+        flex: 3;
+        position: relative;
+        text-align: center;
+      }
+
+      .row-main img {
+        margin-left: -3.4%;
+      }
+
+      .row-aside {
+        flex: 2;
+        position: relative;
+        text-align: center;
+      }
+
+      .row--opposite .row-main { order: 2; }
+      .row--opposite .row-aside { order: 1; }
+
+      .row--opposite .row-main img {
+        margin-left: 0;
+      }
+
+      @media (max-width: 600px) {
+        .row { display: block; }
+        .row-main img { margin-left: 0; }
       }
 
       .before-after {
@@ -269,6 +312,23 @@
         </p>
       </section>
 
+      <section class="full-width-container nudge-top-container">
+        <div class="row">
+          <div class="row-main">
+            <img src="examples/4-read-more.png" alt="" width="1720" height="1654" />
+          </div>
+
+          <div class="row-aside">
+            <img src="examples/3-top.png" alt="" width="1720" height="1654" style="margin-top: 1.7%" />
+            <div style="position: absolute; margin-top: -6%; width: 100%;">
+              <small>
+                Объясняем теорию на&nbsp;пальцах и&nbsp;примерах
+              </small>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="narrow-container nudge-top-container">
         <h2>Для кого</h2>
         <p>Для разработчиков знакомых с&nbsp;Ruby и&nbsp;Rspec, но&nbsp;не&nbsp;до&nbsp;конца понимающих что и&nbsp;как тестировать. Для тех, кто прочитал Rspec Book, но&nbsp;не&nbsp;может написать тест с&nbsp;нуля. Для тех, кто исправляет баг за&nbsp;5&nbsp;минут, а&nbsp;потом 2&nbsp;часа пишет тест.</p>
@@ -294,34 +354,25 @@
       </section>
 
       <section class="full-width-container nudge-top-container">
-        <div class="before-after">
-          <div class="before-after__before">
-            <h2>До&nbsp;курса</h2>
-            <img src="/tests/examples/rspec-example.png"
-              class="before-after__before-bg"
-              width="1040"
-              height="664" />
-            <img src="/tests/examples/travolta-small.gif"
-              class="before-after__before-travolta"
-              width="281"
-              height="271" />
+        <div class="row row--opposite">
+          <div class="row-main">
+            <img src="examples/2-homework.png" alt="" width="1720" height="1654" />
+            <div style="position: absolute; margin-top: -6%; width: 100%;">
+              <small>
+              Домашка и&nbsp;ее&nbsp;проверка в&nbsp;Гитхабе
+              </small>
+            </div>
           </div>
 
-          <div class="before-after__after">
-            <h2>После курса</h2>
-            <img src="/tests/examples/rspec-example.png"
-              class="before-after__after-bg"
-              width="1040"
-              height="664" />
-            <img src="/tests/examples/neo-small.png"
-              class="before-after__after-neo"
-              width="281"
-              height="271" />
+          <div class="row-aside">
+            <img src="examples/github-1.png" alt="" width="2332" height="1770" style="margin-top: 2.6%" />
+            <br />
+            <img src="examples/github-2.png" alt="" width="2332" height="1770" />
           </div>
         </div>
       </section>
 
-      <section class="full-width-container">
+      <section class="full-width-container nudge-top-container">
         <h2>Что внутри</h2>
 
         <p>Вот уроки, которые мы&nbsp;отправляем:</p>
@@ -355,55 +406,6 @@
         </ul>
       </section>
 
-      <section class="full-width-container">
-        <h2>Как выглядит курс</h2>
-        <figure>
-          <div>
-            <img src="examples/3-top.png" alt="" width="1720" height="1654" />
-          </div>
-
-          <small class="marginnote">
-            Объясняем теорию на&nbsp;пальцах и&nbsp;примерах
-          </small>
-        </figure>
-
-        <figure class="opposite">
-          <div>
-            <img src="examples/4-read-more.png" alt="" width="1720" height="1654" />
-          </div>
-          <small class="marginnote">
-            Примеры, примеры и&nbsp;дополнительное чтение
-          </small>
-        </figure>
-
-        <figure>
-          <div>
-            <img src="examples/2-homework.png" alt="" width="1720" height="1654" />
-          </div>
-          <small class="marginnote">
-            Домашка и&nbsp;странные подписи в&nbsp;подвале
-          </small>
-        </figure>
-
-        <figure class="opposite">
-          <div>
-            <img src="examples/github-1.png" alt="" width="2332" height="1770" />
-          </div>
-          <small class="marginnote">
-            Проверка домашней работы в&nbsp;Гитхабе
-          </small>
-        </figure>
-
-        <figure>
-          <div>
-            <img src="examples/github-2.png" alt="" width="2332" height="1770" />
-          </div>
-          <small class="marginnote">
-             
-          </small>
-        </figure>
-      </section>
-
       <section class="narrow-container">
         <h2>Ответы на&nbsp;вопросы</h2>
 
@@ -431,7 +433,7 @@
           Если курс вам не&nbsp;понравится, вернём деньги пропорционально неотправленным урокам.</p>
       </section>
 
-      <section id="signup" class="narrow-container" style="border: 4px solid #414141;">
+      <section id="signup" class="narrow-container" style="background: rgba(0, 0, 0, .05); border-radius: 4px;">
         <h2>Подписка на&nbsp;курс</h2>
         <p>
           Два варианта подписки: с&nbsp;домашними заданиями и&nbsp;без.
