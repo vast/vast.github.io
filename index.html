@@ -70,7 +70,7 @@
     </article>
 
     <div class="recent_posts">
-      {% for post in site.posts limit:10 %}
+      {% for post in site.posts limit:20 %}
         <article class="post">
           <header>
             <h1 class="post-title">
@@ -111,7 +111,7 @@
     <footer class="old_posts">
       <h1 class="old_posts-title">Ушпешный архив</h1>
       <ul class="old_posts-list">
-        {% for post in site.posts offset:10 %}
+        {% for post in site.posts offset:20 %}
           <li class="{{ post.classes }}">
             <a href="{{ post.url }}">
               {{ post.title }}
