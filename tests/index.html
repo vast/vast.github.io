@@ -18,6 +18,15 @@
         flex: 2;
       }
 
+      a {
+        color: #0b5fa5;
+        box-shadow: none;
+      }
+
+      a:hover, a:active {
+        box-shadow: none;
+      }
+
       figure .marginnote {
         margin: 3.6% 3rem 0 0;
         display: inline-block;
@@ -145,14 +154,15 @@
       }
 
       .curriculum {
-        display: inline-block;
-        width: 33%;
+        flex: 1 1 33%;
         vertical-align: top;
-        padding: 0 1.4rem 0 0;
+        padding: 0 1rem 0 0;
         margin: 0;
-        min-width: 15em;
+        min-width: 10em;
+        line-height: 1.25;
         list-style: none outside;
         box-sizing: border-box;
+        font-size: 77%;
       }
 
       .curriculum:last-child {
@@ -160,12 +170,12 @@
       }
 
       .curriculum li {
-        padding: .4rem 0;
+        padding: .4em 0;
       }
 
       .curriculum__title {
         border-bottom: .5px solid;
-        padding-top: 1rem!important;
+        padding-top: 1em!important;
       }
 
       @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
@@ -372,38 +382,40 @@
         </div>
       </section>
 
-      <section class="full-width-container nudge-top-container">
+      <section class="narrow-container nudge-top-container">
         <h2>Что внутри</h2>
 
         <p>Вот уроки, которые мы&nbsp;отправляем:</p>
 
-        <ul class="curriculum">
-          <li class="curriculum__title">Модульные тесты</li>
-          <li>1. Знакомство с&nbsp;пирамидой Тестоу</li>
-          <li>
-            2. <a href="http://us13.campaign-archive1.com/?u=957e36914c9dc5597ebc97fbd&amp;id=748ef7299e&amp;e=">
-              Что и&nbsp;как тестировать у&nbsp;модуля
-            </a>
-          </li>
-          <li>3. Если модуль использует другой модуль</li>
-          <li>4. 5&nbsp;правил модульных тестов</li>
-        </ul>
+        <div class="row">
+          <ul class="curriculum">
+            <li class="curriculum__title">Модульные тесты</li>
+            <li>1. Знакомство с&nbsp;пирамидой Тестоу</li>
+            <li>
+              2. <a href="http://us13.campaign-archive1.com/?u=957e36914c9dc5597ebc97fbd&amp;id=748ef7299e&amp;e=">
+                Что и&nbsp;как тестировать у&nbsp;модуля
+              </a>
+            </li>
+            <li>3. Если модуль использует другой модуль</li>
+            <li>4. 5&nbsp;правил модульных тестов</li>
+          </ul>
 
-        <ul class="curriculum">
-          <li class="curriculum__title">Ясные и&nbsp;лаконичные тесты</li>
-          <li>5. Пишите для людей</li>
-          <li>6. <a href="http://us13.campaign-archive1.com/?u=957e36914c9dc5597ebc97fbd&amp;id=99bc6d0037">describe и&nbsp;context</a></li>
-          <li>7. before и&nbsp;let</li>
-          <li>8. Одна проверка на&nbsp;тест</li>
-          <li>9. Ничего лишнего</li>
-        </ul>
+          <ul class="curriculum">
+            <li class="curriculum__title">Ясные и&nbsp;лаконичные тесты</li>
+            <li>5. Пишите для людей</li>
+            <li>6. <a href="http://us13.campaign-archive1.com/?u=957e36914c9dc5597ebc97fbd&amp;id=99bc6d0037">describe и&nbsp;context</a></li>
+            <li>7. before и&nbsp;let</li>
+            <li>8. Одна проверка на&nbsp;тест</li>
+            <li>9. Ничего лишнего</li>
+          </ul>
 
-        <ul class="curriculum">
-          <li class="curriculum__title">Тесты в&nbsp;браузере</li>
-          <li>10. Модульные тесты с&nbsp;Jasmine</li>
-          <li>11. UI&nbsp;тесты</li>
-          <li>12. Хорошие сценарии</li>
-        </ul>
+          <ul class="curriculum">
+            <li class="curriculum__title">Тесты в&nbsp;браузере</li>
+            <li>10. Модульные тесты с&nbsp;Jasmine</li>
+            <li>11. UI&nbsp;тесты</li>
+            <li>12. Хорошие сценарии</li>
+          </ul>
+        </div>
       </section>
 
       <section class="narrow-container">
