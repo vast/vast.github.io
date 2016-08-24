@@ -50,10 +50,22 @@ RSpec.describe Alarm do
 end
 ```
 
-Такой тест тяжело читать, и он не отражает намерений автора. Чтобы понять, что `snooze` делает, придется прочитать и «скомпилировать» проверку в голове.
+Не помогает и именованный `subject`:
+
+```ruby
+RSpec.describe Alarm do
+  describe "#snooze" do
+    subject(:alarm) { described_class.new(at: time) }
+
+    it { expect { alarm.snooze }.to change { alarm.at }.by(9.minutes)
+  end
+end
+```
+
+Такие тесты тяжело воспринимать. Чтобы понять, что `snooze` делает, придется прочитать и скомпилировать, расшифровать проверку в голове.
 
 <div class="outstanding outstanding--therule">
-  <code>it { expect(subject) }</code> — очень плохо
+  <code>it { expect(...) }</code> — плохо
 </div>
 
 Чтобы исправить ситуацию, разверните тест и добавьте описание:
