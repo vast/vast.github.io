@@ -3,7 +3,7 @@ title: Проблемы с subject
 layout: default
 ---
 
-`subject` — [хелпер в Rspec](https://github.com/rspec/rspec-core/blob/910eb7fb3184ea23a8cd8bd13b14ac84ca39664c/lib/rspec/core/memoized_helpers.rb#L57-L62) для однострочных тестов. Бывает неявным и явным.
+`subject` — [хелпер в RSpec](https://github.com/rspec/rspec-core/blob/910eb7fb3184ea23a8cd8bd13b14ac84ca39664c/lib/rspec/core/memoized_helpers.rb#L57-L62) для однострочных тестов. Бывает неявным и явным.
 
 ```ruby
 # Неявный subject
