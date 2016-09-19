@@ -9,13 +9,13 @@ description: 'О программировании, технологиях и ж�
 url: 'http://vasily.polovnyov.ru'
 popular_posts: []
 popular_post_urls:
-  - "/posts/tests-junior.html"
   - "/posts/from-stylus-to-postcss.html"
-  - "/posts/git-commit-messages.html"
   - "/posts/double-mock-stub.html"
-  - "/posts/foundation-5-and-ie8.html"
-  - "/posts/stop-comments-deodorants.html"
-  - "/posts/how-to-be-alpha-css-rock-star.html"
-  - "/posts/teenage-testing.html"
+  - "/posts/test-smells-ru.html"
+  - "/posts/tests-junior.html"
+  - "/posts/git-commit-messages.html"
+  - "/posts/describe-vs-context.html"
   - "/posts/three-code-review-rules.html"
   - "/posts/css-inbox.html"
+  - "/posts/stop-comments-deodorants.html"
+  - "/posts/teenage-testing.html"
