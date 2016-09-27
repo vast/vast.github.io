@@ -39,8 +39,8 @@ layout: default
 * [Семислойное тестирование](https://github.com/vast/test-smells/blob/master/smells/unnecessary/7-layer-testing.js) (скоро)
 * [Параноидальные тесты](https://github.com/vast/test-smells/blob/master/smells/unnecessary/paranoid.js) (скоро)
 * [Предварительные проверки](https://github.com/vast/test-smells/blob/master/smells/unnecessary/premature-assertions.js)
-* [Тестовые данные с большим самомнением](https://github.com/vast/test-smells/blob/master/smells/unnecessary/self-important-test-data.js) (скоро)
-* [Тест по номеру](https://github.com/vast/test-smells/blob/master/smells/unnecessary/test-by-number.js) (скоро)
+* [Тестовые данные с большим самомнением](https://github.com/vast/test-smells/blob/master/smells/unnecessary/self-important-test-data.js)
+* [Тестирование (раскраска) по номерам](https://github.com/vast/test-smells/blob/master/smells/unnecessary/test-by-number.js)
 
 ### Нереалистичные тесты
 
