@@ -46,10 +46,10 @@ layout: default
 
 * [Загрязненный испытуемый](https://github.com/vast/test-smells/blob/master/smells/unrealistic/contaminated-test-subject.js)
 * [Фантастические тесты](https://github.com/vast/test-smells/blob/master/smells/unrealistic/fantasy.js) (скоро)
-* [Вторжение в частную жизнь](https://github.com/vast/test-smells/blob/master/smells/unrealistic/invasion-of-privacy.js) (скоро)
-* [Моки без границ](https://github.com/vast/test-smells/blob/master/smells/unrealistic/mockers-without-borders.js) (скоро)
+* [Вторжение в частную жизнь](https://github.com/vast/test-smells/blob/master/smells/unrealistic/invasion-of-privacy.js)
+* [Моки без границ](https://github.com/vast/test-smells/blob/master/smells/unrealistic/mockers-without-borders.js)
 * [Нереальные тесты](https://github.com/vast/test-smells/blob/master/smells/unrealistic/surreal.js)
-* [Рентгеновские тесты](https://github.com/vast/test-smells/blob/master/smells/unrealistic/x-ray-specs.js) (скоро)
+* [Рентгеновские тесты](https://github.com/vast/test-smells/blob/master/smells/unrealistic/x-ray-specs.js)
 
 ### Ненадежные тесты
 
