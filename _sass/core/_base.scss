@@ -155,3 +155,22 @@ pre code {
   font-size: 1em;
   white-space: pre-wrap;
 }
+
+table {
+  margin: 0 0 .75rem;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td, th {
+  padding: .3em 1em 0 0;
+  font-family: Helvetica Neue, Arial, sans-serif;
+  font-size: .875em;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  padding-top: 0;
+  border-bottom: 1px solid #000;
+}
