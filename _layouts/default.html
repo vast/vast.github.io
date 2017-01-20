@@ -61,22 +61,11 @@
       <header class="post-header">
         <h1 class="post-title">{{ page.title }} </h1>
       </header>
+
       <div class="post-contents">
         {{ content }}
-
-        {% if page.skip_tests_announce == nil or (page.skip_tests_announce == false) %}
-          <p>
-            {% if page.has_ps %}
-              P. P. S.
-            {% else %}
-              P. S.
-            {% endif %}
-
-            Я веду <a href="/tests/">дистанционный курс о&nbsp;тестах в&nbsp;Ruby/Rails</a>.
-            С&nbsp;теорией, примерами и домашкой.
-          </p>
-        {% endif %}
       </div>
+
       <footer class="post-meta">
         <small class="post-date">
           ⊙
@@ -120,6 +109,21 @@
             {% endif %}
           </li>
         </ul>
+
+        <div class="post-course">
+          {% if page.skip_tests_announce == nil or (page.skip_tests_announce == false) %}
+            <div class="post-course-img">
+              <a href="/tests/">
+                <img src="/assets/tests-small.png" alt="" width="600" height="577" />
+              </a>
+            </div>
+
+            <div class="post-course-description">
+              <h3><a href="/tests/">Тестовый курс</a></h3>
+              <p>Дистанционный курс о тестировании в Ruby и Rails. С теорией, примерами, домашкой и дополнительными материалами: статьями, советами, видео.</p>
+            </div>
+          {% endif %}
+        </div>
       </footer>
     </article>
   </div>

@@ -15,7 +15,7 @@
 
 .post-nav {
   display: flex;
-  margin: 2.64rem 0 0;
+  margin: 2.64rem 0;
   padding: 0;
   list-style: none outside;
 
@@ -58,6 +58,21 @@
 
 .social-likes {
   margin: .75rem -.3em 0!important;
+}
+
+.post-course {
+  margin-top: 1.25rem;
+  display: flex;
+}
+
+.post-course-img {
+  flex: 1;
+  max-width: 10em;
+}
+
+.post-course-description {
+  flex: 1;
+  margin-top: -3px;
 }
 
 .related-posts {
