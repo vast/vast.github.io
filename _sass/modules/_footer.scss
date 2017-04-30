@@ -5,6 +5,10 @@
 
 .related {
   @include container;
+
+  & + .related {
+    padding-top: 0;
+  }
 }
 
 #footer {

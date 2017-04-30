@@ -86,7 +86,11 @@
     width: 100%;
   }
 
-  li:nth-child(n+10) {
+  &:not(.related-posts--too-old) li:nth-child(n+10) {
+    display: none;
+  }
+
+  &--too-old li:nth-child(n+16) {
     display: none;
   }
 }
