@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    h1 {
+      font-size: 48px;
+    }
+
+    article {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      padding: 0 1em;
+    }
+
+    header {
+      display: flex;
+      align-items: baseline;
+    }
+
+    .article-meta {
+      margin-left: auto;
+    }
+
+    .article-body {
+      display: flex;
+      flex: 1 0 auto;
+      flex-direction: column;
+      justify-content: space-between;
+      border-top: .5px solid #ccc;
+    }
+
+    .lead.is__huge {
+      font-size: 64px;
+    }
+
+    .leads {
+      display: flex;
+      margin: 0 -1em;
+    }
+
+    .leads .lead {
+      flex: 1;
+      padding: 0 1em;
+    }
+
+    * {
+      outline: .5px solid red;
+    }
+  </style>
+</head>
+<body>
+  <article>
+    <header>
+      <h1>Универсальный номер</h1>
+      <section class="article-meta">
+        <span class="article-number">№1</span>
+        <date>Январь 2017</date>
+      </section>
+    </header>
+
+    <section class="article-body">
+      <div class="lead is__huge">
+        Безопасные и не очень способы перевода денег внутри группы компаний
+      </div>
+
+      <div class="leads is__distributed">
+        <div class="lead">Декларации о налоге на прибыль, подозрительные для инспекторов и чиновников, полная подборка возможных вариантов.</div>
+        <div class="lead">Редакция журнала провела исследование, чтобы выяснить, каких показателей эффективности требуют собственники.</div>
+        <div class="lead">Финансовая устойчивость или дивиденды: что может убедить акционеров не забирать все</div>
+      </div>
+    </section>
+  </article>
+</body>
+</html>
