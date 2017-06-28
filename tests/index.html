@@ -274,6 +274,26 @@
         margin-bottom: 1.5rem;
       }
 
+      .buy-it__email input {
+        display: inline-block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: .75rem 1.25rem;
+        margin: 0;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 1.333333;
+        white-space: nowrap;
+        vertical-align: middle;
+        -webkit-appearance: none;
+        border: 2px solid #414141;
+        border-radius: .3rem;
+        color: #414141!important;
+        text-decoration: none;
+        box-shadow: none;
+      }
+
       .legal {
         padding: 6rem 0 0;
         font-size: 18px;
@@ -523,31 +543,28 @@
           Оплата банковской картой. При оплате укажите адрес, на&nbsp;который отправлять уроки.
         </p>
 
-        <form method="POST"
-          action="https://money.yandex.ru/quickpay/confirm.xml"
-          class="buy-it"
+        <script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff.js"></script>
+        <form class="buy-it" onsubmit="pay(this); return false;"
           data-reach-goal="tests-newsletter-signup-click">
+          <input type="hidden" name="terminalkey" value="1498122373819">
+          <input type="hidden" name="frame" value="false">
+          <input type="hidden" name="language" value="ru">
+          <input type="hidden" name="description" value="Подписка на Тестовый курс">
 
-          <input type="hidden" name="receiver" value="41001497426879">
-          <input type="hidden" name="formcomment" value="Тестовый курс">
-          <input type="hidden" name="short-dest" value="Тестовый курс">
-          <input type="hidden" name="label" value="$order_id">
-          <input type="hidden" name="quickpay-form" value="small">
-          <input type="hidden" name="paymentType" value="AC">
-          <input type="hidden" name="targets" value="Подписка на «Тестовый курс»">
-          <input type="hidden" name="need-email" value="true">
-          <input type="hidden" name="successURL" value="http://vasily.polovnyov.ru/tests/?bought=yep">
+          <fieldset class="buy-it__email">
+            <input type="text" placeholder="Электронная почта" name="email" required>
+          </fieldset>
 
           <fieldset>
             <div>
               <label>
-                <input type="radio" name="sum" value="300" checked>
+                <input type="radio" name="amount" value="300" checked>
                12&nbsp;уроков без&nbsp;домашних заданий за&nbsp;300&nbsp;рублей
               </label>
             </div>
             <div>
               <label>
-                <input type="radio" name="sum" value="3000">
+                <input type="radio" name="amount" value="3000">
                 12&nbsp;уроков с&nbsp;домашними заданиями за&nbsp;3000&nbsp;рублей
               </label>
             </div>
