@@ -34,4 +34,4 @@ skip_tests_announce: true
 
 Если нет, поделитесь постом в соцсетях. Вот картинка для Фейсбука:
 
-<img src="/assets/cccccccccar.jpg" class="img--break" width="2048" height="858" />
+<img src="/assets/cccar2.jpg" class="img--break" width="2048" height="858" />
