@@ -53,7 +53,7 @@ a {
 }
 
 p {
-  margin: 0 0 .75rem;
+  margin: 0 0 .92rem;
 }
 
 h1 {
@@ -63,7 +63,7 @@ h1 {
 }
 
 h2 {
-  padding: .84rem 0 .42rem;
+  padding: .66rem 0 .77rem;
   font-size: 1.5rem;
 }
 
@@ -73,16 +73,16 @@ h3 {
 }
 
 ul {
-  margin-bottom: .75rem;
+  margin-bottom: .77rem;
   list-style: none outside;
 }
 
 p+ul, p+ol {
-  margin-top: -.75rem;
+  margin-top: -.92rem;
 }
 
 li {
-  padding: 0 0 .5rem 2.25rem;
+  padding: 0 0 .47rem 2.25rem;
 }
 
 li > ul, li > ol {
@@ -94,7 +94,7 @@ li > ul li, li > ol li {
 }
 
 ol {
-  margin-bottom: .75rem;
+  margin-bottom: .77rem;
   list-style: none outside;
   counter-reset: ol-counter;
 }
@@ -124,12 +124,12 @@ hr {
 }
 
 blockquote {
-  padding: 0 0 0 1.5rem;
-  margin: 0 0 .75rem;
+  padding: 0 0 0 1.88rem;
+  margin: 0 0 .77rem;
   border-left: 5px solid #eee;
 
   &.pull-right {
-    padding: 0 1.5rem 0 0;
+    padding: 0 1.88rem 0 0;
     border-left: none;
     border-right: 5px solid #eee;
     text-align: right;
