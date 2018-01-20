@@ -220,6 +220,11 @@
       }
 
       .quick-buy-btn {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        background-color: #414141;
+        z-index: 9999;
         display: inline-block;
         padding: .75rem 1.25rem;
         margin: 0;
@@ -239,7 +244,7 @@
         border: 2px solid #414141;
         border-radius: .3rem;
         touch-action: manipulation;
-        color: #414141!important;
+        color: #fff!important;
         text-decoration: none;
         box-shadow: none;
         transition: background .3s, color .3s;
@@ -248,7 +253,7 @@
       .quick-buy-btn:hover {
         box-shadow: none;
         color: #fff!important;
-        background: #414141;
+        background: #212121;
       }
 
       .alert {
@@ -352,6 +357,7 @@
         <p class="lead">
         Дистанционный курс о&nbsp;тестировании в&nbsp;Ruby и&nbsp;Rails. С&nbsp;теорией, примерами, домашкой и&nbsp;дополнительными материалами: статьями, советами, видео.
         </p>
+        <a href="#signup" class="quick-buy-btn"><span style="padding: 0 1rem">Купить</span></a>
       </section>
 
       <section class="full-width-container nudge-top-container">
@@ -532,11 +538,7 @@
       <section id="signup" class="narrow-container" style="background: rgba(0, 0, 0, .05); border-radius: 4px;">
         <h2>Подписка на&nbsp;курс</h2>
         <p>
-          Два варианта подписки: с&nbsp;домашними заданиями и&nbsp;без.
-        </p>
-
-        <p>
-          В&nbsp;обоих вариантах вы получаете <a href="#course-contents">12&nbsp;уроков</a> по&nbsp;электронной почте, по&nbsp;2&nbsp;урока в&nbsp;неделю.
+          Два варианта подписки: с&nbsp;домашними заданиями и&nbsp;без. В&nbsp;обоих вариантах вы получаете <a href="#course-contents">12&nbsp;уроков</a> по&nbsp;электронной почте.
         </p>
 
         <p>
