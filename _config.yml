@@ -4,8 +4,8 @@ permalink: /posts/:title.html
 kramdown:
   input: GFM
 
-title: 'Успешный блог'
-description: 'О программировании, технологиях и жизни'
+title: 'Блог Половнёва'
+description: 'О разработке, тестировании и культуре работы'
 url: 'http://vasily.polovnyov.ru'
 popular_posts: []
 popular_post_urls:
