@@ -72,7 +72,16 @@
 
 .post-course-img {
   flex: 1;
-  max-width: 10em;
+  max-width: 15.5em;
+}
+
+@media (max-width: 769px) {
+  .post-course {
+    flex-wrap: wrap;
+  }
+  .post-course-img {
+    min-width: 100%;
+  }
 }
 
 .post-course-description {
