@@ -1,0 +1,935 @@
+<!DOCTYPE html><html xmlns="http://www.w3.org/1999/xhtml" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:o="urn:schemas-microsoft-com:office:office"><head>
+      <!-- NAME: SLIM & TRIM -->
+      <!--[if gte mso 15]>
+      <xml>
+      <o:OfficeDocumentSettings>
+      <o:AllowPNG/>
+      <o:PixelsPerInch>96</o:PixelsPerInch>
+      </o:OfficeDocumentSettings>
+      </xml>
+      <![endif]-->
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>6. describe и context</title>
+
+    <style type="text/css">
+    p{
+      margin:10px 0;
+      padding:0;
+    }
+    table{
+      border-collapse:collapse;
+    }
+    h1,h2,h3,h4,h5,h6{
+      display:block;
+      margin:0;
+      padding:0;
+    }
+    img,a img{
+      border:0;
+      height:auto;
+      outline:none;
+      text-decoration:none;
+    }
+    body,#bodyTable,#bodyCell{
+      height:100%;
+      margin:0;
+      padding:0;
+      width:100%;
+    }
+    .mcnPreviewText{
+      display:none !important;
+    }
+    #outlook a{
+      padding:0;
+    }
+    img{
+      -ms-interpolation-mode:bicubic;
+    }
+    table{
+      mso-table-lspace:0pt;
+      mso-table-rspace:0pt;
+    }
+    .ReadMsgBody{
+      width:100%;
+    }
+    .ExternalClass{
+      width:100%;
+    }
+    p,a,li,td,blockquote{
+      mso-line-height-rule:exactly;
+    }
+    a[href^=tel],a[href^=sms]{
+      color:inherit;
+      cursor:default;
+      text-decoration:none;
+    }
+    p,a,li,td,body,table,blockquote{
+      -ms-text-size-adjust:100%;
+      -webkit-text-size-adjust:100%;
+    }
+    .ExternalClass,.ExternalClass p,.ExternalClass td,.ExternalClass div,.ExternalClass span,.ExternalClass font{
+      line-height:100%;
+    }
+    a[x-apple-data-detectors]{
+      color:inherit !important;
+      text-decoration:none !important;
+      font-size:inherit !important;
+      font-family:inherit !important;
+      font-weight:inherit !important;
+      line-height:inherit !important;
+    }
+    a.mcnButton{
+      display:block;
+    }
+    .mcnImage,.mcnRetinaImage{
+      vertical-align:bottom;
+    }
+    .mcnTextContent{
+      word-break:break-word;
+    }
+    .mcnTextContent img{
+      height:auto !important;
+    }
+    .mcnDividerBlock{
+      table-layout:fixed !important;
+    }
+    body,#bodyTable{
+      background-color:#FCFCFC;
+    }
+    #bodyCell{
+      border-top:0;
+    }
+    h1{
+      color:#202020 !important;
+      font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+      font-size:30px;
+      font-style:normal;
+      font-weight:bold;
+      line-height:125%;
+      letter-spacing:-1px;
+      text-align:left;
+    }
+    h2{
+      color:#202020 !important;
+      font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+      font-size:20px;
+      font-style:normal;
+      font-weight:bold;
+      line-height:125%;
+      letter-spacing:normal;
+      text-align:left;
+    }
+    h3{
+      color:#202020 !important;
+      font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+      font-size:18px;
+      font-style:normal;
+      font-weight:bold;
+      line-height:100%;
+      letter-spacing:normal;
+      text-align:left;
+    }
+    h4{
+      color:#202020 !important;
+      font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+      font-size:16px;
+      font-style:normal;
+      font-weight:bold;
+      line-height:125%;
+      letter-spacing:normal;
+      text-align:left;
+    }
+    #templatePreheader{
+      border-top:0;
+      border-bottom:0;
+    }
+    .preheaderContainer .mcnTextContent,.preheaderContainer .mcnTextContent p{
+      color:#202020;
+      font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+      font-size:10px;
+      line-height:125%;
+      text-align:left;
+    }
+    .preheaderContainer .mcnTextContent a{
+      color:#202020;
+      font-weight:normal;
+      text-decoration:underline;
+    }
+    #templateHeader{
+      border-top:0;
+      border-bottom:0;
+    }
+    .headerContainer .mcnTextContent,.headerContainer .mcnTextContent p{
+      color:#202020;
+      font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+      font-size:16px;
+      line-height:150%;
+      text-align:left;
+    }
+    .headerContainer .mcnTextContent a{
+      color:#202020;
+      font-weight:normal;
+      text-decoration:underline;
+    }
+    #templateBody{
+      border-top:0;
+      border-bottom:0;
+      width:640px;
+    }
+    .bodyContainer .mcnTextContent,.bodyContainer .mcnTextContent p{
+      color:#202020;
+      font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+      font-size:18px;
+      line-height:150%;
+      text-align:left;
+    }
+    .bodyContainer .mcnTextContent a{
+      color:#0086b3;
+      font-weight:normal;
+      text-decoration:underline;
+    }
+    #templateFooter{
+      border-top:0;
+      border-bottom:0;
+    }
+    .footerContainer .mcnTextContent,.footerContainer .mcnTextContent p{
+      color:#505050;
+      font-family:'Lucida Sans Unicode', 'Lucida Grande', sans-serif;
+      font-size:10px;
+      line-height:125%;
+      text-align:left;
+    }
+    .footerContainer .mcnTextContent a{
+      color:#505050;
+      font-weight:normal;
+      text-decoration:underline;
+    }
+  @media only screen and (max-width: 480px){
+    body,table,td,p,a,li,blockquote{
+      -webkit-text-size-adjust:none !important;
+    }
+
+} @media only screen and (max-width: 480px){
+    body{
+      width:100% !important;
+      min-width:100% !important;
+    }
+
+} @media only screen and (max-width: 480px){
+    #templateContainer,#templatePreheader,#templateHeader,#templateBody,#templateFooter{
+      max-width:600px !important;
+      width:100% !important;
+    }
+
+} @media only screen and (max-width: 480px){
+    .mcnRetinaImage{
+      max-width:100% !important;
+    }
+
+} @media only screen and (max-width: 480px){
+    .mcnImage{
+      height:auto !important;
+      width:100% !important;
+    }
+
+} @media only screen and (max-width: 480px){
+    .mcnCartContainer,.mcnCaptionTopContent,.mcnRecContentContainer,.mcnCaptionBottomContent,.mcnTextContentContainer,.mcnBoxedTextContentContainer,.mcnImageGroupContentContainer,.mcnCaptionLeftTextContentContainer,.mcnCaptionRightTextContentContainer,.mcnCaptionLeftImageContentContainer,.mcnCaptionRightImageContentContainer,.mcnImageCardLeftTextContentContainer,.mcnImageCardRightTextContentContainer,.mcnImageCardLeftImageContentContainer,.mcnImageCardRightImageContentContainer{
+      max-width:100% !important;
+      width:100% !important;
+    }
+
+} @media only screen and (max-width: 480px){
+    .mcnBoxedTextContentContainer{
+      min-width:100% !important;
+    }
+
+} @media only screen and (max-width: 480px){
+    .mcnImageGroupContent{
+      padding:9px !important;
+    }
+
+} @media only screen and (max-width: 480px){
+    .mcnCaptionLeftContentOuter .mcnTextContent,.mcnCaptionRightContentOuter .mcnTextContent{
+      padding-top:9px !important;
+    }
+
+} @media only screen and (max-width: 480px){
+    .mcnImageCardTopImageContent,.mcnCaptionBottomContent:last-child .mcnCaptionBottomImageContent,.mcnCaptionBlockInner .mcnCaptionTopContent:last-child .mcnTextContent{
+      padding-top:18px !important;
+    }
+
+} @media only screen and (max-width: 480px){
+    .mcnImageCardBottomImageContent{
+      padding-bottom:9px !important;
+    }
+
+} @media only screen and (max-width: 480px){
+    .mcnImageGroupBlockInner{
+      padding-top:0 !important;
+      padding-bottom:0 !important;
+    }
+
+} @media only screen and (max-width: 480px){
+    .mcnImageGroupBlockOuter{
+      padding-top:9px !important;
+      padding-bottom:9px !important;
+    }
+
+} @media only screen and (max-width: 480px){
+    .mcnTextContent,.mcnBoxedTextContentColumn{
+      padding-right:18px !important;
+      padding-left:18px !important;
+    }
+
+} @media only screen and (max-width: 480px){
+    .mcnImageCardLeftImageContent,.mcnImageCardRightImageContent{
+      padding-right:18px !important;
+      padding-bottom:0 !important;
+      padding-left:18px !important;
+    }
+
+} @media only screen and (max-width: 480px){
+    .mcpreview-image-uploader{
+      display:none !important;
+      width:100% !important;
+    }
+
+} @media only screen and (max-width: 480px){
+    h1{
+      font-size:24px !important;
+      line-height:125% !important;
+    }
+
+} @media only screen and (max-width: 480px){
+    h2{
+      font-size:20px !important;
+      line-height:125% !important;
+    }
+
+} @media only screen and (max-width: 480px){
+    h3{
+      font-size:18px !important;
+      line-height:125% !important;
+    }
+
+} @media only screen and (max-width: 480px){
+    h4{
+      font-size:16px !important;
+      line-height:125% !important;
+    }
+
+} @media only screen and (max-width: 480px){
+    .mcnBoxedTextContentContainer .mcnTextContent,.mcnBoxedTextContentContainer .mcnTextContent p{
+      font-size:18px !important;
+      line-height:125% !important;
+    }
+
+} @media only screen and (max-width: 480px){
+    #templatePreheader{
+      display:block !important;
+    }
+
+} @media only screen and (max-width: 480px){
+    .preheaderContainer .mcnTextContent,.preheaderContainer .mcnTextContent p{
+      font-size:14px !important;
+      line-height:115% !important;
+    }
+
+} @media only screen and (max-width: 480px){
+    .headerContainer .mcnTextContent,.headerContainer .mcnTextContent p{
+      font-size:18px !important;
+      line-height:125% !important;
+    }
+
+} @media only screen and (max-width: 480px){
+    .bodyContainer .mcnTextContent,.bodyContainer .mcnTextContent p{
+      font-size:16px !important;
+      line-height:150% !important;
+    }
+
+} @media only screen and (max-width: 480px){
+    .footerContainer .mcnTextContent,.footerContainer .mcnTextContent p{
+      font-size:12px !important;
+      line-height:115% !important;
+    }
+
+}</style>
+                    <script async="" src="https://ds-aksb-a.akamaihd.net/aksb.min.js"></script><script>var w=window;if(w.performance||w.mozPerformance||w.msPerformance||w.webkitPerformance){var d=document;AKSB=w.AKSB||{},AKSB.q=AKSB.q||[],AKSB.mark=AKSB.mark||function(e,_){AKSB.q.push(["mark",e,_||(new Date).getTime()])},AKSB.measure=AKSB.measure||function(e,_,t){AKSB.q.push(["measure",e,_,t||(new Date).getTime()])},AKSB.done=AKSB.done||function(e){AKSB.q.push(["done",e])},AKSB.mark("firstbyte",(new Date).getTime()),AKSB.prof={custid:"405188",ustr:"",originlat:"0",clientrtt:"69",ghostip:"2.16.181.5",ipv6:false,pct:"10",clientip:"46.72.189.66",requestid:"2662b5d",region:"17073",protocol:"h2",blver:14,akM:"x",akN:"ae",akTT:"O",akTX:"1",akTI:"2662b5d",ai:"287436",ra:"false",pmgn:"",pmgi:"",pmp:"",qc:""},function(e){var _=d.createElement("script");_.async="async",_.src=e;var t=d.getElementsByTagName("script"),t=t[t.length-1];t.parentNode.insertBefore(_,t)}(("https:"===d.location.protocol?"https:":"http:")+"//ds-aksb-a.akamaihd.net/aksb.min.js")}</script>
+                    </head>
+    <body leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0" style="height: 100%;margin: 0;padding: 0;width: 100%;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;background-color: #FCFCFC;">
+        <!---->
+        <center>
+            <table align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;height: 100%;margin: 0;padding: 0;width: 100%;background-color: #FCFCFC;">
+                <tbody><tr>
+                    <td align="center" valign="top" id="bodyCell" style="padding-bottom: 40px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;height: 100%;margin: 0;padding: 0;width: 100%;border-top: 0;">
+                        <!-- BEGIN TEMPLATE // -->
+                        <table border="0" cellpadding="0" cellspacing="0" width="640" id="templateContainer" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <tbody><tr>
+                                <td align="left" valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                    <!-- BEGIN PREHEADER // -->
+                                    <table border="0" cellpadding="0" cellspacing="0" width="640" id="templatePreheader" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border-top: 0;border-bottom: 0;">
+                                        <tbody><tr>
+                                          <td valign="top" class="preheaderContainer" style="padding-top: 9px;padding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnCodeBlock" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class="mcnTextBlockOuter">
+        <tr>
+            <td valign="top" class="mcnTextBlockInner" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <style>
+.headerContainer, .headerContainer .mcnTextContent {
+  padding-top: 16px!important;
+  padding-bottom: 0!important
+}
+
+.mcnTextContent h3 {font-size: 1em; margin: 16px 0 0!important; padding: 0!important}
+
+.mcnTextContent h2 {margin: 58px 0 14px!important; padding: 0!important;}
+
+.mcnTextContent p { margin: 16px 0 }
+.mcnTextContent .last { margin-bottom: 0 }
+.mcnTextContent pre {
+  font-family: Monaco, monospace;
+  font-size: .75em;
+  margin: 16px 0;
+  line-height: 1.5;
+}
+
+.mcnTextContent .highlight.last pre { margin-bottom: 0 }
+
+.mcnTextContent code {
+  font-family: Monaco, monospace;
+  font-size: .9em;
+}
+
+.mcnTextContent h3+p { margin-top: 0 }
+.mcnTextContent p+ul { margin-top: -16px }
+
+.mcnTextContent blockquote, .mcnTextContent blockquote p {
+  margin: 10px 0 10px 16px;
+  padding: 0;
+  font-family: Georgia, Times New Roman, Times, serif!important;
+}
+
+.mcnTextContent ul {
+  list-style: none inside;
+  margin: 0 0 16px;
+  padding: 0 0 0 32px;
+}
+
+.mcnTextContent p.the-most-important-message {
+  color: #f2f2f2;
+  background: #404040;
+  padding: 16px;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.mcnTextContent .highlight+p.the-most-important-message {
+  margin-top: 25px;
+}
+
+.highlight .c { color: #999988; font-style: italic; }
+
+.highlight .err { color: #a61717; background-color: #e3d2d2; }
+
+.highlight .k { font-weight: bold; }
+
+.highlight .o { font-weight: bold; }
+
+.highlight .cm { color: #999988; font-style: italic; }
+
+.highlight .cp { color: #999999; font-weight: bold; }
+
+.highlight .c1 { color: #999988; font-style: italic; }
+
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic; }
+
+.highlight .gd { color: #000000; background-color: #ffdddd; }
+
+.highlight .gd .x { color: #000000; background-color: #ffaaaa; }
+
+.highlight .ge { font-style: italic; }
+
+.highlight .gr { color: #aa0000; }
+
+.highlight .gh { color: #999999; }
+
+.highlight .gi { color: #000000; background-color: #ddffdd; }
+
+.highlight .gi .x { color: #000000; background-color: #aaffaa; }
+
+.highlight .go { color: #888888; }
+
+.highlight .gp { color: #555555; }
+
+.highlight .gs { font-weight: bold; }
+
+.highlight .gu { color: #800080; font-weight: bold; }
+
+.highlight .gt { color: #aa0000; }
+
+.highlight .kc { font-weight: bold; }
+
+.highlight .kd { font-weight: bold; }
+
+.highlight .kn { font-weight: bold; }
+
+.highlight .kp { font-weight: bold; }
+
+.highlight .kr { font-weight: bold; }
+
+.highlight .kt { color: #445588; font-weight: bold; }
+
+.highlight .m { color: #009999; }
+
+.highlight .s { color: #dd1144; }
+
+.highlight .n { color: #333333; }
+
+.highlight .na { color: teal; }
+
+.highlight .nb { color: #0086b3; }
+
+.highlight .nc { color: #445588; font-weight: bold; }
+
+.highlight .no { color: teal; }
+
+.highlight .ni { color: purple; }
+
+.highlight .ne { color: #990000; font-weight: bold; }
+
+.highlight .nf { color: #990000; font-weight: bold; }
+
+.highlight .nn { color: #555555; }
+
+.highlight .nt { color: navy; }
+
+.highlight .nv { color: teal; }
+
+.highlight .ow { font-weight: bold; }
+
+.highlight .w { color: #bbbbbb; }
+
+.highlight .mf { color: #009999; }
+
+.highlight .mh { color: #009999; }
+
+.highlight .mi { color: #009999; }
+
+.highlight .mo { color: #009999; }
+
+.highlight .sb { color: #dd1144; }
+
+.highlight .sc { color: #dd1144; }
+
+.highlight .sd { color: #dd1144; }
+
+.highlight .s2 { color: #dd1144; }
+
+.highlight .se { color: #dd1144; }
+
+.highlight .sh { color: #dd1144; }
+
+.highlight .si { color: #dd1144; }
+
+.highlight .sx { color: #dd1144; }
+
+.highlight .sr { color: #009926; }
+
+.highlight .s1 { color: #dd1144; }
+
+.highlight .ss { color: #990073; }
+
+.highlight .bp { color: #999999; }
+
+.highlight .vc { color: teal; }
+
+.highlight .vg { color: teal; }
+
+.highlight .vi { color: teal; }
+
+.highlight .il { color: #009999; }
+
+.highlight .gc { color: #999; background-color: #EAF2F5; }
+</style>
+            </td>
+        </tr>
+    </tbody>
+</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class="mcnTextBlockOuter">
+        <tr>
+            <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <!--[if mso]>
+        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+        <tr>
+        <![endif]-->
+
+        <!--[if mso]>
+        <td valign="top" width="416" style="width:416px;">
+        <![endif]-->
+                <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 416px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+                    <tbody><tr>
+
+                        <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-left: 18px;padding-bottom: 9px;padding-right: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;font-size: 10px;line-height: 125%;text-align: left;">
+
+                            Задаем структуру теста
+                        </td>
+                    </tr>
+                </tbody></table>
+        <!--[if mso]>
+        </td>
+        <![endif]-->
+
+        <!--[if mso]>
+        <td valign="top" width="224" style="width:224px;">
+        <![endif]-->
+                <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 224px;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+                    <tbody><tr>
+
+                        <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-left: 18px;padding-bottom: 9px;padding-right: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;font-size: 10px;line-height: 125%;text-align: left;">
+
+                            <div style="text-align: right;"><a href="#" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-weight: normal;text-decoration: underline;">В браузере</a></div>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+        <!--[if mso]>
+        </td>
+        <![endif]-->
+
+        <!--[if mso]>
+        </tr>
+        </table>
+        <![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </tbody></table>
+                                    <!-- // END PREHEADER -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left" valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                    <!-- BEGIN HEADER // -->
+                                    <table border="0" cellpadding="0" cellspacing="0" width="640" id="templateHeader" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border-top: 0;border-bottom: 0;">
+                                        <tbody><tr>
+                                            <td valign="top" class="headerContainer" style="padding-top: 9px;padding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class="mcnTextBlockOuter">
+        <tr>
+            <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <!--[if mso]>
+        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+        <tr>
+        <![endif]-->
+
+        <!--[if mso]>
+        <td valign="top" width="640" style="width:640px;">
+        <![endif]-->
+                <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+                    <tbody><tr>
+
+                        <td valign="top" class="mcnTextContent" style="padding-top: 16px!important;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;font-size: 16px;line-height: 150%;text-align: left;">
+
+                            <h1 style="display: block;margin: 0;padding: 0;font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;font-size: 30px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: -1px;text-align: left;color: #202020 !important;">describe и context</h1>
+                        </td>
+                    </tr>
+                </tbody></table>
+        <!--[if mso]>
+        </td>
+        <![endif]-->
+
+        <!--[if mso]>
+        </tr>
+        </table>
+        <![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </tbody></table>
+                                    <!-- // END HEADER -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left" valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                    <!-- BEGIN BODY // -->
+                                    <table border="0" cellpadding="0" cellspacing="0" id="templateBody" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border-top: 0;border-bottom: 0;width: 640px;">
+                                        <tbody><tr>
+                                            <td valign="top" class="bodyContainer" style="padding-top: 9px;padding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class="mcnTextBlockOuter">
+        <tr>
+            <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <!--[if mso]>
+        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+        <tr>
+        <![endif]-->
+
+        <!--[if mso]>
+        <td valign="top" width="640" style="width:640px;">
+        <![endif]-->
+                <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+                    <tbody><tr>
+
+                        <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;font-size: 18px;line-height: 150%;text-align: left;">
+
+                            <p style="margin: 16px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;font-size: 18px;line-height: 150%;text-align: left;">Здравствуйте!</p>
+
+<p style="margin: 16px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;font-size: 18px;line-height: 150%;text-align: left;">В&nbsp;прошлом письме мы&nbsp;говорили о&nbsp;том, что правила и&nbsp;структура в&nbsp;тестах помогает читать и&nbsp;воспринимать&nbsp;их. Сегодня поболтаем о&nbsp;том, как&nbsp;структурировать тесты с&nbsp;помощью&nbsp;<code style="font-family: Monaco, monospace;font-size: .9em;">describe</code> и&nbsp;<code style="font-family: Monaco, monospace;font-size: .9em;">context</code>.</p>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+        <!--[if mso]>
+        </td>
+        <![endif]-->
+
+        <!--[if mso]>
+        </tr>
+        </table>
+        <![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class="mcnDividerBlockOuter">
+        <tr>
+            <td class="mcnDividerBlockInner" style="min-width: 100%;padding: 15px 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top-width: 1px;border-top-style: dotted;border-top-color: #777777;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class="mcnDividerBlockInner" style="padding: 18px;">
+                <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class="mcnTextBlockOuter">
+        <tr>
+            <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <!--[if mso]>
+        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+        <tr>
+        <![endif]-->
+
+        <!--[if mso]>
+        <td valign="top" width="640" style="width:640px;">
+        <![endif]-->
+                <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+                    <tbody><tr>
+
+                        <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;font-size: 18px;line-height: 150%;text-align: left;">
+
+                            <h2 style="display: block;margin: 58px 0 14px!important;padding: 0!important;font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;font-size: 20px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;text-align: left;color: #202020 !important;">Структура теста</h2>
+
+<p style="margin: 16px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;font-size: 18px;line-height: 150%;text-align: left;">Структура&nbsp;— каркас теста, отражающий его логику. Без структуры читать тест сложно: повествование скачет, внимание блуждает, поиск связанных проверок бесит. Сравните:</p>
+
+<div class="highlight">
+<pre style="font-family: Monaco, monospace;font-size: .75em;margin: 16px 0;line-height: 1.5;"><span class="c1" style="color: #999988;font-style: italic;"># Без структуры</span>
+<span class="n" style="color: #333333;">it</span> <span class="s2" style="color: #dd1144;">"#accessible_projects return all system projects when user is admin"</span>
+<span class="n" style="color: #333333;">it</span> <span class="s2" style="color: #dd1144;">"returns no projects when user is not admin"</span>
+<span class="n" style="color: #333333;">it</span> <span class="s2" style="color: #dd1144;">"returns user full name with email"</span>
+
+<span class="c1" style="color: #999988;font-style: italic;"># С describe и context</span>
+<span class="n" style="color: #333333;">describe</span> <span class="s2" style="color: #dd1144;">"#accessible_projects"</span> <span class="k" style="font-weight: bold;">do</span>
+  <span class="n" style="color: #333333;">context</span> <span class="s2" style="color: #dd1144;">"when user is admin"</span> <span class="k" style="font-weight: bold;">do</span>
+    <span class="n" style="color: #333333;">it</span> <span class="s2" style="color: #dd1144;">"returns all system projects"</span>
+  <span class="n" style="color: #333333;">context</span> <span class="s2" style="color: #dd1144;">"when user is NOT admin"</span> <span class="k" style="font-weight: bold;">do</span>
+    <span class="n" style="color: #333333;">it</span> <span class="s2" style="color: #dd1144;">"returns no projects"</span>
+
+<span class="n" style="color: #333333;">describe</span> <span class="s2" style="color: #dd1144;">"#user_name_with_email"</span> <span class="k" style="font-weight: bold;">do</span>
+  <span class="n" style="color: #333333;">it</span> <span class="s2" style="color: #dd1144;">"returns user full name with email in parens"</span>
+</pre>
+</div>
+
+<h2 style="display: block;margin: 58px 0 14px!important;padding: 0!important;font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;font-size: 20px;font-style: normal;font-weight: bold;line-height: 125%;letter-spacing: normal;text-align: left;color: #202020 !important;"><code style="font-family: Monaco, monospace;font-size: .9em;">describe</code> и <code style="font-family: Monaco, monospace;font-size: .9em;">context</code></h2>
+
+<p style="margin: 16px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;font-size: 18px;line-height: 150%;text-align: left;">И <code style="font-family: Monaco, monospace;font-size: .9em;">describe</code>, и <code style="font-family: Monaco, monospace;font-size: .9em;">context</code> объединяют связанные проверки. Я&nbsp;использую <code style="font-family: Monaco, monospace;font-size: .9em;">describe</code> для сущностей (кто, что?), а <code style="font-family: Monaco, monospace;font-size: .9em;">context</code> для состояний (когда, с&nbsp;чем, с&nbsp;какими условиями?). Так легче ориентироваться в&nbsp;возможных ситуациях и&nbsp;исследовать условия.</p>
+
+<div class="highlight">
+<pre style="font-family: Monaco, monospace;font-size: .75em;margin: 16px 0;line-height: 1.5;"><span class="c1" style="color: #999988;font-style: italic;"># Так себе</span>
+<span class="n" style="color: #333333;">context</span> <span class="s2" style="color: #dd1144;">"associations"</span>
+<span class="n" style="color: #333333;">context</span> <span class="s2" style="color: #dd1144;">"#full_name"</span>
+<span class="n" style="color: #333333;">describe</span> <span class="s2" style="color: #dd1144;">"when user is admin"</span>
+<span class="n" style="color: #333333;">describe</span> <span class="s2" style="color: #dd1144;">"with valid params"</span>
+
+<span class="c1" style="color: #999988;font-style: italic;"># Хорошо</span>
+<span class="n" style="color: #333333;">describe</span> <span class="s2" style="color: #dd1144;">"associations"</span>
+<span class="n" style="color: #333333;">describe</span> <span class="s2" style="color: #dd1144;">"#full_name"</span>
+<span class="n" style="color: #333333;">context</span> <span class="s2" style="color: #dd1144;">"when user is admin"</span>
+<span class="n" style="color: #333333;">context</span> <span class="s2" style="color: #dd1144;">"with invalid params"</span>
+</pre>
+</div>
+
+<p style="margin: 16px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;font-size: 18px;line-height: 150%;text-align: left;">Контексты начинаются со&nbsp;слов when, with, given, if. Если они присутствуют в&nbsp;описании проверки, вытаскивайте:</p>
+
+<div class="highlight">
+<pre style="font-family: Monaco, monospace;font-size: .75em;margin: 16px 0;line-height: 1.5;"><span class="c1" style="color: #999988;font-style: italic;"># Плохо: условие, описание ситуации (user is editor) тяжело заметить</span>
+<span class="n" style="color: #333333;">it</span> <span class="s2" style="color: #dd1144;">"returns only published posts when user is not editor"</span>
+<span class="n" style="color: #333333;">it</span> <span class="s2" style="color: #dd1144;">"returns published and draft posts when user is editor"</span>
+
+<span class="c1" style="color: #999988;font-style: italic;"># Хорошо: ситуация явно обозначена контекстом</span>
+<span class="n" style="color: #333333;">context</span> <span class="s2" style="color: #dd1144;">"when user is editor"</span> <span class="k" style="font-weight: bold;">do</span>
+  <span class="n" style="color: #333333;">it</span> <span class="s2" style="color: #dd1144;">"returns published and draft posts"</span>
+
+<span class="n" style="color: #333333;">context</span> <span class="s2" style="color: #dd1144;">"when user is NOT editor"</span> <span class="k" style="font-weight: bold;">do</span>
+  <span class="n" style="color: #333333;">it</span> <span class="s2" style="color: #dd1144;">"returns only published posts"</span>
+</pre>
+</div>
+
+<p style="margin: 16px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;font-size: 18px;line-height: 150%;text-align: left;">Вложенные контексты начинайте с&nbsp;and, чтобы было ясно, что это не&nbsp;все условие:</p>
+
+<div class="highlight">
+<pre style="font-family: Monaco, monospace;font-size: .75em;margin: 16px 0;line-height: 1.5;"><span class="n" style="color: #333333;">context</span> <span class="s2" style="color: #dd1144;">"when user is editor"</span> <span class="k" style="font-weight: bold;">do</span>
+  <span class="n" style="color: #333333;">context</span> <span class="s2" style="color: #dd1144;">"and post is published"</span> <span class="k" style="font-weight: bold;">do</span>
+    <span class="n" style="color: #333333;">it</span> <span class="s2" style="color: #dd1144;">"displays post views/visitors count"</span>
+</pre>
+</div>
+
+<p style="margin: 16px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #202020;font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;font-size: 18px;line-height: 150%;text-align: left;">Используйте <code style="font-family: Monaco, monospace;font-size: .9em;">describe</code> и <code style="font-family: Monaco, monospace;font-size: .9em;">context</code> для задания структуры тестов. Благодаря хорошей, явно выраженной структуре, читатель легко охватывает и&nbsp;воспринимает тесты.</p>
+
+<h3 style="display: block;margin: 16px 0 0!important;padding: 0!important;font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;font-size: 1em;font-style: normal;font-weight: bold;line-height: 100%;letter-spacing: normal;text-align: left;color: #202020 !important;">Ещё почитать-посмотреть</h3>
+
+<ul style="list-style: none inside;margin: 0 0 16px;padding: 0 0 0 32px;">
+  <li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="https://vimeo.com/62389591" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #0086b3;font-weight: normal;text-decoration: underline;">Jake Goulding - Structure of Rspec tests</a></li>
+  <li style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><a href="http://lmws.net/describe-vs-context-in-rspec" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #0086b3;font-weight: normal;text-decoration: underline;">describe vs. context</a></li>
+</ul>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+        <!--[if mso]>
+        </td>
+        <![endif]-->
+
+        <!--[if mso]>
+        </tr>
+        </table>
+        <![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnDividerBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;table-layout: fixed !important;">
+    <tbody class="mcnDividerBlockOuter">
+        <tr>
+            <td class="mcnDividerBlockInner" style="min-width: 100%;padding: 15px 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <table class="mcnDividerContent" border="0" cellpadding="0" cellspacing="0" width="100%" style="min-width: 100%;border-top-width: 1px;border-top-style: dotted;border-top-color: #777777;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                    <tbody><tr>
+                        <td style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                            <span></span>
+                        </td>
+                    </tr>
+                </tbody></table>
+<!--
+                <td class="mcnDividerBlockInner" style="padding: 18px;">
+                <hr class="mcnDividerContent" style="border-bottom-color:none; border-left-color:none; border-right-color:none; border-bottom-width:0; border-left-width:0; border-right-width:0; margin-top:0; margin-right:0; margin-bottom:0; margin-left:0;" />
+-->
+            </td>
+        </tr>
+    </tbody>
+</table><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class="mcnTextBlockOuter">
+        <tr>
+            <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <!--[if mso]>
+        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+        <tr>
+        <![endif]-->
+
+        <!--[if mso]>
+        <td valign="top" width="640" style="width:640px;">
+        <![endif]-->
+                <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+                    <tbody><tr>
+
+                        <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #202020;font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;font-size: 18px;line-height: 150%;text-align: left;">
+
+                            <h3 style="display: block;margin: 16px 0 0!important;padding: 0!important;font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;font-size: 1em;font-style: normal;font-weight: bold;line-height: 100%;letter-spacing: normal;text-align: left;color: #202020 !important;">Домашнее задание</h3>
+
+<p style="margin: 16px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;margin-top: 0;color: #202020;font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;font-size: 18px;line-height: 150%;text-align: left;">Исправьте <a href="https://github.com/vast/oh-my-tests/tree/master/lesson-6" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #0086b3;font-weight: normal;text-decoration: underline;">тесты</a>. Срок&nbsp;— до&nbsp;8&nbsp;часов следующего понедельника. Кроме того, поищите и&nbsp;пришлите пример теста без&nbsp;адекватной структуры:&nbsp;<a href="mailto:vasily@polovnyov.ru" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #0086b3;font-weight: normal;text-decoration: underline;">vasily@polovnyov.ru</a>.</p>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+        <!--[if mso]>
+        </td>
+        <![endif]-->
+
+        <!--[if mso]>
+        </tr>
+        </table>
+        <![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </tbody></table>
+                                    <!-- // END BODY -->
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="left" valign="top" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                                    <!-- BEGIN FOOTER // -->
+                                    <table border="0" cellpadding="0" cellspacing="0" width="640" id="templateFooter" style="border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;border-top: 0;border-bottom: 0;">
+                                        <tbody><tr>
+                                            <td valign="top" class="footerContainer" style="padding-top: 9px;padding-bottom: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"><table border="0" cellpadding="0" cellspacing="0" width="100%" class="mcnTextBlock" style="min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+    <tbody class="mcnTextBlockOuter">
+        <tr>
+            <td valign="top" class="mcnTextBlockInner" style="padding-top: 9px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;">
+                <!--[if mso]>
+        <table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+        <tr>
+        <![endif]-->
+
+        <!--[if mso]>
+        <td valign="top" width="640" style="width:640px;">
+        <![endif]-->
+                <table align="left" border="0" cellpadding="0" cellspacing="0" style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
+                    <tbody><tr>
+
+                        <td valign="top" class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #505050;font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;font-size: 10px;line-height: 125%;text-align: left;">
+
+                            <p style="margin: 16px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #505050;font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;font-size: 10px;line-height: 125%;text-align: left;">Шестое письмо написал после просмотра «Коммандо». Let off some steam, Bennett</p>
+<a href="#" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #505050;font-weight: normal;text-decoration: underline;">Отписаться</a>
+
+<p style="margin-bottom: 4em;margin: 16px 0;padding: 0;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #505050;font-family: 'Lucida Sans Unicode', 'Lucida Grande', sans-serif;font-size: 10px;line-height: 125%;text-align: left;">&nbsp;</p>
+
+                        </td>
+                    </tr>
+                </tbody></table>
+        <!--[if mso]>
+        </td>
+        <![endif]-->
+
+        <!--[if mso]>
+        </tr>
+        </table>
+        <![endif]-->
+            </td>
+        </tr>
+    </tbody>
+</table></td>
+                                        </tr>
+                                    </tbody></table>
+                                    <!-- // END FOOTER -->
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <!-- // END TEMPLATE -->
+                    </td>
+                </tr>
+            </tbody></table>
+        </center>
+
+
+</body></html>
