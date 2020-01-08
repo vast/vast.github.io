@@ -86,6 +86,7 @@
       @media (max-width: 600px) {
         .row { display: block; }
         .row-main img { margin-left: 0; }
+        .is__hiddenOnMobile { display: none; }
       }
 
       .before-after {
@@ -361,7 +362,8 @@
           <b>Последнее обновление:</b> 25 декабря 2019 добавили четыре бонусных письмах с тонкостями
           тестирования рандома, внешних АПИ, рейк-тасков и «мигающих» тестов
         </p>
-        <a href="#signup" class="quick-buy-btn"><span style="padding: 0 1rem">Купить</span></a>
+        <!-- a href="#signup" class="quick-buy-btn"><span style="padding: 0
+          1rem">Подписаться</span></a -->
       </section>
 
       <section class="full-width-container nudge-top-container">
@@ -499,8 +501,12 @@
         <li style="padding-left: 0"><a href="https://www.codeschool.com/courses/testing-with-rspec">Testing with RSpec</a></li>
         </ul>
 
+        <p><strong>Если я куплю курс, по два урока в неделю, это 1000 рублей один раз заплачу или каждый
+          месяц, каждую неделю?</strong><br />
+        Один раз. Никакой подписки или ежемесячных списаний нет.</p>
+
         <p><strong>Как и&nbsp;когда проверят мою домашнюю работу?</strong><br />
-          Мы&nbsp;проверяем домашнюю работу в&nbsp;течение двух дней. Проверка&nbsp;&mdash; самое настоящее кодревью пуллреквеста в&nbsp;Гитхабе. Если проверка задержится, мы&nbsp;вас предупредим.</p>
+          Мы&nbsp;проверяем домашнюю работу в&nbsp;течение двух дней. Проверка&nbsp;&mdash; кодревью пуллреквеста в&nbsp;Гитхабе. Если проверка задержится, мы&nbsp;вас предупредим.</p>
 
         <p><strong>Что если уроки не&nbsp;приходят?</strong><br />
           Напишите на&nbsp;<a href="mailto:vasily@polovnyov.ru">vasily@polovnyov.ru</a>. Если проблему с&nbsp;доставкой писем не&nbsp;сможем исправить, вернём деньги.</p>
@@ -623,18 +629,20 @@
       </section>
 
       <section id="signup" class="narrow-container" style="background: rgba(0, 0, 0, .05); border-radius: 4px;">
-        <h2>Подписка на&nbsp;курс</h2>
+        <h2>Подписаться</h2>
         <p>
-          Два варианта подписки: с&nbsp;домашними заданиями и&nbsp;без. В&nbsp;обоих вариантах вы получаете <a href="#course-contents">16&nbsp;уроков</a> по&nbsp;электронной почте.
+          Два варианта: с&nbsp;проверкой домашки и&nbsp;без. В&nbsp;обоих вариантах вы получаете
+          <a href="#course-contents">16&nbsp;уроков</a> с домашними заданиями по&nbsp;электронной
+          почте.
         </p>
 
         <p>
-          При подписке с&nbsp;домашними заданиями дополнительно получаете практические задания в&nbsp;Гитхабе.
+          При подписке с&nbsp;проверкой домашки дополнительно получаете практические задания в&nbsp;Гитхабе.
           Выполняете задание, открываете пулреквест, проверка&nbsp;&mdash; кодревью в&nbsp;течение двух дней.
         </p>
 
         <p>
-          Оплата банковской картой. При оплате укажите адрес, на&nbsp;который отправлять уроки.
+          Оплата банковской картой. При оплате укажите адрес, на&nbsp;который отправлять письма.
         </p>
 
         <script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff.js"></script>
@@ -653,27 +661,29 @@
             <div>
               <label>
                 <input type="radio" name="amount" value="1000" checked>
-               по 2 урока в неделю за&nbsp;1000&nbsp;рублей
+               по 2 письма в неделю за&nbsp;1000&nbsp;рублей
               </label>
             </div>
 
             <div>
               <label>
                 <input type="radio" name="amount" value="2000">
-                16 уроков разом за&nbsp;2000&nbsp;рублей
+                16 писем разом за&nbsp;2000&nbsp;рублей
               </label>
             </div>
 
             <div>
               <label>
                 <input type="radio" name="amount" value="5000">
-                16&nbsp;уроков с&nbsp;домашними заданиями за&nbsp;5000&nbsp;рублей
+                по 2 письма в неделю с&nbsp;проверкой домашки за&nbsp;5000&nbsp;рублей
               </label>
             </div>
           </fieldset>
 
           <fieldset class="buy-it__submits">
-            <input type="submit" value="Купить за 1000 ₽" class="buy-btn">
+            <button type="submit" class="buy-btn">
+              Подписаться <span class="is__hiddenOnMobile">на 16 писем </span>за 1000 ₽
+            </button>
           </fieldset>
         </form>
       </section>
@@ -706,8 +716,8 @@
 
 
       $('.buy-it').on('change', 'input:radio', function() {
-        var text = 'Купить за ' + this.value + ' ₽';
-        $('.buy-btn').val(text);
+        var text = 'Подписаться <span class="is__hiddenOnMobile">на 16 писем </span>за ' + this.value + ' ₽';
+        $('.buy-btn').html(text);
       });
     </script>
   </body>
