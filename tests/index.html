@@ -59,30 +59,21 @@
 
       .row {
         display: flex;
+        margin-bottom: 3rem;
       }
 
       .row-main {
         flex: 3;
         position: relative;
-        text-align: center;
-      }
-
-      .row-main img {
-        margin-left: -3.4%;
       }
 
       .row-aside {
-        flex: 2;
+        flex: 1;
         position: relative;
-        text-align: center;
       }
 
       .row--opposite .row-main { order: 2; }
       .row--opposite .row-aside { order: 1; }
-
-      .row--opposite .row-main img {
-        margin-left: 0;
-      }
 
       @media (max-width: 600px) {
         .row { display: block; }
@@ -371,18 +362,55 @@
       <section class="full-width-container nudge-top-container">
         <div class="row">
           <div class="row-main">
-            <img src="examples/4-read-more.png" alt="" width="1720" height="1654" />
+            <img
+              src="examples/4-read-more.png"
+              alt=""
+              width="1720"
+              height="1654"
+              style="margin: -3.2% 0 -3.5%;"/>
           </div>
 
           <div class="row-aside">
-            <img src="examples/3-top.png" alt="" width="1720" height="1654" style="margin-top: 1.7%" />
-            <div style="position: absolute; margin-top: -6%; width: 100%;">
-              <small>
-                Объясняем теорию на&nbsp;пальцах и&nbsp;примерах
-              </small>
-            </div>
+            <p>Объясняем теорию на пальцах</p>
           </div>
         </div>
+
+        <div class="row">
+          <div class="row-main">
+            <img src="examples/3-top.png" alt="" width="1720" height="1654"
+            style="margin: -3.2% 0 -3.5%;" />
+          </div>
+
+          <div class="row-aside">
+            <p>И на примерах</p>
+          </div>
+        </div>
+
+        <div class="row row--opposite">
+          <div class="row-main">
+            <img src="examples/homework-code.png" alt="" width="1137" height="885"
+              style="margin: -2.2% 0 -2.5%"/>
+          </div>
+
+          <div class="row-aside">
+            <p>Задаем домашние задания</p>
+          </div>
+        </div>
+
+        <div class="row row--opposite">
+          <div class="row-main">
+            <img src="examples/github-1.png" alt="" width="2332" height="1770"
+              style="margin: -3.2% 0 -3.5%"/>
+            <img src="examples/github-2.png" alt="" width="2332" height="1770"
+              style="margin: -3.2% 0 -3.5%"/>
+          </div>
+
+          <div class="row-aside">
+            <p>И проверяем их в Гитхабе</p>
+          </div>
+        </div>
+
+
       </section>
 
       <section class="narrow-container nudge-top-container">
@@ -409,27 +437,8 @@
         </p>
       </section>
 
-      <section class="full-width-container nudge-top-container">
-        <div class="row row--opposite">
-          <div class="row-main">
-            <img src="examples/github-1.png" alt="" width="2332" height="1770" />
-            <div style="position: absolute; margin-top: -5%; width: 100%;">
-              <small>
-              Домашка и&nbsp;ее&nbsp;проверка в&nbsp;Гитхабе
-              </small>
-            </div>
-          </div>
-
-          <div class="row-aside">
-            <img src="examples/github-2.png" alt="" width="2332" height="1770"  style="margin-top: 1.4%" />
-            <br />
-            <img src="examples/homework-code.png" alt="" width="1137" height="885" />
-          </div>
-        </div>
-      </section>
-
       <section class="narrow-container nudge-top-container">
-        <h2>Автор</h2>
+        <h2>Кто автор</h2>
         <p>Меня зовут Василий Половнёв, последние пять лет я работаю ведущим разработчиком в Бюро
         Горбунова: отвечаю за сроки и качество.</p>
         <p>Я специализируюсь на&nbsp;бэкенде и&nbsp;клиентской оптимизации:</p>
@@ -633,9 +642,8 @@
       <section id="signup" class="narrow-container" style="background: rgba(0, 0, 0, .05); border-radius: 4px;">
         <h2>Подписаться</h2>
         <p>
-          Два варианта: с&nbsp;проверкой домашки и&nbsp;без. В&nbsp;обоих вариантах вы получаете
-          <a href="#course-contents">16&nbsp;уроков</a> с домашними заданиями по&nbsp;электронной
-          почте.
+          Два варианта: с проверкой домашки и без. В обоих вариантах вы получаете
+          по электронной почте <a href="#course-contents">16 уроков с домашними заданиями</a>.
         </p>
 
         <p>
@@ -662,29 +670,29 @@
           <fieldset>
             <div>
               <label>
-                <input type="radio" name="amount" value="1000" checked>
-               по 2 письма в неделю за&nbsp;1000&nbsp;рублей
+                <input type="radio" name="amount" value="5000" checked>
+                по 2 письма в неделю с проверкой домашки за 5000 ₽
               </label>
             </div>
 
             <div>
               <label>
                 <input type="radio" name="amount" value="2000">
-                16 писем разом за&nbsp;2000&nbsp;рублей
+                16 писем разом за 2000 ₽
               </label>
             </div>
 
             <div>
               <label>
-                <input type="radio" name="amount" value="5000">
-                по 2 письма в неделю с&nbsp;проверкой домашки за&nbsp;5000&nbsp;рублей
+                <input type="radio" name="amount" value="1000">
+               по 2 письма в неделю за 1000 рублей
               </label>
             </div>
           </fieldset>
 
           <fieldset class="buy-it__submits">
             <button type="submit" class="buy-btn">
-              Подписаться <span class="is__hiddenOnMobile">на 16 писем </span>за 1000 ₽
+              Подписаться <span class="is__hiddenOnMobile">на 16 писем </span>за 5000 ₽
             </button>
           </fieldset>
         </form>
