@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="ru" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Как написать первый тест с RSpec— бесплатный вводный курс по Ruby и RSpec</title>
+    <link rel="stylesheet" href="/css/application.css" media="screen, projection" />
+    <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 980px)" />
+    <link rel="stylesheet" href="https://npmcdn.com/ilyabirman-likely@2.1.0/release/likely.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="Как написать первый тест с RSpec" />
+    <meta property="og:description" content="Бесплатный вводный курс по Ruby и RSpec" />
+    <meta property="og:image" content="http://vasily.polovnyov.ru/tests/examples/3-top.png" />
+    <style>
+      figure {
+        display: flex;
+        margin: 0;
+        padding: 0;
+      }
+
+      figure aside {
+        flex: 2;
+      }
+
+      a {
+        color: #0b5fa5;
+        box-shadow: inset 0 -2px 0 -1px rgba(11, 95, 165, .35);
+      }
+
+      figure .marginnote {
+        margin: 3.6% 3rem 0 0;
+        display: inline-block;
+        max-width: 100px;
+      }
+
+      figure div {
+        flex: 3;
+      }
+
+      figure.opposite div {
+        order: 2;
+      }
+
+      figure.opposite aside {
+        order: 1;
+        text-align: right;
+      }
+
+      figure.opposite .marginnote {
+        margin: 3.6% 0 0 3rem;
+        text-align: right;
+        max-width: 150px;
+      }
+
+      blockquote {
+        font-size: 88%;
+        margin-bottom: 3rem;
+      }
+
+      .row {
+        display: flex;
+        margin-bottom: 3rem;
+      }
+
+      .row-main {
+        flex: 3;
+        position: relative;
+      }
+
+      .row-aside {
+        flex: 1;
+        position: relative;
+      }
+
+      .row--opposite .row-main { order: 2; }
+      .row--opposite .row-aside { order: 1; }
+
+      @media (max-width: 600px) {
+        .row { display: block; }
+        .row-main img { margin-left: 0; }
+        .is__hiddenOnMobile { display: none; }
+      }
+
+      .before-after {
+        display: flex;
+      }
+
+      .before-after h2 {
+        text-align: center;
+      }
+
+      .before-after__before,
+      .before-after__after {
+        position: relative;
+        flex: 1;
+        padding: 1rem 1rem 0;
+        border-bottom: .5px solid #ccc;
+      }
+
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+        .before-after__before,
+        .before-after__after {
+          border-bottom: 1px solid #ccc;
+        }
+      }
+
+      .before-after__before-travolta,
+      .before-after__after-neo {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 280px;
+        margin-left: -140px;
+      }
+
+      @media (max-width: 1100px) {
+        .before-after__before-travolta,
+        .before-after__after-neo {
+          width: 180px;
+          margin-left: -90px;
+        }
+      }
+
+      @media (max-width: 786px) {
+        .before-after__before-travolta,
+        .before-after__after-neo {
+          width: 280px;
+          margin-left: -140px;
+        }
+
+        .before-after {
+          flex-direction: column;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .before-after__before-travolta,
+        .before-after__after-neo {
+          width: 160px;
+          margin-left: -80px;
+        }
+
+        .before-after {
+          flex-direction: column;
+        }
+      }
+
+      .before-after__before-bg {
+        -webkit-filter: blur(1px);
+        filter: blur(1px);
+      }
+
+      .curriculum {
+        flex: 1 1 33%;
+        vertical-align: top;
+        padding: 0 1rem .75rem 0;
+        margin: 0;
+        min-width: 10em;
+        line-height: 1.25;
+        list-style: none outside;
+        box-sizing: border-box;
+        font-size: 77%;
+      }
+
+      .curriculum:last-child {
+        padding-right: 0;
+      }
+
+      .curriculum li {
+        padding: .4em 0;
+      }
+
+      .curriculum__title {
+        border-bottom: .5px solid;
+        padding-top: 0!important;
+      }
+
+      @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+        .curriculum__title {
+          border-bottom: 1px solid;
+        }
+      }
+
+      .buy-btn {
+        display: inline-block;
+        padding: .75rem 1.25rem;
+        margin: 0;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 1.333333;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border: 1px solid transparent;
+        border-radius: .3rem;
+        touch-action: manipulation;
+
+        color: #fff;
+        background-color: #414141;
+        border-color: #414141;
+      }
+
+      .buy-btn:hover {
+        background-color: #212121;
+        border-color: #212121;
+      }
+
+      .quick-buy-btn {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        background-color: #414141;
+        z-index: 9999;
+        display: inline-block;
+        padding: .75rem 1.25rem;
+        margin: 0;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 1.333333;
+        text-align: center;
+        white-space: nowrap;
+        vertical-align: middle;
+        cursor: pointer;
+        -webkit-appearance: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        border: 2px solid #414141;
+        border-radius: .3rem;
+        touch-action: manipulation;
+        color: #fff!important;
+        text-decoration: none;
+        box-shadow: none;
+        transition: background .3s, color .3s;
+      }
+
+      .quick-buy-btn:hover {
+        box-shadow: none;
+        color: #fff!important;
+        background: #212121;
+      }
+
+      .alert {
+        background-color: #fcf8e3;
+        padding: 15px 12.5%;
+        margin-bottom: 1rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        display: none;
+      }
+
+      .has-bought-subscription .alert--bought {
+        display: block;
+      }
+
+      .buy-it {
+        padding: 2.75rem 0 0;
+      }
+
+      .buy-it fieldset {
+        margin-bottom: 1.5rem;
+      }
+
+      .buy-it__email input {
+        display: inline-block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: .75rem 1.25rem;
+        margin: 0;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 1.25rem;
+        font-weight: 400;
+        line-height: 1.333333;
+        white-space: nowrap;
+        vertical-align: middle;
+        -webkit-appearance: none;
+        border: 2px solid #414141;
+        border-radius: .3rem;
+        color: #414141!important;
+        text-decoration: none;
+        box-shadow: none;
+      }
+
+      .legal {
+        padding: 6rem 0 0;
+        font-size: 18px;
+        font-family: Helvetica Neue, Arial, sans-serif;
+      }
+
+      .disabled {
+        opacity: .6;
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body class="is__ready">
+  <script>
+    if (window.location.search.indexOf('bought') !== -1 ) {
+      document.body.className += ' has-bought-subscription';
+    }
+  </script>
+
+  <script type="text/javascript">
+      (function (d, w, c) {
+          (w[c] = w[c] || []).push(function() {
+              try {
+                  w.yaCounter37100705 = new Ya.Metrika({
+                      id:37100705,
+                      clickmap:true,
+                      trackLinks:true,
+                      accurateTrackBounce:true,
+                      webvisor:true
+                  });
+              } catch(e) { }
+          });
+
+          var n = d.getElementsByTagName("script")[0],
+              s = d.createElement("script"),
+              f = function () { n.parentNode.insertBefore(s, n); };
+          s.type = "text/javascript";
+          s.async = true;
+          s.src = "https://mc.yandex.ru/metrika/watch.js";
+
+          if (w.opera == "[object Opera]") {
+              d.addEventListener("DOMContentLoaded", f, false);
+          } else { f(); }
+      })(document, window, "yandex_metrika_callbacks");
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/37100705" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+
+    <article class="global-container">
+      <section class="narrow-container">
+        <h1>Как написать первый тест с RSpec</h1>
+        <p class="lead">
+        Бесплатный вводный курс по Ruby, RSpec и TDD: напишем первый тест, разберемся с RSpec
+        и организацией тестов.
+        </p>
+        <p>
+          <b>Скоро.</b> Оставьте почту, чтобы узнать, когда откроется запись на курс:
+        </p>
+<!-- Begin Mailchimp Signup Form -->
+<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; width:100%;}
+  #mc_embed_signup form { text-align: left; margin-top: calc(-.41rem - 10px); }
+	/* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
+	   We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+</style>
+<div id="mc_embed_signup">
+<form action="https://polovnyov.us13.list-manage.com/subscribe/post?u=957e36914c9dc5597ebc97fbd&amp;id=b313debbba" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+    <div id="mc_embed_signup_scroll">
+	
+	<input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Эл. почта" required>
+    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_957e36914c9dc5597ebc97fbd_b313debbba" tabindex="-1" value=""></div>
+    <div class="clear"><input type="submit" value="Оставить" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+    </div>
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+      </section>
+
+      <section class="narrow-container">
+        <h2>Для кого</h2>
+        <p>Для разработчиков знакомых с Ruby, но пока не пишущих тесты. Для тех, кто знает, что
+        стоит писать тесты, но не знает, с чего начать.</p>
+      </section>
+
+      <section class="narrow-container nudge-top-container">
+        <h2>Чем полезен</h2>
+        <p>
+          Курс поможет научиться проверять собственную работу автоматическими тестами.
+          Напишем первый тест, разберемся с RSpec и организацией тестов.
+        </p>
+
+        <p>
+          В курсе предусмотрена практика.
+          Набьёте на ней руку и станете писать тесты быстрее чем код.
+        </p>
+      </section>
+
+
+      <section class="narrow-container nudge-top-container">
+        <h2>Кто автор</h2>
+        <p>Меня зовут Василий Половнёв, последние пять лет я работаю ведущим разработчиком в Бюро
+        Горбунова: отвечаю за сроки и качество.</p>
+        <p>Я специализируюсь на&nbsp;бэкенде и&nbsp;клиентской оптимизации:</p>
+        <ul>
+<li>сделал <a href="https://www.facebook.com/artgorbunov/posts/10153976230192710">полнотекстовый поиск</a> и&nbsp;закладки в&nbsp;книгах;</li>
+<li>исправил <a href="https://readymag.com/tehnovedro/488569/6/">утечки памяти</a> в&nbsp;книгах на&nbsp;Айпаде, <nobr class="typo">из-за</nobr>&nbsp;которых выход планшетной версии «Типографики и&nbsp;вёрстки» был под&nbsp;вопросом;</li>
+<li>собрал Педанта, <a href="https://readymag.com/tehnovedro/488569/5/">инструмент для&nbsp;визуального тестирования книг</a> в&nbsp;Сафари, Хроме и&nbsp;Айпаде;</li>
+<li>покрыл тестами, переписал, отладил и&nbsp;запустил билинг издательства бюро <nobr class="typo">по-живому</nobr>;</li>
+<li>перенёс сайт бюро с одного домена на другой, не теряя пользовательских данных, <a
+    href="https://bureau.ru/soviet/20180301/">покрыв переезд автотестами</a>;</li>
+<li>выпустил серию статей <a href="https://bureau.ru/soviet/selected/vasiliy-polovnev/kak-borotsya-s-bagami/">об отладке и систематической борьбе с багами</a>.</li>
+</ul>
+        <p>Я хочу поделиться опытом работы с тестами и помочь начинающим, как можно быстрее начать
+        писать хорошие тесты. Мне важно, чтобы разработчики делали качественные продукты и имели
+        хорошую репутацию у продактов, тестировщиков и дизайнеров.</p>
+      </section>
+
+
+      <footer class="narrow-container">
+        <div class="likely likely-big">
+          <div class="twitter">Твитнуть</div>
+          <div class="facebook">Поделиться</div>
+          <div class="telegram">Отправить</div>
+          <div class="vkontakte">Поделиться</div>
+        </div>
+        <div class="legal">
+          ИП Половнёв Василий Сергеевич<br />
+          ОГРНИП 316463200088482 &middot; ИНН 463229901017<br />
+          Эл. почта для связи: <a href="mailto:vasily@polovnyov.ru">vasily@polovnyov.ru</a>
+        </div>
+      </footer>
+    </article>
+
+    <script src="https://npmcdn.com/ilyabirman-likely@2.1.0/release/likely.js"></script>
+  </body>
+</html>
