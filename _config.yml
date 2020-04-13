@@ -6,7 +6,7 @@ kramdown:
 
 title: 'Блог Половнёва'
 description: 'О разработке, тестировании и культуре работы'
-url: 'http://vasily.polovnyov.ru'
+url: 'https://vasily.polovnyov.ru'
 popular_posts: []
 popular_post_urls:
   - "/posts/double-mock-stub.html"
