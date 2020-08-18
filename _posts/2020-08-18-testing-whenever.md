@@ -11,7 +11,7 @@ every 1.day, at: "03:30 am", roles: %i(backupable) do
     backup:assets
   ).join(" ")
 end
-```ruby
+```
 
 При деплое whenever взорвался:
 ```
