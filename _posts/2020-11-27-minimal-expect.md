@@ -7,7 +7,7 @@ layout: default
 
 ```ruby
 context "when coupon is applied" do
-  it "charges user $500 dollars" do
+  it "charges user $500" do
     allow(Cashier).to receive(:charge)
 
     purchase.perform
@@ -28,7 +28,7 @@ end
 
 ```ruby
 context "when coupon is applied" do
-  it "charges user $500 dollars" do
+  it "charges user $500" do
     allow(Cashier).to receive(:charge)
 
     purchase.perform
