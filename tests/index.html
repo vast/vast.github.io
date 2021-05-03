@@ -77,7 +77,7 @@
 
       @media (max-width: 600px) {
         .row { display: block; }
-        .row-main img { margin-left: 0; }
+        .row-main img { margin-left: 0 !important; }
         .is__hiddenOnMobile { display: none; }
       }
 
@@ -312,7 +312,7 @@
   </script>
 
   <div class="alert alert--bought">
-    Спасибо! Вы&nbsp;подписались на&nbsp;«Тестовый курс». Скоро придет письмо с&nbsp;дальнейшими инструкциями.
+    Спасибо! Вы&nbsp;записались на&nbsp;«Тестовый курс». Скоро придет письмо с&nbsp;дальнейшими инструкциями.
   </div>
 
   <script type="text/javascript">
@@ -352,22 +352,20 @@
         домашкой и дополнительными материалами: статьями, советами, видео.
         </p>
         <p>
-          <b>Последнее обновление:</b> 25 декабря 2019 добавили четыре бонусных письмах с тонкостями
+          <b>Последнее обновление:</b> 25 декабря 2019 добавили четыре бонусных урока с тонкостями
           тестирования рандома, внешних АПИ, рейк-тасков и «мигающих» тестов
         </p>
-        <!-- a href="#signup" class="quick-buy-btn"><span style="padding: 0
-          1rem">Подписаться</span></a -->
       </section>
 
       <section class="full-width-container nudge-top-container">
         <div class="row">
           <div class="row-main">
             <img
-              src="examples/4-read-more.png"
+              src="examples/4-read-more.png?v=2"
               alt=""
-              width="1720"
-              height="1654"
-              style="margin: -3.2% 0 -3.5%;"/>
+              width="1436"
+              height="1554"
+              style="border: 1px solid #ccc; border-radius: 10px; margin: 0 0 0 -2.2%" />
           </div>
 
           <div class="row-aside">
@@ -377,8 +375,8 @@
 
         <div class="row">
           <div class="row-main">
-            <img src="examples/3-top.png" alt="" width="1720" height="1654"
-            style="margin: -3.2% 0 -3.5%;" />
+            <img src="examples/3-top.png?v=2" alt="" width="1436" height="1554"
+            style="border: 1px solid #ccc; border-radius: 10px; margin: 0 0 0 -2.2%" />
           </div>
 
           <div class="row-aside">
@@ -464,7 +462,7 @@
         для сотрудников вашей компании, чтобы вся команда училась синхронно. График занятий
         индивидуальный для каждой компании. Участники обсуждают с преподавателем вопросы
         из ежедневной работы — не боясь показать тесты и код посторонним.</p>
-        <p>Чтобы начать разговор напишите:<br/>
+        <p>Чтобы начать разговор, напишите:<br/>
         <a href="mailto:vasily@polovnyov.ru">vasily@polovnyov.ru</a></p>
       </section>
 
@@ -529,7 +527,7 @@
         <p> </p>
 
 
-        <p><strong>Если я куплю курс, по два урока в неделю, это 1600 рублей один раз заплачу или каждый
+        <p><strong>Если я куплю курс, это 2000 рублей один раз заплачу или каждый
           месяц, каждую неделю?</strong><br />
         Один раз. Никакой подписки или ежемесячных списаний нет.</p>
 
@@ -541,11 +539,8 @@
         <p><strong>Как и&nbsp;когда проверят мою домашнюю работу?</strong><br />
           Мы&nbsp;проверяем домашнюю работу в&nbsp;течение двух дней. Проверка&nbsp;&mdash; кодревью пуллреквеста в&nbsp;Гитхабе. Если проверка задержится, мы&nbsp;вас предупредим.</p>
 
-        <p><strong>Что если уроки не&nbsp;приходят?</strong><br />
-          Напишите на&nbsp;<a href="mailto:vasily@polovnyov.ru">vasily@polovnyov.ru</a>. Если проблему с&nbsp;доставкой писем не&nbsp;сможем исправить, вернём деньги.</p>
-
         <p><strong>Можно&nbsp;ли отказаться?</strong><br />
-          Если курс вам не&nbsp;понравится, вернём деньги пропорционально неотправленным урокам.</p>
+          Конечно. Если курс вам не&nbsp;понравится в первую неделю, вернём деньги.</p>
 
         <p>
           <strong>Что еще почитать по&nbsp;тестам?</strong><br />
@@ -779,20 +774,20 @@
       </section>
 
       <section id="signup" class="narrow-container" style="background: rgba(0, 0, 0, .05); border-radius: 4px;">
-        <h2>Подписаться</h2>
+        <h2>Записаться</h2>
         <p>
           Курс идёт шесть недель. Есть два варианта: с проверкой домашки и без.
-          В обоих вариантах вы получаете по электронной почте
+          В обоих вариантах вы получаете 
           <a href="#course-contents">16 уроков с домашними заданиями</a>.
         </p>
 
         <p>
-          При подписке с&nbsp;проверкой домашки дополнительно получаете практические задания в&nbsp;Гитхабе.
+          При записи с&nbsp;проверкой домашки дополнительно получаете практические задания в&nbsp;Гитхабе.
           Выполняете задание, открываете пулреквест, проверка&nbsp;&mdash; кодревью в&nbsp;течение двух дней.
         </p>
 
         <p>
-          Оплата банковской картой. При оплате укажите адрес, на&nbsp;который отправлять письма.
+          Оплата банковской картой. При оплате укажите адрес, на&nbsp;который прислать уроки.
         </p>
 
         <script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff.js"></script>
@@ -801,7 +796,7 @@
           <input type="hidden" name="terminalkey" value="1498122373819">
           <input type="hidden" name="frame" value="false">
           <input type="hidden" name="language" value="ru">
-          <input type="hidden" name="description" value="Подписка на Тестовый курс">
+          <input type="hidden" name="description" value="Запись на Тестовый курс">
 
           <fieldset class="buy-it__email">
             <input type="text" placeholder="Электронная почта" name="email" required>
@@ -810,29 +805,22 @@
           <fieldset>
             <div>
               <label>
-                <input type="radio" name="amount" value="9000">
-                по 2 письма в неделю с проверкой домашки за 9000 ₽
+                <input type="radio" name="amount" value="12000">
+                 16 уроков с проверкой домашки за 12000 ₽
               </label>
             </div>
 
-            <!-- div>
-              <label>
-                <input type="radio" name="amount" value="2000">
-                16 писем разом за 2000 ₽
-              </label>
-            </div -->
-
             <div>
               <label>
-                <input type="radio" name="amount" value="1600" checked>
-                по 2 письма в неделю за 1600 ₽
+                <input type="radio" name="amount" value="2000" checked>
+                16 уроков без домашки за 2000 ₽
               </label>
             </div>
           </fieldset>
 
           <fieldset class="buy-it__submits">
             <button type="submit" class="buy-btn">
-              Подписаться <span class="is__hiddenOnMobile">на 16 писем </span>за 1600 ₽
+              Записаться за 2000 ₽
             </button>
           </fieldset>
         </form>
@@ -866,7 +854,7 @@
 
 
       $('.buy-it').on('change', 'input:radio', function() {
-        var text = 'Подписаться <span class="is__hiddenOnMobile">на 16 писем </span>за ' + this.value + ' ₽';
+        var text = 'Записаться за ' + this.value + ' ₽';
         $('.buy-btn').html(text);
       });
     </script>
