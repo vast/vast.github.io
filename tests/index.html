@@ -249,6 +249,35 @@
         background: #212121;
       }
 
+      .topbar {
+        background: rgba(255, 255, 255, 1);
+        z-index: 100;
+        position: sticky;
+        top: 0;
+        left: 0;
+        right: 0;
+        padding: .125em 12.5% .3em;
+        line-height: 1;
+        text-align: center;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      }
+
+      .topbar a {
+        box-shadow: none !important;
+      }
+
+      .has-bought-subscription .topbar {
+        display: none;
+      }
+
+      .topbar a:not(:last-child) {
+        margin-right: 1em;
+      }
+
+      @media screen and (max-width: 500px) {
+        .topbar { display: none }
+      }
+
       .alert {
         background-color: #fcf8e3;
         padding: 15px 12.5%;
@@ -315,6 +344,16 @@
     Спасибо! Вы&nbsp;записались на&nbsp;«Тестовый курс». Скоро придет письмо с&nbsp;дальнейшими инструкциями.
   </div>
 
+  <div class="topbar">
+    <small>
+    <a href="#forwhom">Для кого</a>
+    <a href="#useful">Чем полезен</a>
+    <a href="#author">Кто автор</a>
+    <a href="#feedback">Отзывы</a>
+    <a href="#signup">Купить</a>
+    </small>
+  </div>
+
   <script type="text/javascript">
       (function (d, w, c) {
           (w[c] = w[c] || []).push(function() {
@@ -350,10 +389,6 @@
         <p class="lead">
         Практический курс о тестировании в Ruby и Rails. С наставником, теорией,
         домашкой и дополнительными материалами: статьями, советами, видео.
-        </p>
-        <p>
-          <b>Последнее обновление:</b> 25 декабря 2019 добавили четыре бонусных урока с тонкостями
-          тестирования рандома, внешних АПИ, рейк-тасков и «мигающих» тестов
         </p>
       </section>
 
@@ -411,14 +446,14 @@
 
       </section>
 
-      <section class="narrow-container nudge-top-container">
+      <section id="forwhom" class="narrow-container nudge-top-container">
         <h2>Для кого</h2>
         <p>Для разработчиков знакомых с&nbsp;Ruby и&nbsp;RSpec, но&nbsp;не&nbsp;до&nbsp;конца понимающих что и&nbsp;как тестировать. Для тех, кто прочитал RSpec Book, но&nbsp;не&nbsp;может написать тест с&nbsp;нуля. Для тех, кто исправляет баг за&nbsp;5&nbsp;минут, а&nbsp;потом 2&nbsp;часа пишет тест.</p>
 
         <p>Если вы&nbsp;в&nbsp;совершенстве владеете TDD/BDD и&nbsp;отличаете мок от&nbsp;стаба, то&nbsp;уроки не&nbsp;принесут вам ощутимой пользы.</p>
       </section>
 
-      <section class="narrow-container nudge-top-container">
+      <section id="useful" class="narrow-container nudge-top-container">
         <h2>Чем полезен</h2>
         <p>
           Курс поможет научиться проверять собственную работу автоматическими тестами. Объясним,
@@ -437,7 +472,7 @@
         </p>
       </section>
 
-      <section class="narrow-container nudge-top-container">
+      <section id="author" class="narrow-container nudge-top-container">
         <h2>Кто автор</h2>
         <p>Меня зовут Василий Половнёв, последние пять лет я работаю ведущим разработчиком в Бюро
         Горбунова: отвечаю за сроки и качество.</p>
@@ -560,7 +595,7 @@
         </ul>
       </section>
 
-      <section class="narrow-container">
+      <section id="feedback" class="narrow-container">
         <h2>Отзывы</h2>
         <blockquote>
           <p><em>Чего вы ждали от курса?</em><br>
@@ -774,15 +809,15 @@
       </section>
 
       <section id="signup" class="narrow-container" style="background: rgba(0, 0, 0, .05); border-radius: 4px;">
-        <h2>Записаться</h2>
+        <h2>Купить</h2>
         <p>
-          Курс идёт шесть недель. Есть два варианта: с проверкой домашки и без.
+          Есть два варианта: с проверкой домашки и без.
           В обоих вариантах вы получаете 
           <a href="#course-contents">16 уроков с домашними заданиями</a>.
         </p>
 
         <p>
-          При записи с&nbsp;проверкой домашки дополнительно получаете практические задания в&nbsp;Гитхабе.
+          В варианте с с&nbsp;проверкой домашки дополнительно получаете практические задания в&nbsp;Гитхабе.
           Выполняете задание, открываете пулреквест, проверка&nbsp;&mdash; кодревью в&nbsp;течение двух дней.
         </p>
 
@@ -820,7 +855,7 @@
 
           <fieldset class="buy-it__submits">
             <button type="submit" class="buy-btn">
-              Записаться за 2000 ₽
+              Купить за 2000 ₽
             </button>
           </fieldset>
         </form>
@@ -854,7 +889,7 @@
 
 
       $('.buy-it').on('change', 'input:radio', function() {
-        var text = 'Записаться за ' + this.value + ' ₽';
+        var text = 'Купить за ' + this.value + ' ₽';
         $('.buy-btn').html(text);
       });
     </script>
