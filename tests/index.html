@@ -830,19 +830,21 @@
       </section>
 
       <section id="signup" class="narrow-container" style="background: rgba(0, 0, 0, .05); border-radius: 4px;">
-        <h2>Купить</h2>
-        <p>
+        <h2><s>Купить</s></h2>
+        <p style="font-size: 1.5em">Запись закрыта. Курс пока не проводится</p>
+
+        <!-- p>
           Оплата банковской картой. При оплате укажите адрес, на который прислать уроки.
         </p>
 
         <p>
         Если хотите оплатить курс от компании, в рассрочку или возникли любые другие вопросы, напишите:<br />
         <a href="mailto:vasily@polovnyov.ru">vasily@polovnyov.ru</a>
-        </p>
+        </p -->
 
         <script src="https://securepay.tinkoff.ru/html/payForm/js/tinkoff.js"></script>
 
-        <div class="plans">
+        <div class="plans" style="display: none">
           <form class="buy-it" onsubmit="pay(this); return false;"
             data-reach-goal="tests-newsletter-signup-click">
             <input type="hidden" name="terminalkey" value="1498122373819">
