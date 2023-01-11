@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eyexercise</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <audio id="alert" preload="auto">
+    <source src="./assets/alert.mp3" />
+    <source src="./assets/alert.ogg" />
+    <source src="./assets/alert.wav" />
+  </audio>
+
+  <script type="text/babel">
+    class EyeWorkout extends React.Component {
+      constructor(props) {
+        super(props)
+
+        this.state = { currentStep: 1 }
+
+        this.goToNextStep = this.goToNextStep.bind(this)
+        this.startOrRestart = this.startOrRestart.bind(this)
+      }
+
+      get currentStep() {
+        return (this.state.currentStep - 1) % this.props.children.length
+      }
+
+      get currentExercise() {
+        return this.props.children[this.currentStep]
+      }
+
+      componentDidUpdate() {
+        this.scheduleNextUpdate()
+        this.playAlert()
+      }
+
+      scheduleNextUpdate() {
+        const { duration } = this.currentExercise.props
+
+        this.nextStepTimeout = duration ? setTimeout(this.goToNextStep, duration * 1000) : null
+      }
+
+      playAlert() {
+        if (this.nextStepTimeout) document.getElementById('alert').play()
+      }
+
+      goToNextStep() {
+        return this.setState({ currentStep: this.state.currentStep + 1 })
+      }
+
+      startOrRestart() {
+        if (!this.nextStepTimeout) return this.goToNextStep()
+      }
+
+      render() {
+        return (
+          <main className="eyeworkout" onClick={ this.startOrRestart }>
+            { this.currentExercise }
+          </main>
+        )
+      }
+    }
+
+    const Intro = () => (<div className="intro">Нажмите где угодно, чтобы начать</div>)
+    const Outro = () => (<div className="outro">Вы молодец!</div>)
+    const EyeExercise = ({ children }) => (<div className="eyeexercise">{ children }</div>)
+
+    const App = () => {
+      return (
+        <EyeWorkout>
+          <Intro/>
+          <EyeExercise duration="30">Моргайте быстро-быстро</EyeExercise>
+          <EyeExercise duration="30">Крепко зажмурьтесь на пару секунд, а потом откройте глаза на пару секунд</EyeExercise>
+          <EyeExercise duration="30">Вращайте глазные яблоки, один оборот – по часовой стрелке, другой – против</EyeExercise>
+          <EyeExercise duration="45">Легко нажмите на верхнее веко тремя пальцами на пару секунд, потом отпустите на пару секунд</EyeExercise>
+          <EyeExercise duration="45">Сфокусируйте взгляд на отдаленном предмете, потом медленно сфокусируйте на близком предмете</EyeExercise>
+          <Outro/>
+        </EyeWorkout>
+      )
+    }
+    ReactDOM.render(<App />, document.getElementById('root'))
+  </script>
+</body>
+</html>
