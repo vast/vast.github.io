@@ -7,6 +7,35 @@
   <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
   <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
   <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+  <style>
+    html,
+    body,
+    #root {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      min-height: 100%;
+      min-width: 100%;
+    }
+
+    .eyeworkout {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f7f7f7;
+      color: #222;
+      font-family: Monaco, Menlo, Consolas, monospace;
+      font-size: clamp(1.5rem, -0.875rem + 8.333vw, 3.5rem);
+      line-height: 1.2;
+    }
+
+    .eyeworkout > * {
+      max-width: 18em;
+      padding: 1em;
+    }
+  </style>
 </head>
 <body>
   <div id="root"></div>
