@@ -1,320 +1,122 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Eyexercise</title>
+  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
   <style>
-  body {
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-    font-weight: 300;
-    text-align: center;
-    transition: background-color 2s;
-  }
-  
-  #yes {
-    color: black;
-  }
-  
-  #wrapper {
-    width: 419px;
-    min-width: 419px;
-    margin: 25px auto 0;
-  }
-  
-  #eye {
-    width: 419px;
-    height: 308px;
-  }
-  
-  #eyehorus {
-    margin-top: 100px;
-  }
-  
-  #text {
-    margin-top: 30px;
-  }
-  
-  #speaker_icon {
-    margin-top:35px;
-    opacity: .4;
-    transition: opacity 1s;
-  }
-  
-  #speaker_icon:hover {
-    opacity: 1;
-  }
-  
-  #instructions {
-    margin-bottom: 65px;
-  }
-  
-  #eyexercise {
-    display: none;
-  }
-  
-  #timer {
-    font-size: 66px;
-  }
-  
-  #seconds,
-  #repeatfor,
-  #speaker_icon {
-    display: none;
-  }
-  
-  #settings {
-    display:none;
-    margin-top: 5px;
-    padding: 7px;
-    background-color: #F9F6F4;
-  }
-  
-  #sound0 {
-    font-weight: 900;
-  }
-  
-  #volumeSlider {
-    margin-top: 10px;
-  }
+    html,
+    body,
+    #root {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      min-height: 100%;
+      min-width: 100%;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    .eyeworkout {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #f7f7f7;
+      color: #222;
+      font-family: Monaco, Menlo, Consolas, monospace;
+      font-size: clamp(1.5rem, -0.875rem + 8.333vw, 3.5rem);
+      line-height: 1.2;
+    }
+
+    .eyeworkout > * {
+      max-width: 18em;
+      padding: 1em;
+    }
   </style>
-  
-  <script>
-  var currentTime;
-  var minutesLeft;
-  var step = 1;
-  var currentSpeaker = 0;   //default alarm sound
-  
-  function load(){
-    currentTime = new Date();
-    minutesLeft = 60 - currentTime.getMinutes();
-    setInterval('updateCountdown()', 1000 * 60 );
-    document.getElementById('countdown').innerHTML = minutesLeft;
-    document.getElementById('settings').style.display = "none";
-    document.getElementById('speaker_icon').style.display = "block";
-  }
-  
-  function updateCountdown() {
-    var cd = document.getElementById('countdown');
-    minutesLeft--;
-    cd.innerHTML = minutesLeft;
-    if (minutesLeft == 0) {
-      clearInterval();
-      toggleExerciseView();
-    }
-  }
-  
-  function toggleExerciseView() {
-    eyeOfHorus = document.getElementById('eyehorus');
-    eyExercise = document.getElementById('eyexercise');
-    instructions = document.getElementById('instructions');
-    timer = document.getElementById('timer');
-    text = document.getElementById('text');
-    secondsText = document.getElementById('seconds');
-    speaker_icon = document.getElementById('speaker_icon');
-    settings = document.getElementById('settings');
-    
-      if(eyeOfHorus.style.display == "none") {
-        eyeOfHorus.style.display = "block";
-        eyExercise.style.display = "none"
-        text.style.display = "block"
-      } else {
-        eyeOfHorus.style.display = "none";
-        eyExercise.style.display = "block";
-        text.style.display = "none";
-        speaker_icon.style.display = "none";
-        settings.style.display = "none";
-        clearInterval();
-        playSound();
-        document.bgColor = "#FFF5C3";
-        instructions.innerHTML = "Готовы начать?";
-        timer.innerHTML = "<a id='yes' href='javascript:readyToGo()'>Да</a>";
-      }
-  };
-  
-  function readyToGo(){
-    document.bgColor = "#FFFFC3";
-    document.getElementById('seconds').style.display = "block";
-    instructions.innerHTML = "1/5. Моргайте быстро-быстро";
-    timer.innerHTML = "30";
-    // tick timer each sec
-    setInterval('tickMainTimer()', 1000);
-  };
-  
-  function tickMainTimer() {
-    var cur = parseInt (document.getElementById('timer').innerHTML);
-    cur--;
-    if (cur != 0) { 
-      document.getElementById('timer').innerHTML = cur;
-    } else {
-      switch (step){
-        case 1:
-          playSound();
-          document.bgColor = "#D3E397";
-          instructions.innerHTML = "2/5. Крепко зажмурьтесь на пару секунд, а потом откройте глаза на пару секунд";
-          timer.innerHTML = "30";
-          break;
-        case 2:
-          playSound();
-          document.bgColor = "#8DCDC1";
-          instructions.innerHTML = "3/5. Вращайте глазные яблоки, один оборот – по часовой стрелке, другой – против";
-          timer.innerHTML = "30";
-          break;
-        case 3:
-          playSound();
-          document.bgColor = "#7C786A";
-          instructions.innerHTML = "4/5. Легко нажмите на верхнее веко тремя пальцами на пару секунд, потом отпустите на пару секунд"
-          timer.innerHTML = "45"
-          break;
-        case 4:
-          playSound();
-          document.bgColor = "#FFF5C3";
-          instructions.innerHTML = "5/5. Сфокусируйте взгляд на отдаленном предмете, потом медленно сфокусируйте на близком предмете"
-          timer.innerHTML = "45"
-          break;
-        case 5:
-          playSound();
-          document.bgColor = "#31B96E";
-          instructions.innerHTML = "Вы молодец!"
-          timer.innerHTML = "3"
-          break;
-        case 6:
-          window.location.reload();
-          break;        
-      }
-      step++;
-    }
-  }
-  
-  function playSound() {
-    switch (currentSpeaker) {
-      case 0:
-        document.getElementById('speaker_alert').play();
-        break;
-      case 1:
-        document.getElementById('speaker_flute').play();
-        break;
-      case 2:
-        document.getElementById('speaker_athmo').play();
-        break;
-      case 3:
-        document.getElementById('speaker_harp').play();
-        break;
-      case 4:
-        document.getElementById('speaker_evilaugh').play();
-        break;
-      default:
-        document.getElementById('speaker_alert').play();
-        break;
-    }
-    
-  };
-  
-  function toggleSettings() {
-    settings = document.getElementById('settings');
-    
-      if (settings.style.display == "none") {
-        settings.style.display = "block";
-      } else {
-        settings.style.display = "none";
-      }
-  }
-  
-  function setAudio(num) {
-    if (num >= 0 && num <= 4) currentSpeaker = num;
-    playSound();
-    
-    document.getElementById('sound0').style.fontWeight = "300";
-    document.getElementById('sound1').style.fontWeight = "300";
-    document.getElementById('sound2').style.fontWeight = "300";
-    document.getElementById('sound3').style.fontWeight = "300";
-    document.getElementById('sound4').style.fontWeight = "300";
-    switch (num) {
-      case 0:
-        document.getElementById('sound0').style.fontWeight = "900";
-        break;
-      case 1:
-        document.getElementById('sound1').style.fontWeight = "900";
-        break;
-      case 2:
-        document.getElementById('sound2').style.fontWeight = "900";
-        break;
-      case 3:
-        document.getElementById('sound3').style.fontWeight = "900";
-        break;
-      case 4:
-        document.getElementById('sound4').style.fontWeight = "900";
-        break;
-    }
-  };
-  
-  function volumeChange (slider) {
-    document.getElementById('speaker_alert').volume = slider.value/10;
-    document.getElementById('speaker_flute').volume = slider.value/10;
-    document.getElementById('speaker_athmo').volume = slider.value/10;
-    document.getElementById('speaker_harp').volume = slider.value/10;
-    document.getElementById('speaker_evilaugh').volume = slider.value/10;
-  };
-
-  
-
-  </script>
-  <script src="./assets/slider.js"></script>
 </head>
+<body>
+  <div id="root"></div>
+  <audio id="alert" preload="auto">
+    <source src="./assets/alert.mp3" />
+    <source src="./assets/alert.ogg" />
+    <source src="./assets/alert.wav" />
+  </audio>
 
-<body onload="load()">
-  <div id="wrapper">
-    <audio id="speaker_alert" preload="auto">
-      <source src="./assets/alert.mp3"/>
-      <source src="./assets/alert.ogg"/>
-      <source src="./assets/alert.wav"/>
-      <small>Ваш браузер не поддерживает звуки! Ну, это не так важно :)</small>
-    </audio>
-    
-    <audio id="speaker_flute" preload="none">
-      <source src="./assets/alert2.mp3"/>
-      <source src="./assets/alert2.ogg"/>
-      <source src="./assets/alert2.wav"/>
-    </audio>
-    
-    <audio id="speaker_athmo" preload="none">
-      <source src="./assets/athmo.mp3"/>
-      <source src="./assets/athmo.ogg"/>
-      <source src="./assets/athmo.wav"/>
-    </audio>
-    
-    <audio id="speaker_harp" preload="none">
-      <source src="./assets/harp.mp3"/>
-      <source src="./assets/harp.ogg"/>
-      <source src="./assets/harp.wav"/>
-    </audio>
-    
-    <audio id="speaker_evilaugh" preload="none">
-      <source src="./assets/evilaugh.mp3"/>
-      <source src="./assets/evilaugh.ogg"/>
-      <source src="./assets/evilaugh.wav"/>
-    </audio>
-    
-    <div id="eye">
-      <img id="eyehorus" src="./assets/logo_eye.png" alt="eyexercise">
-      <div id="eyexercise"> 
-        <h1 id="instructions"></h1>
-        <h2 id="repeatfor">повторяйте</h2>
-        <h1 id="timer"></h1>
-        <h2 id="seconds">секунд</h2>
-        
-      </div>
-    </div>
-    
-    <div id="text">
-      В начале каждого часа прозвучит <a href="javascript:playSound();">такой</a> сигнал и начнётся 3-минутное упражнение для глаз. <br> <br> Подождите <span id="countdown">?</span> минут или <a href="javascript:toggleExerciseView();">начните</a> прямо сейчас.</div>
-      
-    <div id="speaker_icon">
-        <a href="javascript:toggleSettings()"><img src="./assets/speaker_icon.png"/></a>
-    </div>
-      
-    <div id="settings">
-        <a href="javascript:setAudio(0);"><span id="sound0">небеса</span></a>, <a href="javascript:setAudio(1);"><span id="sound1">флейта</span></a>, <a href="javascript:setAudio(2);"><span id="sound2">атмо</span></a>, <a href="javascript:setAudio(3);"><span id="sound3">гармоника</span></a>, <a href="javascript:setAudio(4);"><span id="sound4">смех</span></a> <br><input id="volumeSlider" onchange="volumeChange(this)" type="range" min="0" max="10" value="10"/>
-    </div>
-  </div>
+  <script type="text/babel">
+    class EyeWorkout extends React.Component {
+      constructor(props) {
+        super(props)
+
+        this.state = { currentStep: 1 }
+
+        this.goToNextStep = this.goToNextStep.bind(this)
+        this.startOrRestart = this.startOrRestart.bind(this)
+      }
+
+      get currentStep() {
+        return (this.state.currentStep - 1) % this.props.children.length
+      }
+
+      get currentExercise() {
+        return this.props.children[this.currentStep]
+      }
+
+      componentDidUpdate() {
+        this.scheduleNextUpdate()
+        this.playAlert()
+      }
+
+      scheduleNextUpdate() {
+        const { duration } = this.currentExercise.props
+
+        this.nextStepTimeout = duration ? setTimeout(this.goToNextStep, duration * 1000) : null
+      }
+
+      playAlert() {
+        if (this.nextStepTimeout) document.getElementById('alert').play()
+      }
+
+      goToNextStep() {
+        return this.setState({ currentStep: this.state.currentStep + 1 })
+      }
+
+      startOrRestart() {
+        if (!this.nextStepTimeout) return this.goToNextStep()
+      }
+
+      render() {
+        return (
+          <main className="eyeworkout" onClick={ this.startOrRestart }>
+            { this.currentExercise }
+          </main>
+        )
+      }
+    }
+
+    const Intro = () => (<div className="intro">Нажмите где угодно, чтобы начать</div>)
+    const Outro = () => (<div className="outro">Вы молодец!</div>)
+    const EyeExercise = ({ children }) => (<div className="eyeexercise">{ children }</div>)
+
+    const App = () => {
+      return (
+        <EyeWorkout>
+          <Intro/>
+          <EyeExercise duration="30">Моргайте быстро-быстро</EyeExercise>
+          <EyeExercise duration="30">Крепко зажмурьтесь на пару секунд, а потом откройте глаза на пару секунд</EyeExercise>
+          <EyeExercise duration="45">Легко нажмите на верхнее веко тремя пальцами на пару секунд, потом отпустите на пару секунд</EyeExercise>
+          <EyeExercise duration="30">Медленно переводите взгляд вверх-вниз и влево-вправо, не меняя положения головы</EyeExercise>
+          <EyeExercise duration="30">Медленно переводите взгляд по диагоналям, не меняя положения головы</EyeExercise>
+          <EyeExercise duration="30">Вращайте глазные яблоки, один оборот – по часовой стрелке, другой – против</EyeExercise>
+          <EyeExercise duration="60">Сфокусируйте взгляд на отдаленном предмете, потом медленно сфокусируйте на близком предмете</EyeExercise>
+          <Outro/>
+        </EyeWorkout>
+      )
+    }
+    ReactDOM.render(<App />, document.getElementById('root'))
+  </script>
 </body>
 </html>
