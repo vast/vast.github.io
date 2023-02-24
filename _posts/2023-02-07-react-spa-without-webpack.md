@@ -23,7 +23,7 @@ layout: default
 <div id="root"></div>
 ```
 
-4\. Добавляем <script> в конец body, который babel скомпилирует в рантайме:
+4\. Добавляем `<script>` в конец body, который babel скомпилирует в рантайме:
 ```html
 <script type="text/babel">
 ```
