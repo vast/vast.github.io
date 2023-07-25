@@ -36,7 +36,7 @@ layout: default
 IRB.conf[:ECHO_ON_ASSIGNMENT] = true
 ```
 
-P. S. Там же можно вырубить всратое автодополнение:
+Там же можно вырубить всратое автодополнение:
 ```ruby
 IRB.conf[:USE_AUTOCOMPLETE] = false
 ```
