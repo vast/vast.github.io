@@ -51,130 +51,128 @@
 <noscript><div><img src="https://mc.yandex.ru/watch/37100705" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 
-  <div class="global-container">
-    <header class="header">
-      <div class="header-contents">
-        <a href="/">{{ site.title }}</a>
-      </div>
-    </header>
-    <article class="post">
-      <header class="post-header">
-        <h1 class="post-title">{{ page.title }} </h1>
-      </header>
-
-      <div class="post-contents">
-        {{ content }}
-
-        <p>
-        P. S. Ещё больше постов о программировании, тестах и культуре разработки у меня
-        <a href="https://t.me/polovnyov_journal">в Телеграме.</a>
-        </p>
-      </div>
-
-      <footer class="post-meta">
-        <small class="post-date">
-          ⊙
-          {% assign m = page.date | date: "%-m" %}
-          {{ page.date | date: "%-d" }}
-          {% case m %}
-            {% when '1' %}января
-            {% when '2' %}февраля
-            {% when '3' %}марта
-            {% when '4' %}апреля
-            {% when '5' %}мая
-            {% when '6' %}июня
-            {% when '7' %}июля
-            {% when '8' %}августа
-            {% when '9' %}сентября
-            {% when '10' %}октября
-            {% when '11' %}ноября
-            {% when '12' %}декабря
-          {% endcase %}
-          {{ page.date | date: "%Y" }}
-        </small>
-
-        <div class="social-likes">
-          <div data-service="twitter" data-via="vazilla" title="Поделиться ссылкой в Твитере">Твитнуть</div>
-          <div data-service="facebook" title="Поделиться ссылкой на Фейсбуке">Поделиться</div>
-          <div class="vkontakte" title="Поделиться ссылкой во Вконтакте">Поделиться</div>
-        </div>
-
-        <ul class="post-nav">
-          <li>
-            {% if page.previous.url %}
-              <a href="{{page.previous.url}}">{{page.previous.title}}</a>
-            {% endif %}
-          </li>
-
-          <li class="post-nav-spacer">← →</li>
-
-          <li>
-            {% if page.next.url %}
-              <a href="{{page.next.url}}">{{page.next.title}}</a>
-            {% endif %}
-          </li>
-        </ul>
-
-        <div class="post-course">
-          {% if page.skip_tests_announce == nil or (page.skip_tests_announce == false) %}
-            <div class="post-course-img">
-              <a href="https://tough-dev.school/growth">
-                <img src="/assets/growth-course.png" alt="" width="2880" height="1412" />
-              </a>
-            </div>
-
-            <div class="post-course-description">
-              <h3><a href="https://tough-dev.school/growth">Профессиональный рост: меня и команды</a></h3>
-              <p>Четырёхнедельный курс о том, как расти в профессии самому
-                и выстраивать системный рост команды.</p>
-            </div>
-          {% endif %}
-        </div>
-      </footer>
-    </article>
-  </div>
-
-  <div class="bottom-contents">
-    <div class="global-container">
-      <aside class="related">
-        <h2>Популярное</h2>
-        {% assign popular_posts = site.popular_posts %}
-        {% for post_url in site.popular_post_urls %}
-          {% for post in site.posts %}
-            {% if post_url == post.url %}
-              {% assign popular_posts = popular_posts | push: post %}
-            {% endif %}
-          {% endfor %}
-        {% endfor %}
-        <ul class="related-posts related-posts--popular">
-          {% for post in popular_posts %}
-            {% if post.url != page.url %}
-              <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-            {% endif %}
-          {% endfor %}
-        </ul>
-      </aside>
-
-      <aside class="related">
-        <h2>Из старого</h2>
-        <ul class="related-posts related-posts--too-old">
-          {% for post in site.posts %}
-          {% unless popular_posts contains post %}
-            {% if post.url != page.url %}
-              <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-            {% endif %}
-          {% endunless %}
-          {% endfor %}
-        </ul>
-      </aside>
-
-      <footer id="footer">
-        <span style="margin-left: -1.22em">&copy; Василий Половнёв, 2014—{{ site.time | date: '%Y' }}</span>,<br />
-        <span id="funny-title" onclick="javascript:trulyRandom();" style="cursor: pointer">
-          бьюти-разработчик
-        </span>
-      </footer>
+  <header class="header">
+    <div class="header-contents">
+      <a href="/">{{ site.title }}</a>
     </div>
+  </header>
+  <article class="post">
+    <header class="post-header">
+      <h1 class="post-title">{{ page.title }} </h1>
+    </header>
+
+    <div class="post-contents">
+      {{ content }}
+
+      <p>
+      P. S. Ещё больше постов о программировании, тестах и культуре разработки у меня
+      <a href="https://t.me/polovnyov_journal">в Телеграме.</a>
+      </p>
+    </div>
+
+    <footer class="post-meta">
+      <small class="post-date">
+        ⊙
+        {% assign m = page.date | date: "%-m" %}
+        {{ page.date | date: "%-d" }}
+        {% case m %}
+          {% when '1' %}января
+          {% when '2' %}февраля
+          {% when '3' %}марта
+          {% when '4' %}апреля
+          {% when '5' %}мая
+          {% when '6' %}июня
+          {% when '7' %}июля
+          {% when '8' %}августа
+          {% when '9' %}сентября
+          {% when '10' %}октября
+          {% when '11' %}ноября
+          {% when '12' %}декабря
+        {% endcase %}
+        {{ page.date | date: "%Y" }}
+      </small>
+
+      <div class="social-likes">
+        <div data-service="twitter" data-via="vazilla" title="Поделиться ссылкой в Твитере">Твитнуть</div>
+        <div data-service="facebook" title="Поделиться ссылкой на Фейсбуке">Поделиться</div>
+        <div class="vkontakte" title="Поделиться ссылкой во Вконтакте">Поделиться</div>
+      </div>
+
+      <ul class="post-nav">
+        <li>
+          {% if page.previous.url %}
+            <a href="{{page.previous.url}}">{{page.previous.title}}</a>
+          {% endif %}
+        </li>
+
+        <li class="post-nav-spacer">← →</li>
+
+        <li>
+          {% if page.next.url %}
+            <a href="{{page.next.url}}">{{page.next.title}}</a>
+          {% endif %}
+        </li>
+      </ul>
+
+      <div class="post-course">
+        {% if page.skip_tests_announce == nil or (page.skip_tests_announce == false) %}
+          <div class="post-course-img">
+            <a href="https://tough-dev.school/growth">
+              <img src="/assets/growth-course.png" alt="" width="2880" height="1412" />
+            </a>
+          </div>
+
+          <div class="post-course-description">
+            <h3><a href="https://tough-dev.school/growth">Профессиональный рост: меня и команды</a></h3>
+            <p>Четырёхнедельный курс о том, как расти в профессии самому
+              и выстраивать системный рост команды.</p>
+          </div>
+        {% endif %}
+      </div>
+    </footer>
+  </article>
+</div>
+
+<div class="bottom-contents">
+  <div class="global-container">
+    <aside class="related">
+      <h2>Популярное</h2>
+      {% assign popular_posts = site.popular_posts %}
+      {% for post_url in site.popular_post_urls %}
+        {% for post in site.posts %}
+          {% if post_url == post.url %}
+            {% assign popular_posts = popular_posts | push: post %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+      <ul class="related-posts related-posts--popular">
+        {% for post in popular_posts %}
+          {% if post.url != page.url %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </aside>
+
+    <aside class="related">
+      <h2>Из старого</h2>
+      <ul class="related-posts related-posts--too-old">
+        {% for post in site.posts %}
+        {% unless popular_posts contains post %}
+          {% if post.url != page.url %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endif %}
+        {% endunless %}
+        {% endfor %}
+      </ul>
+    </aside>
+
+    <footer id="footer">
+      <span style="margin-left: -1.22em">&copy; Василий Половнёв, 2014—{{ site.time | date: '%Y' }}</span>,<br />
+      <span id="funny-title" onclick="javascript:trulyRandom();" style="cursor: pointer">
+        бьюти-разработчик
+      </span>
+    </footer>
   </div>
 
   <script src="/js/errything.js"></script>

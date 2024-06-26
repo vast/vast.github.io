@@ -45,84 +45,82 @@
 <noscript><div><img src="https://mc.yandex.ru/watch/37100705" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 
-  <div class="global-container">
-    <article class="post post--about post--ignored">
-      <header class="post-header">
-        <h1 class="post-title post-title--main">
-          Василий Половнёв
-        </h1>
-      </header>
-      <div class="post-contents">
-        <p>
-          Ведущий разработчик.
-        </p>
-        <p>
-          Специализация — Рельсы, фронтенд, автоматизация тестирования и разработки.
-        </p>
-        <p>
-          Связаться:
-          <a href="mailto:vasily@polovnyov.ru">vasily@polovnyov.ru</a>
-          или <a href="tg://resolve?domain=polovnyov_journal">телеграм</a>.
-        </p>
-        <p class="my_presence" style="font-family: Helvetica Neue;">
-          <span class="my_presence-link is__active">Блог</span>
-          <a href="https://tough-dev.school/growth">Курс о росте в профессии</a>
-        </p>
-      </div>
-    </article>
-
-    <div class="recent_posts">
-      {% for post in site.posts limit:20 %}
-        <article class="post">
-          <header>
-            <h1 class="post-title">
-              <a href="{{post.url}}">{{ post.title }}</a>
-            </h1>
-          </header>
-
-          <div class="post-contents">
-            {{ post.content }}
-          </div>
-
-          <footer class="post-meta">
-            <small class="post-date">
-              ⊙
-              {% assign m = post.date | date: "%-m" %}
-              {{ post.date | date: "%-d" }}
-              {% case m %}
-                {% when '1' %}января
-                {% when '2' %}февраля
-                {% when '3' %}марта
-                {% when '4' %}апреля
-                {% when '5' %}мая
-                {% when '6' %}июня
-                {% when '7' %}июля
-                {% when '8' %}августа
-                {% when '9' %}сентября
-                {% when '10' %}октября
-                {% when '11' %}ноября
-                {% when '12' %}декабря
-              {% endcase %}
-              {{ post.date | date: "%Y" }}
-            </small>
-          </footer>
-        </article>
-      {% endfor %}
+  <article class="post post--about post--ignored">
+    <header class="post-header">
+      <h1 class="post-title post-title--main">
+        Василий Половнёв
+      </h1>
+    </header>
+    <div class="post-contents">
+      <p>
+        Ведущий разработчик.
+      </p>
+      <p>
+        Специализация — Рельсы, фронтенд, автоматизация тестирования и разработки.
+      </p>
+      <p>
+        Связаться:
+        <a href="mailto:vasily@polovnyov.ru">vasily@polovnyov.ru</a>
+        или <a href="tg://resolve?domain=polovnyov_journal">телеграм</a>.
+      </p>
+      <p class="my_presence" style="font-family: Helvetica Neue;">
+        <span class="my_presence-link is__active">Блог</span>
+        <a href="https://tough-dev.school/growth">Курс о росте в профессии</a>
+      </p>
     </div>
+  </article>
 
-    <footer class="old_posts">
-      <h1 class="old_posts-title">Архив</h1>
-      <ul class="old_posts-list">
-        {% for post in site.posts offset:20 %}
-          <li class="{{ post.classes }}">
-            <a href="{{ post.url }}">
-              {{ post.title }}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
-    </footer>
+  <div class="recent_posts">
+    {% for post in site.posts limit:20 %}
+      <article class="post">
+        <header>
+          <h1 class="post-title">
+            <a href="{{post.url}}">{{ post.title }}</a>
+          </h1>
+        </header>
+
+        <div class="post-contents">
+          {{ post.content }}
+        </div>
+
+        <footer class="post-meta">
+          <small class="post-date">
+            ⊙
+            {% assign m = post.date | date: "%-m" %}
+            {{ post.date | date: "%-d" }}
+            {% case m %}
+              {% when '1' %}января
+              {% when '2' %}февраля
+              {% when '3' %}марта
+              {% when '4' %}апреля
+              {% when '5' %}мая
+              {% when '6' %}июня
+              {% when '7' %}июля
+              {% when '8' %}августа
+              {% when '9' %}сентября
+              {% when '10' %}октября
+              {% when '11' %}ноября
+              {% when '12' %}декабря
+            {% endcase %}
+            {{ post.date | date: "%Y" }}
+          </small>
+        </footer>
+      </article>
+    {% endfor %}
   </div>
+
+  <footer class="old_posts">
+    <h3 class="old_posts-title">Архив</h3>
+    <ul class="old_posts-list">
+      {% for post in site.posts offset:20 %}
+        <li class="{{ post.classes }}">
+          <a href="{{ post.url }}">
+            {{ post.title }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </footer>
 
   <script src="/js/errything.js"></script>
   <script>typographer.kickit('.post-contents, .post-title')</script>
