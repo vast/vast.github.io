@@ -134,46 +134,45 @@
 </div>
 
 <div class="bottom-contents">
-  <div class="global-container">
-    <aside class="related">
-      <h2>Популярное</h2>
-      {% assign popular_posts = site.popular_posts %}
-      {% for post_url in site.popular_post_urls %}
-        {% for post in site.posts %}
-          {% if post_url == post.url %}
-            {% assign popular_posts = popular_posts | push: post %}
-          {% endif %}
-        {% endfor %}
+  <aside class="related">
+    <h2>Популярное</h2>
+    {% assign popular_posts = site.popular_posts %}
+    {% for post_url in site.popular_post_urls %}
+      {% for post in site.posts %}
+        {% if post_url == post.url %}
+          {% assign popular_posts = popular_posts | push: post %}
+        {% endif %}
       {% endfor %}
-      <ul class="related-posts related-posts--popular">
-        {% for post in popular_posts %}
-          {% if post.url != page.url %}
-            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-    </aside>
+    {% endfor %}
+    <ul class="related-posts related-posts--popular">
+      {% for post in popular_posts %}
+        {% if post.url != page.url %}
+          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+  </aside>
 
-    <aside class="related">
-      <h2>Из старого</h2>
-      <ul class="related-posts related-posts--too-old">
-        {% for post in site.posts %}
-        {% unless popular_posts contains post %}
-          {% if post.url != page.url %}
-            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-          {% endif %}
-        {% endunless %}
-        {% endfor %}
-      </ul>
-    </aside>
+  <aside class="related">
+    <h2>Из старого</h2>
+    <ul class="related-posts related-posts--too-old">
+      {% for post in site.posts %}
+      {% unless popular_posts contains post %}
+        {% if post.url != page.url %}
+          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+        {% endif %}
+      {% endunless %}
+      {% endfor %}
+    </ul>
+  </aside>
 
-    <footer id="footer">
-      <span style="position: absolute; transform: translateX(-100%)">&copy; </span> Василий Половнёв, 2014—{{ site.time | date: '%Y' }},<br />
-      <span id="funny-title" onclick="javascript:trulyRandom();" style="cursor: pointer">
-        бьюти-разработчик
-      </span>
-    </footer>
-  </div>
+  <footer id="footer">
+    <span style="position: absolute; transform: translateX(-100%)">&copy; </span> Василий Половнёв, 2014—{{ site.time | date: '%Y' }},<br />
+    <span id="funny-title" onclick="javascript:trulyRandom();" style="cursor: pointer">
+      бьюти-разработчик
+    </span>
+  </footer>
+</div>
 
   <script src="/js/errything.js"></script>
   <script src="https://npmcdn.com/social-likes-next/dist/social-likes.min.js"></script>
