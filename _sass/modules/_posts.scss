@@ -52,7 +52,8 @@
   border-color: transparent;
 }
 
-.img--break {
+.img--break,
+iframe {
   margin-bottom: 2em;
 }
 
@@ -82,6 +83,7 @@
   }
   .post-course-img {
     min-width: 100%;
+    margin-bottom: 10px;
   }
 }
 
