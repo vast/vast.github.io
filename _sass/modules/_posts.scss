@@ -111,6 +111,10 @@
   columns: 3;
   margin-left: 0;
 
+  @media (max-width: 480px) {
+    columns: 2;
+  }
+
   li {
     display: inline-block;
     vertical-align: top;
