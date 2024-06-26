@@ -1,6 +1,7 @@
 ---
 title: "Не надо везде лепить восклицательные знаки!"
 layout: default
+classes: favorite
 ---
 
 Вижу такое:

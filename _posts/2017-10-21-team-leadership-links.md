@@ -1,18 +1,19 @@
 ---
 title: Что почитать начинающему тимлиду
 layout: default
+classes: favorite
 ---
 
 Я «тимлидю» три года. В этом посте — всё, что я хотел бы прочитать три с половиной года назад о тимлидстве и разработке.
 
-## Базовый минимум
+### Базовый минимум
 
 * [Team Leadership in the Age of Agile](https://www.infoq.com/presentations/Team-Leadership-in-the-Age-of-Internet) \(Спасибо, Тимур!\)
 * [High Output Management](https://www.amazon.com/High-Output-Management-Andrew-Grove/dp/0679762884)
 * [The Conjoined Triangles of Senior-Level Development](https://frontside.io/blog/2016/07/07/the-conjoined-triangles-of-senior-level-development.html)
 
 
-## Процессы и продуктоводство
+### Процессы и продуктоводство
 
 * [Scrum и XP: заметки с передовой](http://scrum.org.ua/wp-content/uploads/2008/12/scrum_xp-from-the-trenches-rus-final.pdf)
 * [How we structure our work and teams at Basecamp](https://m.signalvnoise.com/how-we-set-up-our-work-cbce3d3d9cae)
@@ -24,7 +25,7 @@ layout: default
 * [Алгоритм системного решения проблем](http://vsevolodustinov.ru/blog/all/algoritm-sistemnogo-resheniya-problem/)
 
 
-## Крутаны
+### Крутаны
 
 * [Федор Борщев об управлении проектами](https://f213.in/tags/favorites/)
 * [Elastic Leadership](http://5whys.com/)

@@ -22,13 +22,12 @@ end
 ```
 
 И несколько интересных фактов о before и after хуках:
+1. `before :each` и `before :all` — алиасы для `before :example` и `before :context`.
 
-1\. `before :each` и `before :all` — алиасы для `before :example` и `before :context`.
+2. `before :each` выполняется перед каждым примером, `it do...end`. `after :each` — после.
 
-2\. `before :each` выполняется перед каждым примером, `it do...end`. `after :each` — после.
+3. `before :all` выполняется перед контекстом (`context`, `describe`). `after :all` — после.
 
-3\. `before :all` выполняется перед контекстом (`context`, `describe`). `after :all` — после.
+4. В `before :suite` нельзя задавать переменные экземпляра (instance var, `@foo`)
 
-4\. В `before :suite` нельзя задавать переменные экземпляра (instance var, `@foo`)
-
-5\. Только в `before :each` можно мокать.
+5. Только в `before :each` можно мокать.

@@ -1,6 +1,7 @@
 ---
 title: "«Что» и «Чтобы что» в пулреквестах"
 layout: default
+classes: favorite
 ---
 
 
