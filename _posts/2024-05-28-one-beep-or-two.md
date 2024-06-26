@@ -6,7 +6,9 @@ title: "Один «бжж» или два «бжж»"
 Год назад вышел подкаст Лекса Фридмана с Хикару Накамурой. Хикару — крутой шахматист-стример, специализирующийся на быстрых шахматах. Когда-то побеждал Магнуса Карлсена.
 
 В подкасте есть интересный эпизод с обсуждением читинга в шахматах:
+<div class="youtubeVideo">
 <iframe width="560" height="315" src="https://www.youtube.com/embed/oJNvxYEcVAY?si=Bsez0_UghEKLuf-m&amp;start=3904" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
 
 На 1:15:55 Лекс задает самый важный технический вопрос: сколько информации тебе нужно, чтобы читерить? Накамура отвечает, что ему хватит одного «бжж», если текущая позиция отличная, и двух «бжж», если текущая позиция обычная или нормальная. То есть ему не нужны конкретные ходы, оценки или предсказания. Ему достаточно знать ответ на вопрос: текущая ситуация на доске отличная (для меня) или нет?
 

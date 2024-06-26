@@ -53,8 +53,22 @@
 }
 
 .img--break,
-iframe {
+.youtubeVideo {
   margin-bottom: 2em;
+}
+
+.youtubeVideo {
+  max-width: 100%;
+  aspect-ratio: 560 / 315;
+  position: relative;
+}
+
+.youtubeVideo iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }
 
 
