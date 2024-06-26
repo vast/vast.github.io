@@ -28,8 +28,8 @@ layout: default
 Это нужно для того, чтобы ребята со старым Руби все равно получили новый irb вместо «системного» старья.
 
 Во-вторых, новый irb по умолчанию обрезает «эхо» при присвоении:
-* <https://github.com/ruby/irb/commit/4c89b0775be793f34f45766570516dae5a34e8bc>
-* <https://github.com/ruby/irb/commit/5af637b3c17f85c15a32416bc5b4579307873833>
+* <a href="https://github.com/ruby/irb/commit/4c89b0775be793f34f45766570516dae5a34e8bc">https://github.com/ruby/irb/<wbr>commit/4c89b077</a>
+* <a href="https://github.com/ruby/irb/commit/5af637b3c17f85c15a32416bc5b4579307873833">https://github.com/ruby/irb/<wbr>commit/5af637b3</a>
 
 В-третьих, чтобы вернуть «эхо», достаточно подкрутить конфигурацию irb в ~/.irbrc:
 ```ruby

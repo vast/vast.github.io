@@ -13,10 +13,10 @@ layout: default
 > User agent: Conforming user agents must apply a default style sheet (or behave as if they did). A user agent's default style sheet should present the elements of the document language in ways that satisfy general presentation expectations for the document language (e.g., for visual browsers, the EM element in HTML is presented using an italic font). See A sample style sheet for HTML for a recommended default style sheet for HTML documents.
 
 И конечно, эти стили можно посмотреть: опен-сорс, все дела. Например, Хром:  
-<https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css>
+<a href="https://chromium.googlesource.com/chromium/blink/+/master/Source/core/css/html.css">https://chromium.googlesource.com/<wbr>chromium/blink/+/master/<wbr>Source/core/css/html.css</a>
 
 Сафари:  
-<https://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css>
+<a href="https://trac.webkit.org/browser/trunk/Source/WebCore/css/html.css">https://trac.webkit.org/<wbr>browser/trunk/Source/WebCore/css/html.css</a>
 
 Фаерфокс:  
 <https://searchfox.org/mozilla-central/source/layout/style/res/html.css>

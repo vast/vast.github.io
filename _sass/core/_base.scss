@@ -147,6 +147,11 @@ blockquote {
   &.pull-right small:before { display: none}
 }
 
+pre {
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
 pre, code {
   color: $code-color;
   font-family: $monospace-font;
