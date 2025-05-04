@@ -1,9 +1,18 @@
 .post {
   @include container;
+
+  h1 {
+    text-box: trim-both ex alphabetic;
+  }
+}
+
+* + .post-contents {
+  margin-top: 1lh;
 }
 
 .post-meta {
   font-size: 16px;
+  margin-top: .25lh;
 }
 
 .post-date, .post-nav {
@@ -37,7 +46,7 @@
 
 .outstanding {
   text-align: center;
-  margin: .92rem 0 1.05rem;
+  margin: .5lh 0 2lh;
   font: 1.125rem/1.5 Georgia, serif;
 }
 
@@ -45,16 +54,16 @@
   border: 2px solid;
   border-radius: 2px;
   padding: .5em 1em .6em;
-  margin: 1.25rem 0 2.25rem;
+  margin: 1lh 0 2lh;
 }
 
 .outstanding--important {
   border-color: transparent;
 }
 
-.img--break,
-.youtubeVideo {
-  margin-bottom: 2em;
+.img--break + *,
+.youtubeVideo + *{
+  margin-top: 2lh;
 }
 
 .youtubeVideo {
