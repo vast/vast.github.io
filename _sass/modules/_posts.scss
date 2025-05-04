@@ -40,9 +40,20 @@
   font: 1.25rem/1.5 Georgia, serif;
 }
 
+* + .outstanding,
+* + .outstanding--therule,
+* + .outstanding--important {
+  margin-top: 1lh;
+}
+
+.outstanding + *,
+.outstanding--therule + *,
+.outstanding--important + * {
+  margin-top: 2lh;
+}
+
 .outstanding {
   text-align: center;
-  margin: .5lh 0 2lh;
   font: 1.125rem/1.5 Georgia, serif;
 }
 
@@ -50,7 +61,6 @@
   border: 2px solid;
   border-radius: 2px;
   padding: .5em 1em .6em;
-  margin: 1lh 0 2lh;
 }
 
 .outstanding--important {
