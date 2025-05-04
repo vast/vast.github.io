@@ -1,13 +1,9 @@
 .post {
   @include container;
-
-  h1 {
-    text-box: trim-both ex alphabetic;
-  }
 }
 
 * + .post-contents {
-  margin-top: 1lh;
+  margin-top: .5lh;
 }
 
 .post-meta {
