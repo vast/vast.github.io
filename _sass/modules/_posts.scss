@@ -2,8 +2,13 @@
   @include container;
 }
 
+* + .post-contents {
+  margin-top: .5lh;
+}
+
 .post-meta {
   font-size: 16px;
+  margin-top: .25lh;
 }
 
 .post-date, .post-nav {
@@ -35,9 +40,20 @@
   font: 1.25rem/1.5 Georgia, serif;
 }
 
+* + .outstanding,
+* + .outstanding--therule,
+* + .outstanding--important {
+  margin-top: 1lh;
+}
+
+.outstanding + *,
+.outstanding--therule + *,
+.outstanding--important + * {
+  margin-top: 2lh;
+}
+
 .outstanding {
   text-align: center;
-  margin: .92rem 0 1.05rem;
   font: 1.125rem/1.5 Georgia, serif;
 }
 
@@ -45,16 +61,15 @@
   border: 2px solid;
   border-radius: 2px;
   padding: .5em 1em .6em;
-  margin: 1.25rem 0 2.25rem;
 }
 
 .outstanding--important {
   border-color: transparent;
 }
 
-.img--break,
-.youtubeVideo {
-  margin-bottom: 2em;
+.img--break + *,
+.youtubeVideo + *{
+  margin-top: 2lh;
 }
 
 .youtubeVideo {

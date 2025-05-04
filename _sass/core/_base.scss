@@ -53,19 +53,20 @@ a {
   }
 }
 
-p {
-  margin: 0 0 .92rem;
+* + p,
+p + * {
+  margin-top: .5lh;
 }
 
 h1 {
-  padding: 1.24rem 0 .62rem;
+  margin: 2lh 0 0;
   font-size: 2rem;
   line-height: 1.1;
 }
 
 h2 {
-  padding: .66rem 0 .77rem;
   font-size: 1.5rem;
+  margin: 1lh 0 0 !important; // FIXME
 }
 
 h3 {
@@ -73,8 +74,12 @@ h3 {
   font-weight: bold;
 }
 
+ul + *,
+ol + * {
+  margin-top: .5lh;
+}
+
 ul {
-  margin-bottom: .77rem;
   list-style: none outside;
   margin-left: 2rem;
   padding-left: 0;
@@ -84,12 +89,14 @@ h3 + ul {
   margin-left: 0;
 }
 
-p+ul, p+ol {
-  margin-top: -.92rem;
+h3 + p,
+p + ul,
+p + ol {
+  margin-top: 0;
 }
 
-li {
-  padding: 0 0 .47rem;
+li + * {
+  margin-top: .33lh;
 }
 
 li > ul, li > ol {
@@ -101,7 +108,6 @@ li > ul li, li > ol li {
 }
 
 ol {
-  margin-bottom: .77rem;
   margin-left: 1em;
   list-style: none outside;
   counter-reset: ol-counter;
@@ -126,20 +132,24 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 hr {
   position: relative;
-  margin: 1.5rem 0;
+  margin: 1lh 0;
   height: 1px;
   border: 0;
   box-shadow: inset 0 -2px 0 -1px rgba(0, 0, 0, .15);
 }
 
+blockquote + * {
+  margin-top: .5lh;
+}
+
 blockquote {
   padding: 0 0 0 2rem;
-  margin: 0 0 .77rem;
   border-left: 5px solid #eee;
 
   &.pull-right {
@@ -156,6 +166,14 @@ blockquote {
   }
 
   &.pull-right small:before { display: none}
+}
+
+* + div:has(pre) {
+  margin-top: .5lh;
+}
+
+div:has(pre) + *{
+  margin-top: 1lh;
 }
 
 pre {
@@ -176,7 +194,7 @@ pre code {
 }
 
 table {
-  margin: 0 0 .75rem;
+  margin: 0 0 1lh;
   border-collapse: collapse;
   border-spacing: 0;
 }
