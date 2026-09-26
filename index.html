@@ -5,124 +5,74 @@
 <html lang="ru">
 <head>
   <title>Сайт и блог Василия Половнёва</title>
-  <meta charset="utf-8" />
-  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="{{ site.description }}" />
   <link rel="openid.server" href="http://www.myopenid.com/server" />
   <link rel="openid.delegate" href="http://vast.myopenid.com" />
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
-  <link rel="stylesheet" href="/css/application.css" media="screen, projection" />
-  <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 980px)" />
+  {% include head.html %}
 </head>
 <body>
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function (d, w, c) {
-        (w[c] = w[c] || []).push(function() {
-            try {
-                w.yaCounter37100705 = new Ya.Metrika({
-                    id:37100705,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true,
-                    webvisor:true
-                });
-            } catch(e) { }
-        });
-
-        var n = d.getElementsByTagName("script")[0],
-            s = d.createElement("script"),
-            f = function () { n.parentNode.insertBefore(s, n); };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = "https://mc.yandex.ru/metrika/watch.js";
-
-        if (w.opera == "[object Opera]") {
-            d.addEventListener("DOMContentLoaded", f, false);
-        } else { f(); }
-    })(document, window, "yandex_metrika_callbacks");
-</script>
 <noscript><div><img src="https://mc.yandex.ru/watch/37100705" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
 
-  <article class="post post--about post--ignored">
-    <header class="post-header">
-      <h1 class="post-title post-title--main">
-        Василий Половнёв
-      </h1>
-    </header>
-    <div class="post-contents">
-      <p>
-        Ведущий разработчик.
-      </p>
-      <p>
-        Специализация — Рельсы, фронтенд, автоматизация тестирования и разработки.
-      </p>
-      <p>
-        Связаться:
-        <a href="mailto:vasily@polovnyov.ru">vasily@polovnyov.ru</a>
-        или <a href="tg://resolve?domain=polovnyov_journal">телеграм</a>.
-      </p>
-      <p class="my_presence" style="font-family: Helvetica Neue;">
-        <span class="my_presence-link is__active">Блог</span>
-        <a href="https://tough-dev.school/growth">Курс о росте в профессии</a>
-      </p>
-    </div>
-  </article>
+<main class="page">
+  {% include site-header.html home=true %}
 
-  <div class="recent_posts">
+  <section class="intro">
+    <h1 class="intro-title">Василий Половнёв</h1>
+    <p class="post-byline">Ведущий разработчик · Рельсы, фронтенд, автоматизация тестирования и разработки</p>
+
+    <dl class="card">
+      <dt>почта</dt>
+      <dd><a href="mailto:vasily@polovnyov.ru">vasily@polovnyov.ru</a></dd>
+      <dt>телеграм</dt>
+      <dd><a href="https://t.me/polovnyov_journal">@polovnyov_journal</a></dd>
+      <dt>курс</dt>
+      <dd><a href="https://tough-dev.school/growth">Профессиональный рост: меня и команды</a></dd>
+      <dt>блог</dt>
+      {%- assign posts_count = site.posts.size -%}
+      {%- assign mod10 = posts_count | modulo: 10 -%}
+      {%- assign mod100 = posts_count | modulo: 100 -%}
+      {%- if mod100 >= 11 and mod100 <= 14 -%}
+        {%- assign posts_word = "постов" -%}
+      {%- elsif mod10 == 1 -%}
+        {%- assign posts_word = "пост" -%}
+      {%- elsif mod10 >= 2 and mod10 <= 4 -%}
+        {%- assign posts_word = "поста" -%}
+      {%- else -%}
+        {%- assign posts_word = "постов" -%}
+      {%- endif %}
+      <dd>{{ posts_count }} {{ posts_word }} о разработке, тестировании и культуре работы</dd>
+    </dl>
+  </section>
+
+  <div class="recent-posts">
     {% for post in site.posts limit:20 %}
       <article class="post">
-        <header>
-          <h1 class="post-title">
-            <a href="{{post.url}}">{{ post.title }}</a>
-          </h1>
+        <header class="post-header">
+          <h2 class="post-title">
+            <a href="{{ post.url }}">{{ post.title }}</a>
+          </h2>
+          <p class="post-byline">{% include date.html date=post.date %}</p>
         </header>
 
         <div class="post-contents">
           {{ post.content }}
         </div>
-
-        <footer class="post-meta">
-          <small class="post-date">
-            ⊙
-            {% assign m = post.date | date: "%-m" %}
-            {{ post.date | date: "%-d" }}
-            {% case m %}
-              {% when '1' %}января
-              {% when '2' %}февраля
-              {% when '3' %}марта
-              {% when '4' %}апреля
-              {% when '5' %}мая
-              {% when '6' %}июня
-              {% when '7' %}июля
-              {% when '8' %}августа
-              {% when '9' %}сентября
-              {% when '10' %}октября
-              {% when '11' %}ноября
-              {% when '12' %}декабря
-            {% endcase %}
-            {{ post.date | date: "%Y" }}
-          </small>
-        </footer>
       </article>
     {% endfor %}
   </div>
 
-  <footer class="old_posts">
-    <h3 class="old_posts-title">Архив</h3>
-    <ul class="old_posts-list">
-      {% for post in site.posts offset:20 %}
-        <li class="{{ post.classes }}">
-          <a href="{{ post.url }}">
-            {{ post.title }}
-          </a>
-        </li>
-      {% endfor %}
-    </ul>
-  </footer>
+  <section class="home-archive" id="archive">
+    <header class="section-caption">
+      <h2>Архив</h2>
+      <span><em class="favorite-mark">*</em> — любимое</span>
+    </header>
+    {% include archive-table.html offset=20 %}
+  </section>
 
-  <script src="/js/errything.js"></script>
-  <script>typographer.kickit('.post-contents, .post-title')</script>
+  {% include site-footer.html %}
+</main>
+
+<script src="/js/errything.js"></script>
+<script>typographer.kickit('.post-contents, .post-title')</script>
 </body>
 </html>

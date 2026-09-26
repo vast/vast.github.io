@@ -1,0 +1,104 @@
+.page {
+  width: min(100% - 2rem, 88rem);
+  margin-inline: auto;
+  // Сверху отступ задаёт шапка, снизу — подвал
+  padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+
+  @media (min-width: 46rem) {
+    width: min(100% - 4rem, 88rem);
+  }
+}
+
+// Шапка: от верха окна до x-height — межабзац.
+// Блоки обрезаны по краям букв и кончаются на базовой линии, поэтому выравниваем их по низу
+.site-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: var(--line-gap) var(--space-6);
+  padding: var(--paragraph-gap) var(--gutter) 0;
+  color: var(--muted);
+  font-size: .8125rem;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--accent);
+    }
+  }
+}
+
+.site-name {
+  @include trim-to-ink;
+  display: block;
+  color: var(--ink);
+}
+
+.site-nav {
+  @include trim-to-ink;
+
+  a + a {
+    margin-left: 2ch;
+  }
+}
+
+// Подпись раздела: жирный заголовок слева, серое пояснение справа, пунктир сверху.
+// Текст обрезан по x-height и базовой линии: от пунктира до текста — просвет строки,
+// а первая строка списка под подписью встаёт на следующую строку
+.section-caption {
+  display: flex;
+  justify-content: space-between;
+  // Обрезанные блоки кончаются ровно на базовой линии, поэтому выравнивание по низу равно выравниванию по базовой.
+  // По baseline нельзя: flex берёт базовую линию у пустого псевдоэлемента обрезки, и пояснение съезжает
+  align-items: flex-end;
+  gap: var(--space-4);
+  padding-top: var(--line-gap);
+  border-top: 1px dashed var(--line);
+
+  h2 {
+    @include trim-to-ink;
+    font-size: 1rem;
+  }
+
+  span {
+    @include trim-to-ink;
+    display: block;
+    color: var(--muted);
+    font-size: .75rem;
+  }
+
+  @media (max-width: 36rem) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+
+    span {
+      margin-top: var(--line-gap);
+    }
+  }
+}
+
+// Подвал на тёмной полосе до самого низа страницы.
+// До его пунктира от предыдущего раздела — два межстрочника: один снаружи полосы, один внутри.
+// После рубрик внешний не нужен: у их полосы свой межстрочник снизу, и фон сливается
+.site-footer {
+  @include full-bleed-band;
+  margin-top: var(--interline);
+  padding: var(--interline) var(--gutter);
+  color: var(--muted);
+  font-size: .75rem;
+
+  p {
+    @include trim-to-ink;
+    padding-top: var(--line-gap);
+    border-top: 1px dashed var(--line);
+  }
+
+  #funny-title {
+    cursor: pointer;
+  }
+}

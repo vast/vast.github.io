@@ -1,163 +1,446 @@
+// От шапки до названия — межстрочник
 .post {
-  @include container;
+  padding: var(--interline) var(--gutter) 0;
 }
 
-* + .post-contents {
-  margin-top: .5lh;
-}
+// Название и дата обрезаны по краям букв, а дата встаёт на следующую строку:
+// от базовой линии названия до базовой линии даты ровно интерлиньяж
+.post-title {
+  @include trim-to-ink;
+  max-width: 54ch;
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 600;
+  text-wrap: balance;
 
-.post-meta {
-  font-size: 16px;
-  margin-top: .25lh;
-}
+  a {
+    color: inherit;
+    text-decoration: none;
 
-.post-date, .post-nav {
-  font-size: .875em;
-  display: block;
-  font-family: Helvetica Neue, Arial, sans-serif;
-  color: lighten($text-color, 50%);
-}
-
-.post-nav {
-  display: flex;
-  margin: 2.64rem 0;
-  padding: 0;
-  list-style: none outside;
-
-  li {
-    margin: 0;
-    padding: 0;
+    &:hover,
+    &:focus-visible {
+      text-decoration: underline;
+    }
   }
 }
 
-.post-nav-spacer {
-  margin: 0 1em!important;
-  white-space: nowrap;
+.post-byline {
+  @include trim-to-ink;
+  // --line-gap считается от x-height самой даты, поэтому базовые линии встают ровно через интерлиньяж
+  margin-top: var(--line-gap);
+  color: var(--muted);
+  font-size: .8125rem;
+
+  a {
+    color: var(--ink);
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--accent);
+    }
+  }
+}
+
+.post-header + .post-contents {
+  margin-top: var(--paragraph-gap);
+}
+
+//
+// Типографика поста
+//
+
+// Врезки: всё, что прерывает поток текста
+$image-paragraphs: "p:has(> img:only-child), p:has(> a:only-child > img:only-child)";
+$inserts: "div.highlighter-rouge, pre, figure, blockquote, .outstanding, .img--break, .youtubeVideo, #{$image-paragraphs}";
+
+.post-contents {
+  max-width: var(--measure-wide);
+  overflow-wrap: break-word;
+
+  // Текстовые блоки обрезаем по x-height и базовой линии.
+  // Абзацы с одной картинкой не трогаем: в них нет строк текста.
+  // У выделенных правил псевдоэлементы заняты плюсиками, их обрезаем через padding ниже
+  > :is(p, ul, ol, dl, h2, h3, h4, .outstanding):not(.outstanding--therule, #{$image-paragraphs}),
+  blockquote > * {
+    @include trim-to-ink;
+  }
+
+  > * + * {
+    margin-top: var(--paragraph-gap);
+  }
+
+  h2 {
+    margin-top: var(--interline);
+    font-size: 1rem;
+  }
+
+  h3,
+  h4 {
+    margin-top: var(--subsection-gap);
+    font-size: 1rem;
+  }
+
+  // Текст после заголовка и список после абзаца продолжают предыдущий блок,
+  // поэтому встают на следующую строку
+  h2 + *,
+  h3 + *,
+  h4 + *,
+  p + ul,
+  p + ol {
+    margin-top: var(--line-gap);
+  }
+
+  ul,
+  ol {
+    padding-left: 2ch;
+    list-style: none;
+  }
+
+  ul > li,
+  ol > li {
+    position: relative;
+  }
+
+  li + li,
+  li > ul,
+  li > ol {
+    margin-top: var(--list-gap);
+  }
+
+  // Абзацы внутри пункта не обрезаются, поэтому вычитаем просвет строк
+  li > p + p {
+    margin-top: calc(var(--paragraph-gap) - var(--line-gap));
+  }
+
+  // Списки со своим классом (например, чек-лист в «Трёх правилах ревью») рисуют маркеры сами
+  ul:not([class]) > li::before {
+    position: absolute;
+    left: -2ch;
+    color: var(--muted);
+    content: "–";
+  }
+
+  ol {
+    counter-reset: ol-counter;
+    padding-left: 3ch;
+  }
+
+  ol:not([class]) > li::before {
+    position: absolute;
+    left: -3ch;
+    color: var(--muted);
+    content: counter(ol-counter) ".";
+    counter-increment: ol-counter;
+    font-variant-numeric: tabular-nums;
+  }
+
+  blockquote {
+    padding-left: 2ch;
+    border-left: 1px dashed var(--line-bright);
+    color: var(--muted);
+
+    > * + * {
+      margin-top: var(--paragraph-gap);
+    }
+
+    &.pull-right {
+      padding: 0 2ch 0 0;
+      border-left: 0;
+      border-right: 1px dashed var(--line-bright);
+      text-align: right;
+    }
+
+    small {
+      display: block;
+      font-size: .8125rem;
+
+      &::before {
+        content: "— ";
+      }
+    }
+  }
+
+  hr {
+    margin: var(--interline) 0;
+  }
+
+  // Текст держим узким, а код, таблицы и видео пускаем чуть шире
+  > :is(p, ul, ol, dl, h2, h3, h4, blockquote, .outstanding) {
+    max-width: var(--measure);
+  }
+
+  // После врезки — межстрочник, между врезками подряд — межабзац
+  > :is(#{$inserts}) + * {
+    margin-top: var(--interline);
+  }
+
+  > :is(#{$inserts}) + :is(#{$inserts}) {
+    margin-top: var(--paragraph-gap);
+  }
+
+  img {
+    border: 1px dashed var(--line);
+  }
+
+  code {
+    padding: .05em .3em;
+    color: var(--ink-strong);
+    background: var(--paper-raised);
+    font-size: .9375em;
+  }
+
+  // Внутри рамки кода — межабзац, как в других рамках
+  pre {
+    @include trim-to-ink;
+    padding: var(--paragraph-gap) var(--space-4);
+    border: 1px dashed var(--line);
+    color: var(--ink-strong);
+    background: var(--paper-raised);
+    font-size: .875rem;
+    tab-size: 2;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+
+    code {
+      padding: 0;
+      background: none;
+      font-size: inherit;
+    }
+  }
+
+  // Таблицы — как строки архива: от пунктира до текста просвет строки
+  table {
+    border-collapse: collapse;
+    font-size: .8125rem;
+  }
+
+  th,
+  td {
+    @include trim-to-ink;
+    padding: var(--line-gap) var(--space-4) var(--line-gap) 0;
+    border-bottom: 1px dashed var(--line);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    border-top: 1px dashed var(--line);
+    color: var(--muted);
+    font-weight: 400;
+  }
+}
+
+// От текста до P. S. — ¾ межстрочника. После врезки остаётся полный межстрочник: правило врезок специфичнее
+.post-contents > .post-ps {
+  margin-top: var(--subsection-gap);
+  color: var(--muted);
 }
 
 .lead {
-  margin: 0 0 1.05rem;
-  font: 1.25rem/1.5 Georgia, serif;
+  color: var(--ink-strong);
+  font-size: 1.0625rem;
 }
 
-* + .outstanding,
-* + .outstanding--therule,
-* + .outstanding--important {
-  margin-top: 1lh;
-}
+//
+// Выделенные фразы и правила
+//
 
-.outstanding + *,
-.outstanding--therule + *,
-.outstanding--important + * {
-  margin-top: 2lh;
-}
-
-.outstanding {
+.post-contents > .outstanding {
+  color: var(--accent);
+  font-weight: 500;
   text-align: center;
-  font: 1.125rem/1.5 Georgia, serif;
+  text-wrap: balance;
 }
 
-.outstanding--therule, .outstanding--important {
-  border: 2px solid;
-  border-radius: 2px;
-  padding: .5em 1em .6em;
+.post-contents > .outstanding--therule {
+  @include blueprint-box;
+  @include trim-to-ink-padding(var(--paragraph-gap));
+  padding-inline: var(--space-4);
+  background: var(--paper-raised);
+  color: var(--ink-strong);
+  font-weight: 600;
 }
 
-.outstanding--important {
-  border-color: transparent;
-}
-
-.img--break + *,
-.youtubeVideo + *{
-  margin-top: 2lh;
+.post-contents > .outstanding--important {
+  color: var(--ink-strong);
 }
 
 .youtubeVideo {
-  max-width: 100%;
-  aspect-ratio: 560 / 315;
   position: relative;
-}
+  aspect-ratio: 560 / 315;
 
-.youtubeVideo iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-}
-
-
-//
-// INBOX
-//
-
-.social-likes {
-  margin: .75rem -.3em 0!important;
-}
-
-.post-course {
-  margin-top: 1.25rem;
-  display: flex;
-}
-
-.post-course-img {
-  flex: 1;
-  max-width: 15.5em;
-  margin-right: 10px;
-}
-
-@media (max-width: 769px) {
-  .post-course {
-    flex-wrap: wrap;
-  }
-  .post-course-img {
-    min-width: 100%;
-    margin-bottom: 10px;
+  iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
   }
 }
 
-.post-course-description {
-  flex: 1;
-  margin-top: -3px;
+//
+// Под постом
+//
+
+// Подвал поста живёт по тем же правилам ритма:
+// связанные блоки — через межабзац, отдельные — через межстрочник,
+// строки между пунктирными линиями — просвет строки сверху и снизу
+.post-share {
+  @include trim-to-ink;
+  margin-top: var(--paragraph-gap);
+  color: var(--muted);
+  font-size: .8125rem;
+
+  a {
+    margin-left: 1ch;
+    color: var(--ink);
+  }
+}
+
+.post-nav {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin: var(--interline) var(--gutter) 0;
+  border-top: 1px dashed var(--line-bright);
+  border-bottom: 1px dashed var(--line-bright);
+
+  @media (max-width: 36rem) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.post-nav-item {
+  display: block;
+  padding: var(--line-gap) var(--space-4) var(--line-gap) 0;
+  text-decoration: none;
+
+  &--next {
+    padding: var(--line-gap) 0 var(--line-gap) var(--space-4);
+    border-left: 1px dashed var(--line);
+    text-align: right;
+  }
+
+  &:hover,
+  &:focus-visible {
+    background: color-mix(in srgb, var(--accent) 5%, transparent);
+    outline-offset: -2px;
+  }
+
+  &:hover .post-nav-title {
+    color: var(--accent);
+  }
+
+  @media (max-width: 36rem) {
+    &--next {
+      padding: var(--line-gap) 0;
+      border-left: 0;
+      border-top: 1px dashed var(--line);
+      text-align: left;
+    }
+
+    &:empty {
+      display: none;
+    }
+  }
+}
+
+.post-nav-label {
+  @include trim-to-ink;
+  display: block;
+  color: var(--muted);
+  font-size: .75rem;
+}
+
+// Название встаёт на следующую строку после подписи
+.post-nav-title {
+  @include trim-to-ink;
+  display: block;
+  margin-top: var(--line-gap);
+  color: var(--ink-strong);
+}
+
+.course {
+  @include blueprint-box;
+  display: grid;
+  grid-template-columns: minmax(0, 15rem) minmax(0, 1fr);
+  gap: var(--paragraph-gap) var(--space-6);
+  align-items: center;
+  max-width: calc(var(--measure-wide) + 2 * var(--space-4));
+  margin: var(--section-gap) var(--gutter) 0;
+  // Внутри рамки — межабзац, как у выделенных правил в посте
+  padding: var(--paragraph-gap) var(--space-4);
+  background: var(--paper-raised);
+
+  img {
+    border: 1px dashed var(--line);
+  }
+
+  .eyebrow {
+    @include trim-to-ink($caps: true);
+  }
+
+  // Заголовок и описание встают на следующие строки
+  h3 {
+    @include trim-to-ink;
+    margin-top: var(--line-gap);
+    color: var(--accent);
+
+    a {
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  p:last-child {
+    @include trim-to-ink;
+    margin-top: var(--line-gap);
+    color: var(--muted);
+    font-size: .875rem;
+  }
+
+  @media (max-width: 36rem) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Рубрики «Популярное» и «Свежее» лежат на тёмной полосе во всю ширину окна
+// и сливаются с подвалом, у которого такой же фон
+.related-band {
+  @include full-bleed-band;
+  margin-top: var(--section-gap);
+  padding-block: var(--interline);
+
+  + .site-footer {
+    margin-top: 0;
+  }
+}
+
+.related {
+  margin: var(--section-gap) var(--gutter) 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 .related-posts {
-  -webkit-columns: 3;
-  columns: 3;
-  margin-left: 0;
-
-  @media (max-width: 480px) {
-    columns: 2;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 22rem), 1fr));
+  column-gap: var(--space-8);
+  list-style: none;
+  font-size: .875rem;
 
   li {
-    display: inline-block;
-    vertical-align: top;
-    padding-left: 0;
-    width: 100%;
+    @include trim-to-ink;
+    padding: var(--line-gap) 0;
+    border-bottom: 1px dashed var(--line);
   }
 
-  &:not(.related-posts--too-old) li:nth-child(n+10) {
-    display: none;
-  }
-
-  &--too-old li:nth-child(n+16) {
-    display: none;
-  }
-}
-
-.my_presence {
-  background: $minor-color;
-  padding: 1em 0 1.1em 1.5em;
-  border-radius: 4px;
-  margin: 0 0 0 -1.5em;
-}
-
-.my_presence-link {
-  margin-right: 1.5em;
-
-  &.is__active {
-    color: $link-active-color;
-    box-shadow: none;
+  a {
+    display: block;
+    text-decoration: none;
   }
 }

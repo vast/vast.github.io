@@ -7,6 +7,13 @@ kramdown:
 title: 'Блог Половнёва'
 description: 'О разработке, тестировании и культуре работы'
 url: 'https://vasily.polovnyov.ru'
+
+# Служебное не публикуем: github-pages делает страницы даже из .md без front matter
+exclude:
+  - AGENTS.md
+  - CLAUDE.md
+  - docs
+
 popular_posts: []
 popular_post_urls:
   - "/posts/double-mock-stub.html"

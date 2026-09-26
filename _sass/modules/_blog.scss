@@ -1,24 +1,106 @@
-.old_posts {
-  @include container;
+// От шапки до имени — межстрочник
+.intro {
+  padding: var(--interline) var(--gutter) 0;
 }
 
-.old_posts-list {
-  margin-top: 0;
-  margin-left: 0;
+.intro-title {
+  @include trim-to-ink;
+  color: var(--accent);
+  font-size: 1rem;
+  font-weight: 600;
+}
 
-  li {
-    padding-left: 0;
+// Внутри рамки — межабзац, как у плашки курса; строки встают через интерлиньяж
+.card {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: var(--line-gap) var(--space-6);
+  max-width: var(--measure-wide);
+  margin-top: var(--paragraph-gap);
+  padding: var(--paragraph-gap) var(--space-4);
+  border: 1px dashed var(--line);
+  color: var(--ink-strong);
+  background: var(--paper-raised);
+
+  dt,
+  dd {
+    @include trim-to-ink;
   }
 
-  .favorite:before {
-    display: inline-block;
-    content: '★';
-    position: absolute;
-    width: 1.5em;
-    margin-left: -1.5em;
-    margin-top: .27em;
-    color: #414141;
-    font-size: .7em;
-    text-align: center;
+  dt {
+    color: var(--muted);
+  }
+
+  // На телефоне подпись и значение идут столбиком, а пары разделены межабзацем
+  @media (max-width: 36rem) {
+    grid-template-columns: 1fr;
+
+    dd + dt {
+      margin-top: calc(var(--paragraph-gap) - var(--line-gap));
+    }
+  }
+}
+
+.recent-posts {
+  .post {
+    padding-top: 0;
+    margin-top: var(--section-gap);
+  }
+
+  .post-header {
+    padding-top: var(--paragraph-gap);
+    border-top: 1px dashed var(--line);
+  }
+}
+
+.home-archive {
+  max-width: var(--measure-wide);
+  margin: var(--section-gap) var(--gutter) 0;
+}
+
+.favorite-mark {
+  color: var(--accent);
+  font-style: normal;
+}
+
+// Архив — как списки в рубриках: от пунктира до текста просвет строки,
+// а первая строка встаёт на следующую строку после подписи
+.archive-table {
+  width: 100%;
+  max-width: var(--measure-wide);
+  border-collapse: collapse;
+  font-size: .875rem;
+
+  th,
+  td {
+    @include trim-to-ink;
+    padding: var(--line-gap) 0;
+    border-top: 0;
+    border-bottom: 1px dashed var(--line);
+    text-align: left;
+    vertical-align: top;
+  }
+
+  th {
+    width: 7ch;
+    color: var(--muted);
+    font-weight: 400;
+    font-variant-numeric: tabular-nums;
+    border-bottom: 0;
+  }
+
+  // Над первым годом линия не нужна: сверху уже подпись или заголовок страницы
+  .archive-year-start:not(:first-child) th {
+    border-top: 1px dashed var(--line);
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  .favorite a::after {
+    margin-left: .5ch;
+    color: var(--accent);
+    content: "*";
   }
 }

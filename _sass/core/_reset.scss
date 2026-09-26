@@ -1,3 +1,14 @@
-html, body, h1, h2, h3, h4, h5, ul, li, ol, dl, dt, dd, p, img, table, address, blockquote, fieldset {
-  padding: 0; margin: 0; font-size: 100%; font-weight: normal; font-style: normal; border: 0;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body, h1, h2, h3, h4, h5, h6, ul, li, ol, dl, dt, dd, p, img, table, address, blockquote, fieldset, figure, pre {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  font-weight: normal;
+  font-style: normal;
+  border: 0;
 }
