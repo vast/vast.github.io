@@ -9,8 +9,6 @@
   {% include head.html %}
 </head>
 <body>
-<noscript><div><img src="https://mc.yandex.ru/watch/37100705" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-
 <main class="page">
   {% include site-header.html %}
 
@@ -42,11 +40,13 @@
       </p>
     </div>
 
+    {% assign share_url = site.url | append: page.url | url_encode %}
+    {% assign share_title = page.title | url_encode %}
     <footer class="post-share">
       <span>Поделиться:</span>
-      <a href="https://t.me/share/url?url={{ site.url | append: page.url | uri_escape }}&amp;text={{ page.title | uri_escape }}" target="_blank" rel="noopener">Телеграм</a>
-      <a href="https://vk.com/share.php?url={{ site.url | append: page.url | uri_escape }}" target="_blank" rel="noopener">ВКонтакте</a>
-      <a href="https://x.com/intent/post?via=vazilla&amp;url={{ site.url | append: page.url | uri_escape }}&amp;text={{ page.title | uri_escape }}" target="_blank" rel="noopener">X</a>
+      <a href="https://t.me/share/url?url={{ share_url }}&amp;text={{ share_title }}" target="_blank" rel="noopener">Телеграм</a>
+      <a href="https://vk.com/share.php?url={{ share_url }}" target="_blank" rel="noopener">ВКонтакте</a>
+      <a href="https://x.com/intent/post?via=vazilla&amp;url={{ share_url }}&amp;text={{ share_title }}" target="_blank" rel="noopener">X</a>
     </footer>
   </article>
 
@@ -57,8 +57,6 @@
           <span class="post-nav-label">← Раньше</span>
           <span class="post-nav-title">{{ page.previous.title }}</span>
         </a>
-      {% else %}
-        <span class="post-nav-item"></span>
       {% endif %}
       {% if page.next.url %}
         <a class="post-nav-item post-nav-item--next" href="{{ page.next.url }}" rel="next">
@@ -69,7 +67,7 @@
     </nav>
   {% endif %}
 
-  {% if page.skip_tests_announce == nil or page.skip_tests_announce == false %}
+  {% unless page.skip_tests_announce %}
     <aside class="course">
       <a class="course-img" href="https://tough-dev.school/growth">
         <img src="/assets/growth-course.png" alt="" width="2880" height="1412" loading="lazy" />
@@ -81,15 +79,14 @@
           и выстраивать системный рост команды.</p>
       </div>
     </aside>
-  {% endif %}
+  {% endunless %}
 
-  {% assign popular_posts = site.popular_posts %}
+  {% assign popular_posts = "" | split: "" %}
   {% for post_url in site.popular_post_urls %}
-    {% for post in site.posts %}
-      {% if post_url == post.url %}
-        {% assign popular_posts = popular_posts | push: post %}
-      {% endif %}
-    {% endfor %}
+    {% assign popular_post = site.posts | where: "url", post_url | first %}
+    {% if popular_post %}
+      {% assign popular_posts = popular_posts | push: popular_post %}
+    {% endif %}
   {% endfor %}
 
   <div class="related-band">
@@ -130,8 +127,5 @@
 
   {% include site-footer.html %}
 </main>
-
-<script src="/js/errything.js"></script>
-<script>typographer.kickit('.post-contents, .post-title')</script>
 </body>
 </html>

@@ -23,8 +23,12 @@
   ];
 
   var trulyRandom = function() {
-    document.getElementById('funny-title').innerHTML = funnyTitles[Math.floor(Math.random()*funnyTitles.length)];
+    document.getElementById('funny-title').textContent = funnyTitles[Math.floor(Math.random()*funnyTitles.length)];
   }
 
   setInterval(trulyRandom, 5000);
 </script>
+
+<noscript><div><img src="https://mc.yandex.ru/watch/37100705" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<script src="/js/errything.js"></script>
+<script>typographer.kickit('.post-contents, .post-title')</script>

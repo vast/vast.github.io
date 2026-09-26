@@ -8,11 +8,8 @@ html {
 
 body {
   min-width: 20rem;
-  color: var(--ink);
-  background: var(--paper);
   font-family: var(--font-mono);
   font-variant-ligatures: none;
-  font-size: 1rem;
   line-height: var(--line-height);
   visibility: hidden;
 
@@ -50,16 +47,11 @@ b, strong {
   font-weight: 600;
 }
 
-em, i {
-  font-style: italic;
-}
-
-// Заголовки того же кегля, что и текст, поэтому и интерлиньяж у них общий —
-// на нём держатся обрезка по краям букв и ритм
+// Заголовки того же кегля и интерлиньяжа, что и текст (кегль сбрасывает reset, интерлиньяж наследуется от body):
+// на этом держатся обрезка по краям букв и ритм
 h1, h2, h3, h4 {
   color: var(--ink-strong);
   font-weight: 600;
-  line-height: var(--line-height);
 }
 
 img {

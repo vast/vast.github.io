@@ -14,7 +14,6 @@ exclude:
   - CLAUDE.md
   - docs
 
-popular_posts: []
 popular_post_urls:
   - "/posts/double-mock-stub.html"
   - "/posts/from-stylus-to-postcss.html"

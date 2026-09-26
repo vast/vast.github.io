@@ -3,13 +3,13 @@
   .c, .ch, .cm, .c1, .cs, .cd, .cp, .cpf { color: #8f8f8a; font-style: italic; }
   .err { color: #b4233b; }
 
-  .k, .kc, .kd, .kn, .kp, .kr, .kv, .ow { color: #dc224d; }
+  .k, .kd, .kn, .kp, .kr, .kv, .ow { color: #dc224d; }
   .kt, .nc, .nn { color: #7141a6; }
   .nf, .fm, .nd { color: #9a7808; }
   .no, .ss, .nl, .kc, .bp { color: #e57600; }
   .nb, .na, .nt { color: #0d90a1; }
   .nv, .vc, .vg, .vi, .vm { color: #0068c9; }
-  .o, .p { color: #0068c9; }
+  .o { color: #0068c9; }
   .p { color: var(--muted); }
 
   .s, .s1, .s2, .sa, .sb, .sc, .sd, .se, .sh, .si, .sx, .dl { color: #178c47; }

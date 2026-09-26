@@ -9,8 +9,6 @@
   @include trim-to-ink;
   max-width: 54ch;
   color: var(--accent);
-  font-size: 1rem;
-  font-weight: 600;
   text-wrap: balance;
 
   a {
@@ -72,13 +70,11 @@ $inserts: "div.highlighter-rouge, pre, figure, blockquote, .outstanding, .img--b
 
   h2 {
     margin-top: var(--interline);
-    font-size: 1rem;
   }
 
   h3,
   h4 {
     margin-top: var(--subsection-gap);
-    font-size: 1rem;
   }
 
   // Текст после заголовка и список после абзаца продолжают предыдущий блок,
@@ -237,11 +233,6 @@ $inserts: "div.highlighter-rouge, pre, figure, blockquote, .outstanding, .img--b
   color: var(--muted);
 }
 
-.lead {
-  color: var(--ink-strong);
-  font-size: 1.0625rem;
-}
-
 //
 // Выделенные фразы и правила
 //
@@ -314,7 +305,9 @@ $inserts: "div.highlighter-rouge, pre, figure, blockquote, .outstanding, .img--b
   padding: var(--line-gap) var(--space-4) var(--line-gap) 0;
   text-decoration: none;
 
+  // Без «Раньше» ссылка «Позже» всё равно стоит справа
   &--next {
+    grid-column: 2;
     padding: var(--line-gap) 0 var(--line-gap) var(--space-4);
     border-left: 1px dashed var(--line);
     text-align: right;
@@ -332,14 +325,14 @@ $inserts: "div.highlighter-rouge, pre, figure, blockquote, .outstanding, .img--b
 
   @media (max-width: 36rem) {
     &--next {
+      grid-column: auto;
       padding: var(--line-gap) 0;
       border-left: 0;
-      border-top: 1px dashed var(--line);
       text-align: left;
     }
 
-    &:empty {
-      display: none;
+    & + &--next {
+      border-top: 1px dashed var(--line);
     }
   }
 }

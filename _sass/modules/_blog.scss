@@ -3,13 +3,6 @@
   padding: var(--interline) var(--gutter) 0;
 }
 
-.intro-title {
-  @include trim-to-ink;
-  color: var(--accent);
-  font-size: 1rem;
-  font-weight: 600;
-}
-
 // Внутри рамки — межабзац, как у плашки курса; строки встают через интерлиньяж
 .card {
   display: grid;
@@ -75,7 +68,6 @@
   td {
     @include trim-to-ink;
     padding: var(--line-gap) 0;
-    border-top: 0;
     border-bottom: 1px dashed var(--line);
     text-align: left;
     vertical-align: top;
