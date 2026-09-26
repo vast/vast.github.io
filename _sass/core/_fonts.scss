@@ -1,27 +1,16 @@
 @font-face {
-  src: url(/assets/fonts/iAWriterDuoS-Regular.woff2) format("woff2");
-  font-family: iA Writer Duo;
-  font-weight: 400;
+  src: url(/assets/fonts/GeistMono-Variable.woff2) format("woff2");
+  font-family: Geist Mono;
+  font-weight: 100 900;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  src: url(/assets/fonts/iAWriterDuoS-Bold.woff2) format("woff2");
-  font-family: iA Writer Duo;
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  src: url(/assets/fonts/iAWriterDuoS-Italic.woff2) format("woff2");
-  font-family: iA Writer Duo;
-  font-weight: normal;
+  src: url(/assets/fonts/GeistMono-Italic-Variable.woff2) format("woff2");
+  font-family: Geist Mono;
+  font-weight: 100 900;
   font-style: italic;
+  font-display: swap;
 }
 
-@font-face {
-  src: url(/assets/fonts/iAWriterDuoS-BoldItalic.woff2) format("woff2");
-  font-family: iA Writer Duo;
-  font-weight: bold;
-  font-style: italic;
-}

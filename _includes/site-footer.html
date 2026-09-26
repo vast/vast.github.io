@@ -1,0 +1,34 @@
+<footer class="site-footer">
+  <p>
+    © Василий Половнёв, 2014—{{ site.time | date: '%Y' }},
+    <span id="funny-title" onclick="trulyRandom()">бьюти-разработчик</span>
+  </p>
+</footer>
+
+<script>
+  var funnyTitles = [
+    'капитан-командор, непризнанный филантроп',
+    'автор бестселлера «HTML ненавидит нас всех»',
+    'веб-евангелист в ООО «Печенька»',
+    'давно мечтает о фамилии Круг-Циркуль',
+    'мать, жена, саентолог',
+    'мастер спорта по тяжелым омлетикам',
+    'фронтенд-шмонтенд разработчик',
+    'редактор журнала «Верстающий Фатеж»',
+    'программист полураспада',
+    'бьюти-разработчик',
+    'мамкин штангист',
+    'папкин борец',
+    'может пояснить за хафгард',
+  ];
+
+  var trulyRandom = function() {
+    document.getElementById('funny-title').textContent = funnyTitles[Math.floor(Math.random()*funnyTitles.length)];
+  }
+
+  setInterval(trulyRandom, 5000);
+</script>
+
+<noscript><div><img src="https://mc.yandex.ru/watch/37100705" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<script src="/js/errything.js"></script>
+<script>typographer.kickit('.post-contents, .post-title')</script>

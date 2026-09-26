@@ -1,0 +1,46 @@
+:root {
+  --paper: #faf9f5;
+  --paper-raised: #f3f2ec;
+  --ink: #32332f;
+  --ink-strong: #11120f;
+  --muted: #72736b;
+  --line: #cbc9be;
+  --line-bright: #a9a79c;
+  --accent: #006fe6;
+
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+
+  // Вертикальный ритм текста. Подробно — в docs/spacing.md.
+  // Все отступы оптические: текстовые блоки обрезаны миксином trim-to-ink по x-height сверху и базовой линии снизу,
+  // поэтому отступ — это ровно просвет от базовой линии (или края картинки) до x-height следующего блока.
+  --line-height: 1.65;
+  --leading: calc(var(--line-height) * 1rem);
+  // Просвет между строками внутри абзаца: от базовой до x-height следующей строки
+  --line-gap: calc(var(--leading) - 1ex);
+  // Межабзац: 30px. Им же разделяем врезки, идущие подряд
+  --paragraph-gap: 1.875rem;
+  // Межстрочник: два межабзаца. После врезок (картинки, код, цитаты, видео, выделенные фразы) и перед h2
+  --interline: calc(var(--paragraph-gap) * 2);
+  // Три четверти межстрочника: перед подзаголовками h3 и h4 и перед P. S.
+  --subsection-gap: calc(var(--interline) * .75);
+  // Два межстрочника: между крупными разделами — постами в ленте, рекламой курса, рубриками и подвалом
+  --section-gap: calc(var(--interline) * 2);
+  // Между пунктами списка: посередине между просветом строк и межабзацем.
+  // Пункты не обрезаются, поэтому к отступу прибавляется просвет строк
+  --list-gap: calc((var(--paragraph-gap) - var(--line-gap)) / 2);
+
+  --gutter: clamp(0rem, 4vw, 4rem);
+  --measure: 68ch;
+  --measure-wide: 84ch;
+
+  --font-mono: "Geist Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+
+// На телефоне хватает отступа самой страницы
+@media (max-width: 36rem) {
+  :root {
+    --gutter: 0rem;
+  }
+}

@@ -1,0 +1,13 @@
+<table class="archive-table">
+  <tbody>
+    {% assign current_year = "" %}
+    {% for post in site.posts offset: include.offset %}
+      {% assign year = post.date | date: "%Y" %}
+      <tr{% if year != current_year %} class="archive-year-start"{% endif %}>
+        <th scope="row">{% if year != current_year %}{{ year }}{% endif %}</th>
+        <td class="{{ post.classes }}"><a href="{{ post.url }}">{{ post.title }}</a></td>
+      </tr>
+      {% assign current_year = year %}
+    {% endfor %}
+  </tbody>
+</table>

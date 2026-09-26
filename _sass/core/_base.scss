@@ -1,13 +1,16 @@
 html {
-  font-size: 18px;
+  color: var(--ink);
+  background: var(--paper);
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  color: $text-color-fallback;
-  color: $text-color;
-  background: #fafafa;
-  font: normal normal 1rem/1.45 $base-font;
-  -webkit-text-size-adjust: none;
+  min-width: 20rem;
+  font-family: var(--font-mono);
+  font-variant-ligatures: none;
+  line-height: var(--line-height);
   visibility: hidden;
 
   &.is__ready {
@@ -15,199 +18,140 @@ body {
   }
 }
 
-.global-container {
-  padding: 1em 2em;
-}
-
-.narrow-container {
-  @include container;
-}
-
-.full-width-container {
-  @include container;
-  padding-left: 0;
-  padding-right: 0;
-  max-width: none;
-}
-
-.nudge-top-container {
-  padding-top: 0;
-  margin-top: -3rem;
+::selection {
+  color: var(--paper);
+  background: var(--accent);
 }
 
 a {
-  color: $link-color;
+  color: inherit;
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-underline-offset: .175em;
-  text-decoration-color: color-mix(in srgb, currentColor, transparent 80%);
-  text-decoration-skip: none;
-  text-decoration-skip-ink: none;
+  text-underline-offset: .25em;
+  text-decoration-color: var(--line-bright);
 
-  &:hover {
-    color: $link-hover-color;
+  &:hover,
+  &:focus-visible {
+    color: var(--accent);
+    text-decoration-color: currentColor;
   }
 
-  &:active {
-    color: $link-active-color;
+  &:focus-visible {
+    outline: 1px solid var(--accent);
+    outline-offset: 2px;
   }
 }
 
-* + p,
-p + * {
-  margin-top: .5lh;
+b, strong {
+  color: var(--ink-strong);
+  font-weight: 600;
 }
 
-h1 {
-  margin: 2lh 0 0;
-  font-size: 2rem;
-  line-height: 1.1;
-}
-
-h2 {
-  font-size: 1.5rem;
-  margin: 1lh 0 0 !important; // FIXME
-}
-
-h3 {
-  font-size: 1rem;
-  font-weight: bold;
-}
-
-ul + *,
-ol + * {
-  margin-top: .5lh;
-}
-
-ul {
-  list-style: none outside;
-  margin-left: 2rem;
-  padding-left: 0;
-}
-
-h3 + ul {
-  margin-left: 0;
-}
-
-h3 + p,
-p + ul,
-p + ol {
-  margin-top: 0;
-}
-
-li + * {
-  margin-top: .33lh;
-}
-
-li > ul, li > ol {
-  margin: .45em 0 0 2em
-}
-
-li > ul li, li > ol li {
-  font-size: 1em
-}
-
-ol {
-  margin-left: 1em;
-  list-style: none outside;
-  counter-reset: ol-counter;
-}
-
-ol > li:before {
-  position: absolute;
-  margin-left: -1em;
-  content: counter(ol-counter) '. ';
-  counter-increment: ol-counter;
-}
-
-ol > li > p:last-child {
-  margin-bottom: 0;
-}
-
-dd {
-  margin-left: 2rem;
+// Заголовки того же кегля и интерлиньяжа, что и текст (кегль сбрасывает reset, интерлиньяж наследуется от body):
+// на этом держатся обрезка по краям букв и ритм
+h1, h2, h3, h4 {
+  color: var(--ink-strong);
+  font-weight: 600;
 }
 
 img {
   display: block;
   max-width: 100%;
   height: auto;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 hr {
-  position: relative;
-  margin: 1lh 0;
-  height: 1px;
+  height: 0;
   border: 0;
-  box-shadow: inset 0 -2px 0 -1px rgba(0, 0, 0, .15);
+  border-top: 1px dashed var(--line);
 }
 
-blockquote + * {
-  margin-top: .5lh;
+code, pre, kbd, samp {
+  font-family: inherit;
+  font-size: inherit;
 }
 
-blockquote {
-  padding: 0 0 0 2rem;
-  border-left: 5px solid #eee;
+.eyebrow {
+  color: var(--muted);
+  font-size: .75rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
 
-  &.pull-right {
-    padding: 0 1.88rem 0 0;
-    border-left: none;
-    border-right: 5px solid #eee;
-    text-align: right;
+// Сколько строка занимает над x-height (или над прописными — для текста капсом) и под базовой линией.
+// Метрики Geist Mono: ascent 1.005em, descent .295em, x-height .53em, высота прописных .71em
+$ink-trim-top: calc((var(--line-height) - 1.3) * .5em + .475em);
+$ink-trim-top-caps: calc((var(--line-height) - 1.3) * .5em + .295em);
+$ink-trim-bottom: calc((var(--line-height) - 1.3) * .5em + .295em);
+
+// Обрезаем блок по x-height первой строки и базовой линии последней, чтобы отступы вокруг текста были оптическими.
+// Делаем это отрицательными отступами у псевдоэлементов, а не через text-box:
+// в Chrome text-box: trim-both после подгрузки шрифта иногда добавляет лишний отступ перед строкой посреди абзаца.
+// $caps: true — для текста капсом, его верх — прописные, а не x-height
+@mixin trim-to-ink($caps: false) {
+  &::before,
+  &::after {
+    display: table;
+    content: "";
   }
 
-  small { color: #515151 }
-
-  small:before, &.pull-right small:after {
-    content: '— ';
+  &::before {
+    margin-bottom: calc(-1 * #{if($caps, $ink-trim-top-caps, $ink-trim-top)});
   }
 
-  &.pull-right small:before { display: none}
+  &::after {
+    margin-top: calc(-1 * #{$ink-trim-bottom});
+  }
 }
 
-* + div:has(pre) {
-  margin-top: .5lh;
+// То же для блоков, у которых псевдоэлементы заняты: вычитаем обрезку из внутренних отступов
+@mixin trim-to-ink-padding($top, $bottom: $top) {
+  padding-top: calc(#{$top} - #{$ink-trim-top});
+  padding-bottom: calc(#{$bottom} - #{$ink-trim-bottom});
 }
 
-div:has(pre) + *{
-  margin-top: 1lh;
+// Тёмная полоса во всю ширину окна, хотя сам блок стоит в колонке.
+// Рисуем её тенью и обрезаем clip-path по вертикали: полоса выходит за колонку, но не даёт горизонтальной прокрутки
+@mixin full-bleed-band {
+  background: var(--paper-raised);
+  box-shadow: 0 0 0 100vmax var(--paper-raised);
+  clip-path: inset(0 -100vmax);
 }
 
-pre {
-  white-space: pre-wrap;
-  overflow-x: auto;
+// Пунктирная рамка с плюсиками по углам, как чертёж.
+// Плюсик рисуем двумя линиями, а не символом «+»: у глифа центр не совпадает с серединой строки,
+// и плюсик съезжает с угла. Линии 1px в центре квадрата 9×9 ложатся ровно на рамку.
+@mixin blueprint-box {
+  position: relative;
+  border: 1px dashed var(--line-bright);
+
+  &::before,
+  &::after {
+    position: absolute;
+    z-index: 1;
+    width: 9px;
+    height: 9px;
+    background:
+      linear-gradient(var(--line-bright), var(--line-bright)) center / 1px 100% no-repeat,
+      linear-gradient(var(--line-bright), var(--line-bright)) center / 100% 1px no-repeat,
+      var(--paper);
+    content: "";
+    pointer-events: none;
+  }
+
+  &::before {
+    top: -5px;
+    left: -5px;
+  }
+
+  &::after {
+    bottom: -5px;
+    right: -5px;
+  }
 }
 
-pre, code {
-  color: $code-color;
-  font-family: $monospace-font;
-  font-size: 88.8%
-}
-
-pre code {
-  color: $pre-code-color;
-  font-size: 1em;
-  white-space: pre-wrap;
-}
-
-table {
-  margin: 0 0 1lh;
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-td, th {
-  padding: .3em 1em 0 0;
-  font-family: Helvetica Neue, Arial, sans-serif;
-  font-size: .875em;
-  text-align: left;
-  vertical-align: top;
-}
-
-th {
-  padding-top: 0;
-  border-bottom: 1px solid #000;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }

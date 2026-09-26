@@ -1,0 +1,12 @@
+<header class="site-header">
+  {% if include.home %}
+    <span class="site-name">{{ site.title }}</span>
+  {% else %}
+    <a class="site-name" href="/">{{ site.title }}</a>
+  {% endif %}
+  <nav class="site-nav">
+    <a href="https://t.me/polovnyov_journal">Телеграм</a>
+    <a href="https://tough-dev.school/growth">Курс</a>
+    <a href="/feed.xml">RSS</a>
+  </nav>
+</header>

@@ -1,204 +1,131 @@
 <!DOCTYPE html>
 <html lang="ru" prefix="og: http://ogp.me/ns#">
 <head>
-  <meta charset="utf-8" />
-  <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
   <meta property="og:title" content="{{ page.title }}" />
   <meta property="og:description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160 | escape_once }}" />
-
-  <title>
-    {% if page.title %}
-      {{ page.title }}
-    {% else %}
-      {{ site.title }} &middot; {{ site.tagline }}
-    {% endif %}
-  </title>
-  <link rel="stylesheet" href="/css/application.css" media="screen, projection" />
-  <link rel="stylesheet" href="/css/mobile.css" media="screen and (max-width: 980px)" />
-  <link rel="stylesheet" href="https://npmcdn.com/social-likes-next/dist/social-likes_birman.css">
+  <meta name="description" content="{{ page.excerpt | strip_html | strip_newlines | truncate: 160 | escape_once }}" />
   <link rel="profile" href="http://microformats.org/profile/hcard" />
-  <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
+  {% include head.html %}
 </head>
 <body>
-<!-- Yandex.Metrika counter -->
-<script type="text/javascript">
-    (function (d, w, c) {
-        (w[c] = w[c] || []).push(function() {
-            try {
-                w.yaCounter37100705 = new Ya.Metrika({
-                    id:37100705,
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true,
-                    webvisor:true
-                });
-            } catch(e) { }
-        });
+<main class="page">
+  {% include site-header.html %}
 
-        var n = d.getElementsByTagName("script")[0],
-            s = d.createElement("script"),
-            f = function () { n.parentNode.insertBefore(s, n); };
-        s.type = "text/javascript";
-        s.async = true;
-        s.src = "https://mc.yandex.ru/metrika/watch.js";
-
-        if (w.opera == "[object Opera]") {
-            d.addEventListener("DOMContentLoaded", f, false);
-        } else { f(); }
-    })(document, window, "yandex_metrika_callbacks");
-</script>
-<noscript><div><img src="https://mc.yandex.ru/watch/37100705" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-<!-- /Yandex.Metrika counter -->
-
-  <header class="header">
-    <div class="header-contents">
-      <a href="/">{{ site.title }}</a>
-    </div>
-  </header>
   <article class="post">
     <header class="post-header">
-      <h1 class="post-title">{{ page.title }} </h1>
+      <h1 class="post-title">{{ page.title }}</h1>
+      {% if page.date %}
+        <p class="post-byline">{% include date.html date=page.date %}</p>
+      {% endif %}
     </header>
 
     <div class="post-contents">
       {{ content }}
 
-      <p>
-      P. S. Ещё больше постов о программировании, тестах и культуре разработки у меня
-      <a href="https://t.me/polovnyov_journal">в Телеграме.</a>
+      {%- comment -%}
+        Если в посте уже есть свой P. S. (или P. P. S.), приписка продолжает счёт.
+        has_ps: true во front matter включает P. P. S. вручную
+      {%- endcomment -%}
+      {% if content contains "<p>P. P. S." %}
+        {% assign ps_label = "P. P. P. S." %}
+      {% elsif content contains "<p>P. S." or page.has_ps %}
+        {% assign ps_label = "P. P. S." %}
+      {% else %}
+        {% assign ps_label = "P. S." %}
+      {% endif %}
+      <p class="post-ps">
+        {{ ps_label }} Ещё больше постов о программировании, тестах и культуре разработки у меня
+        <a href="https://t.me/polovnyov_journal">в Телеграме.</a>
       </p>
     </div>
 
-    <footer class="post-meta">
-      <small class="post-date">
-        ⊙
-        {% assign m = page.date | date: "%-m" %}
-        {{ page.date | date: "%-d" }}
-        {% case m %}
-          {% when '1' %}января
-          {% when '2' %}февраля
-          {% when '3' %}марта
-          {% when '4' %}апреля
-          {% when '5' %}мая
-          {% when '6' %}июня
-          {% when '7' %}июля
-          {% when '8' %}августа
-          {% when '9' %}сентября
-          {% when '10' %}октября
-          {% when '11' %}ноября
-          {% when '12' %}декабря
-        {% endcase %}
-        {{ page.date | date: "%Y" }}
-      </small>
-
-      <div class="social-likes">
-        <div data-service="twitter" data-via="vazilla" title="Поделиться ссылкой в Твитере">Твитнуть</div>
-        <div data-service="facebook" title="Поделиться ссылкой на Фейсбуке">Поделиться</div>
-        <div class="vkontakte" title="Поделиться ссылкой во Вконтакте">Поделиться</div>
-      </div>
-
-      <ul class="post-nav">
-        <li>
-          {% if page.previous.url %}
-            <a href="{{page.previous.url}}">{{page.previous.title}}</a>
-          {% endif %}
-        </li>
-
-        <li class="post-nav-spacer">← →</li>
-
-        <li>
-          {% if page.next.url %}
-            <a href="{{page.next.url}}">{{page.next.title}}</a>
-          {% endif %}
-        </li>
-      </ul>
-
-      <div class="post-course">
-        {% if page.skip_tests_announce == nil or (page.skip_tests_announce == false) %}
-          <div class="post-course-img">
-            <a href="https://tough-dev.school/growth">
-              <img src="/assets/growth-course.png" alt="" width="2880" height="1412" />
-            </a>
-          </div>
-
-          <div class="post-course-description">
-            <h3><a href="https://tough-dev.school/growth">Профессиональный рост: меня и команды</a></h3>
-            <p>Четырёхнедельный курс о том, как расти в профессии самому
-              и выстраивать системный рост команды.</p>
-          </div>
-        {% endif %}
-      </div>
+    {% assign share_url = site.url | append: page.url | url_encode %}
+    {% assign share_title = page.title | url_encode %}
+    <footer class="post-share">
+      <span>Поделиться:</span>
+      <a href="https://t.me/share/url?url={{ share_url }}&amp;text={{ share_title }}" target="_blank" rel="noopener">Телеграм</a>
+      <a href="https://vk.com/share.php?url={{ share_url }}" target="_blank" rel="noopener">ВКонтакте</a>
+      <a href="https://x.com/intent/post?via=vazilla&amp;url={{ share_url }}&amp;text={{ share_title }}" target="_blank" rel="noopener">X</a>
     </footer>
   </article>
-</div>
 
-<div class="bottom-contents">
-  <aside class="related">
-    <h2>Популярное</h2>
-    {% assign popular_posts = site.popular_posts %}
-    {% for post_url in site.popular_post_urls %}
-      {% for post in site.posts %}
-        {% if post_url == post.url %}
-          {% assign popular_posts = popular_posts | push: post %}
-        {% endif %}
-      {% endfor %}
-    {% endfor %}
-    <ul class="related-posts related-posts--popular">
-      {% for post in popular_posts %}
-        {% if post.url != page.url %}
-          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-  </aside>
+  {% if page.previous.url or page.next.url %}
+    <nav class="post-nav" aria-label="Соседние посты">
+      {% if page.previous.url %}
+        <a class="post-nav-item" href="{{ page.previous.url }}" rel="prev">
+          <span class="post-nav-label">← Раньше</span>
+          <span class="post-nav-title">{{ page.previous.title }}</span>
+        </a>
+      {% endif %}
+      {% if page.next.url %}
+        <a class="post-nav-item post-nav-item--next" href="{{ page.next.url }}" rel="next">
+          <span class="post-nav-label">Позже →</span>
+          <span class="post-nav-title">{{ page.next.title }}</span>
+        </a>
+      {% endif %}
+    </nav>
+  {% endif %}
 
-  <aside class="related">
-    <h2>Из старого</h2>
-    <ul class="related-posts related-posts--too-old">
-      {% for post in site.posts %}
-      {% unless popular_posts contains post %}
-        {% if post.url != page.url %}
-          <li><a href="{{ post.url }}">{{ post.title }}</a></li>
-        {% endif %}
-      {% endunless %}
-      {% endfor %}
-    </ul>
-  </aside>
+  {% unless page.skip_tests_announce %}
+    <aside class="course">
+      <a class="course-img" href="https://tough-dev.school/growth">
+        <img src="/assets/growth-course.png" alt="" width="2880" height="1412" loading="lazy" />
+      </a>
+      <div class="course-description">
+        <p class="eyebrow">Курс</p>
+        <h3><a href="https://tough-dev.school/growth">Профессиональный рост: меня и команды</a></h3>
+        <p>Четырёхнедельный курс о том, как расти в профессии самому
+          и выстраивать системный рост команды.</p>
+      </div>
+    </aside>
+  {% endunless %}
 
-  <footer id="footer">
-    <span style="position: absolute; transform: translateX(-100%)">&copy; </span> Василий Половнёв, 2014—{{ site.time | date: '%Y' }},<br />
-    <span id="funny-title" onclick="javascript:trulyRandom();" style="cursor: pointer">
-      бьюти-разработчик
-    </span>
-  </footer>
-</div>
+  {% assign popular_posts = "" | split: "" %}
+  {% for post_url in site.popular_post_urls %}
+    {% assign popular_post = site.posts | where: "url", post_url | first %}
+    {% if popular_post %}
+      {% assign popular_posts = popular_posts | push: popular_post %}
+    {% endif %}
+  {% endfor %}
 
-  <script src="/js/errything.js"></script>
-  <script src="https://npmcdn.com/social-likes-next/dist/social-likes.min.js"></script>
-  <script>typographer.kickit('.post-contents, .post-title')</script>
-  <script>
-    var funnyTitles = [
-      'капитан-командор, непризнанный филантроп',
-      'автор бестселлера &laquo;HTML ненавидит нас всех&raquo;',
-      'веб-евангелист в ООО &laquo;Печенька&raquo;',
-      'давно мечтает о&nbsp;фамилии Круг-Циркуль',
-      'мать, жена, саентолог',
-      'мастер спорта по тяжелым омлетикам',
-      'фронтенд-шмонтенд разработчик',
-      'редактор журнала &laquo;Верстающий Фатеж&raquo;',
-      'программист полураспада',
-      'бьюти-разработчик',
-      'мамкин штангист',
-      'папкин борец',
-      'может пояснить за хафгард',
-    ];
+  <div class="related-band">
+    <section class="related">
+      <header class="section-caption">
+        <h2>Популярное</h2>
+        <span>что читают чаще всего</span>
+      </header>
+      <ul class="related-posts">
+        {% assign shown = 0 %}
+        {% for post in popular_posts %}
+          {% if post.url != page.url and shown < 9 %}
+            {% assign shown = shown | plus: 1 %}
+            <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </section>
 
-    var trulyRandom = function() {
-      document.getElementById('funny-title').innerHTML = funnyTitles[Math.floor(Math.random()*funnyTitles.length)];
-    }
+    <section class="related">
+      <header class="section-caption">
+        <h2>Свежее</h2>
+        <span><a href="/posts/">весь архив</a></span>
+      </header>
+      <ul class="related-posts">
+        {% assign shown = 0 %}
+        {% for post in site.posts %}
+          {% unless popular_posts contains post %}
+            {% if post.url != page.url and shown < 15 %}
+              {% assign shown = shown | plus: 1 %}
+              <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+            {% endif %}
+          {% endunless %}
+        {% endfor %}
+      </ul>
+    </section>
+  </div>
 
-    setInterval(trulyRandom, 5000);
-  </script>
+  {% include site-footer.html %}
+</main>
 </body>
 </html>
