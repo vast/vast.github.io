@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -7,24 +7,21 @@
   <meta name="apple-mobile-web-app-title" content="Eyexercise">
   <meta name="theme-color" content="#f7f7f7">
   <title>Eyexercise</title>
-  <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
-  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
-  <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon-192.png">
+  <link rel="apple-touch-icon" href="./icons/icon-180.png">
 
   <style>
     html,
-    body,
-    #root {
+    body {
       margin: 0;
       padding: 0;
-      display: flex;
-      min-height: 100%;
-      min-width: 100%;
+      height: 100%;
       -webkit-text-size-adjust: 100%;
     }
 
     .eyeworkout {
-      flex: 1;
+      min-height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -33,6 +30,9 @@
       font-family: Monaco, Menlo, Consolas, monospace;
       font-size: clamp(1.5rem, -0.875rem + 8.333vw, 3.5rem);
       line-height: 1.2;
+      cursor: pointer;
+      -webkit-user-select: none;
+      user-select: none;
     }
 
     .eyeworkout > * {
@@ -42,82 +42,76 @@
   </style>
 </head>
 <body>
-  <div id="root"></div>
+  <main class="eyeworkout">
+    <div>Нажмите где угодно, чтобы начать</div>
+  </main>
   <audio id="alert" preload="auto">
     <source src="./assets/alert.mp3">
   </audio>
 
-  <script type="text/babel">
-    class EyeWorkout extends React.Component {
-      constructor(props) {
-        super(props)
+  <script>
+    const steps = [
+      { text: 'Нажмите где угодно, чтобы начать' },
+      { text: 'Моргайте быстро-быстро', duration: 30 },
+      { text: 'Крепко зажмурьтесь на пару секунд, а потом откройте глаза на пару секунд', duration: 30 },
+      { text: 'Легко нажмите на верхнее веко тремя пальцами на пару секунд, потом отпустите на пару секунд', duration: 45 },
+      { text: 'Медленно переводите взгляд вверх-вниз и влево-вправо, не меняя положения головы', duration: 30 },
+      { text: 'Медленно переводите взгляд по диагоналям, не меняя положения головы', duration: 30 },
+      { text: 'Вращайте глазные яблоки, один оборот – по часовой стрелке, другой – против', duration: 30 },
+      { text: 'Сфокусируйте взгляд на отдаленном предмете, потом медленно сфокусируйте на близком предмете', duration: 60 },
+      { text: 'Вы молодец!', duration: 5 }
+    ]
 
-        this.state = { currentStep: 1 }
+    const main = document.querySelector('.eyeworkout')
+    const alertSound = document.getElementById('alert')
+    let currentStep = 0
+    let nextStepTimeout = null
+    let wakeLock = null
 
-        this.goToNextStep = this.goToNextStep.bind(this)
-        this.startOrRestart = this.startOrRestart.bind(this)
-      }
+    function showStep(index) {
+      currentStep = index % steps.length
+      const { text, duration } = steps[currentStep]
 
-      get currentStep() {
-        return (this.state.currentStep - 1) % this.props.children.length
-      }
+      main.firstElementChild.textContent = text
+      nextStepTimeout = duration ? setTimeout(() => showStep(currentStep + 1), duration * 1000) : null
 
-      get currentExercise() {
-        return this.props.children[this.currentStep]
-      }
-
-      componentDidUpdate() {
-        this.scheduleNextUpdate()
-        this.playAlert()
-      }
-
-      scheduleNextUpdate() {
-        const { duration } = this.currentExercise.props
-
-        this.nextStepTimeout = duration ? setTimeout(this.goToNextStep, duration * 1000) : null
-      }
-
-      playAlert() {
-        if (this.nextStepTimeout) document.getElementById('alert').play()
-      }
-
-      goToNextStep() {
-        return this.setState({ currentStep: this.state.currentStep + 1 })
-      }
-
-      startOrRestart() {
-        if (!this.nextStepTimeout) return this.goToNextStep()
-      }
-
-      render() {
-        return (
-          <main className="eyeworkout" onClick={ this.startOrRestart }>
-            { this.currentExercise }
-          </main>
-        )
+      if (nextStepTimeout) {
+        playAlert()
+        keepScreenOn()
+      } else {
+        letScreenSleep()
       }
     }
 
-    const Intro = () => (<div className="intro">Нажмите где угодно, чтобы начать</div>)
-    const Outro = () => (<div className="outro">Вы молодец!</div>)
-    const EyeExercise = ({ children }) => (<div className="eyeexercise">{ children }</div>)
-
-    const App = () => {
-      return (
-        <EyeWorkout>
-          <Intro/>
-          <EyeExercise duration="30">Моргайте быстро-быстро</EyeExercise>
-          <EyeExercise duration="30">Крепко зажмурьтесь на пару секунд, а потом откройте глаза на пару секунд</EyeExercise>
-          <EyeExercise duration="45">Легко нажмите на верхнее веко тремя пальцами на пару секунд, потом отпустите на пару секунд</EyeExercise>
-          <EyeExercise duration="30">Медленно переводите взгляд вверх-вниз и влево-вправо, не меняя положения головы</EyeExercise>
-          <EyeExercise duration="30">Медленно переводите взгляд по диагоналям, не меняя положения головы</EyeExercise>
-          <EyeExercise duration="30">Вращайте глазные яблоки, один оборот – по часовой стрелке, другой – против</EyeExercise>
-          <EyeExercise duration="60">Сфокусируйте взгляд на отдаленном предмете, потом медленно сфокусируйте на близком предмете</EyeExercise>
-          <Outro duration="5" />
-        </EyeWorkout>
-      )
+    // Первый play() случается прямо в обработчике нажатия, это разрешает звук на iOS
+    function playAlert() {
+      alertSound.currentTime = 0
+      alertSound.play().catch(() => {})
     }
-    ReactDOM.render(<App />, document.getElementById('root'))
+
+    async function keepScreenOn() {
+      if (wakeLock || !('wakeLock' in navigator)) return
+
+      try {
+        wakeLock = await navigator.wakeLock.request('screen')
+        wakeLock.addEventListener('release', () => { wakeLock = null })
+      } catch (e) {}
+    }
+
+    function letScreenSleep() {
+      if (wakeLock) wakeLock.release()
+    }
+
+    main.addEventListener('click', () => {
+      if (!nextStepTimeout) showStep(currentStep + 1)
+    })
+
+    // Браузер отпускает блокировку экрана, когда вкладка скрыта
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible' && nextStepTimeout) keepScreenOn()
+    })
+
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('./sw.js')
   </script>
 </body>
 </html>
