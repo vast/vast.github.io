@@ -1,5 +1,5 @@
 // Поменяйте версию после любой правки файлов ниже, иначе телефон продолжит показывать старые
-const CACHE = 'eyexercise-v1'
+const CACHE = 'eyexercise-v2'
 
 const FILES = [
   './',
